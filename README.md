@@ -1,7 +1,5 @@
 
-# Friflo.Engine.ECS
-
-Welcome to the Friflo.Engine.ECS wiki. 👋
+Welcome to the **Friflo.Engine.ECS** wiki. 👋
 
 The wiki pages provide you examples and documentation to all aspects of the library.
 
