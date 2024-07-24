@@ -13,8 +13,8 @@ Package extension for Unity - with full Editor integration like
 Check out the [README](https://github.com/friflo/Friflo.Json.Fliox/blob/main/Engine/README.md) for more information.
 
 <span>
-  <img src="https://raw.githubusercontent.com/friflo/Friflo.Engine-docs/main/docs/images/ECS Store.png"  width="418" height="477"/>
-  <img src="https://raw.githubusercontent.com/friflo/Friflo.Engine-docs/main/docs/images/ECS Entity.png" width="450" height="477"/>
+  <img src="../images/ECS Store.png"  width="418" height="477"/>
+  <img src="../images/ECS Entity.png" width="450" height="477"/>
 </span>
 
 ECS - dead simple. Highlights
