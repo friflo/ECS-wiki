@@ -1,7 +1,5 @@
 
-# Test ECS wiki - README
-
-## Friflo.Engine.ECS
+# Friflo.Engine.ECS
 
 Welcome to the Friflo.Engine.ECS wiki. 👋
 
