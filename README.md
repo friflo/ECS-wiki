@@ -19,10 +19,10 @@ The Wiki provide detailed information about the ECS and illustrate them by examp
 
 ## Examples
 
-* [General](examples/General.md)
+* [General](examples/General.md)  
   Explain fundamental ECS types like *Entity*, *Component*, *Tag*, *Command Buffer*, ... and show you how to use them.
 
-* [Optimization](examples/Optimization.md)
+* [Optimization](examples/Optimization.md)  
   Provide you techniques how to improve ECS performance by examples.
 
 * [Component Types](examples/Component-Types.md)
@@ -30,16 +30,16 @@ The Wiki provide detailed information about the ECS and illustrate them by examp
 
 ## Extensions
 
-* [Unity Extension](extensions/Unity-extension.md)
+* [Unity Extension](extensions/Unity-extension.md)  
   Projects extending Friflo.Engine.ECS with additional features.
 
 
 ## Package
 
-* [Release Notes](package/Release-Notes.md)
+* [Release Notes](package/Release-Notes.md)  
   List of changes of every release available on nuget.
 
-* [Features](package/Features.md)
+* [Features](package/Features.md)  
   Integration possibilities, a complete feature list and performance characteristics 🔥.
 
-* [Library](package/Library.md)
+* [Library](package/Library.md)  
