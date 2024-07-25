@@ -1,4 +1,9 @@
 
+<a href="https://github.com/friflo/Friflo.Engine.ECS"><img src="images/github-mark.svg" width="20" height="20"/></a>
+[![Github Repo](https://img.shields.io/badge/Repo-blue)](https://github.com/friflo/Friflo.Engine.ECS)
+[![C# API](https://img.shields.io/badge/C%23%20API-22aaaa)](https://github.com/friflo/Friflo.Engine-docs)
+[![Demos](https://img.shields.io/badge/Demos-22aa22)](https://github.com/friflo/Friflo.Engine.ECS-Demos)
+
 Welcome to the **Friflo.Engine.ECS** wiki. 👋
 
 The wiki pages provide you examples and documentation to all aspects of the library.
