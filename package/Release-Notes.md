@@ -72,7 +72,7 @@ public struct GenericComponent<T> : IComponent {
 ```
 
 ## 2.0.0
-![new](images/new.svg) **Features**
+![new](../images/new.svg) **Features**
 - Introduced Systems, System Groups with command buffers and performance monitoring.  
 Details at [README - Systems](https://github.com/friflo/Friflo.Json.Fliox/blob/main/Engine/README.md#systems)
 - Added support for Native AOT.  

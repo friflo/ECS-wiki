@@ -4,7 +4,7 @@ Examples using **Friflo.Engine.ECS** are part of the unit tests see:
 
 When testing the examples use a debugger to check entity state changes while stepping throw the code.
 
-<img src="images/entity-debugger.png" width="630" height="370"></img>  
+<img src="../images/entity-debugger.png" width="630" height="370"></img>  
 *Screenshot:* Entity state - enables browsing the entire store hierarchy.
 
 Examples showing typical use cases of the [Entity API](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/Entity.md)
