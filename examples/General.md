@@ -51,7 +51,7 @@ public static void CreateEntity()
     foreach (var entity in store.Entities) {
         Console.WriteLine($"entity {entity}");
     }
-    // > entity id: 1  []       Info:  []  shows entity has no components, tags or scripts
+    // > entity id: 1  []       Info:  [] entity has no components
     // > entity id: 2  []
 }
 ```
@@ -68,7 +68,7 @@ public static void DeleteEntity()
     var entity  = store.CreateEntity();
     entity.DeleteEntity();
     var isDeleted = entity.IsNull;
-    Console.WriteLine($"deleted: {isDeleted}");         // > deleted: True
+    Console.WriteLine($"deleted: {isDeleted}");     // > deleted: True
 }
 ```
 
@@ -82,13 +82,13 @@ public static void DisableEntity()
     var store   = new EntityStore();
     var entity  = store.CreateEntity();
     entity.Enabled = false;
-    Console.WriteLine(entity);                          // > id: 1  [#Disabled]
+    Console.WriteLine(entity);                      // > id: 1  [#Disabled]
     
     var query    = store.Query();
-    Console.WriteLine($"default - {query}");            // > default - Query: []  Count: 0
+    Console.WriteLine($"default - {query}");        // > default - Query: []  Count: 0
     
     var disabled = store.Query().WithDisabled();
-    Console.WriteLine($"disabled - {disabled}");        // > disabled - Query: []  Count: 1
+    Console.WriteLine($"disabled - {disabled}");    // > disabled - Query: []  Count: 1
 }
 ```
 <br/>
@@ -112,7 +112,7 @@ public static void AddComponents()
     var entity  = store.CreateEntity();
     
     // add components
-    entity.AddComponent(new EntityName("Hello World!"));// EntityName is a build-in component
+    entity.AddComponent(new EntityName("Hello World!"));// EntityName is build-in
     entity.AddComponent(new MyComponent { value = 42 });
     Console.WriteLine($"entity: {entity}");             // > entity: id: 1  "Hello World!"  [EntityName, Position]
     
@@ -149,7 +149,7 @@ It enables access to a unique entity without the need to pass an entity by exter
 public static void GetUniqueEntity()
 {
     var store   = new EntityStore();
-    store.CreateEntity(new UniqueEntity("Player"));     // UniqueEntity is a build-in component
+    store.CreateEntity(new UniqueEntity("Player"));     // UniqueEntity is build-in
     
     var player  = store.GetUniqueEntity("Player");
     Console.WriteLine($"entity: {player}");             // > entity: id: 1  [UniqueEntity]
@@ -176,11 +176,11 @@ public static void AddTags()
     // add tags
     entity.AddTag<MyTag1>();
     entity.AddTag<MyTag2>();
-    Console.WriteLine($"entity: {entity}");             // > entity: id: 1  [#MyTag1, #MyTag2]
+    Console.WriteLine($"entity: {entity}");     // > entity: id: 1  [#MyTag1, #MyTag2]
     
     // get tag
     var tag1 = entity.Tags.Has<MyTag1>();
-    Console.WriteLine($"tag1: {tag1}");                 // > tag1: True
+    Console.WriteLine($"tag1: {tag1}");         // > tag1: True
 }
 ```
 <br/>
@@ -212,8 +212,8 @@ public static void EntityQueries()
     });
     
     // --- query components with tags
-    var queryNamesWithTags  = store.Query<EntityName>().AllTags(Tags.Get<MyTag1, MyTag2>());
-    queryNamesWithTags.ForEachEntity((ref EntityName name, Entity entity) => {
+    var namesWithTags  = store.Query<EntityName>().AllTags(Tags.Get<MyTag1, MyTag2>());
+    namesWithTags.ForEachEntity((ref EntityName name, Entity entity) => {
         // ... 1 match
     });
 }
@@ -430,7 +430,7 @@ public static void AddChildEntities()
     root.AddChild(child1);
     root.AddChild(child2);
     
-    Console.WriteLine($"child entities: {root.ChildEntities}"); // > child entities: Count: 2
+    Console.WriteLine($"entities: {root.ChildEntities}"); // > entities: Count: 2
 }
 ```
 <br/>
