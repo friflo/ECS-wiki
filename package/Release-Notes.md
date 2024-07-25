@@ -17,6 +17,9 @@ Detailed information for each release at
 
 # 3.x Releases
 
+## 3.0.0-preview.6
+- Same release as preview.5 build with GitHub Action in [new Repository](https://github.com/friflo/Friflo.Engine.ECS)
+
 ## 3.0.0-preview.5
 - Improved performance of `Entity.RemoveChild()` & `Entity.InsertChild()` when remove / insert child entity on tail.
 
