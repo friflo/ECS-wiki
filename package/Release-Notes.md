@@ -1,8 +1,8 @@
 
 
 Features in this list are also explained in the GitHub Wiki.  
-- [**Examples - General**](https://friflo.gitbook.io/ecs-wiki/Examples-General)  
-- [**Examples - Optimization**](https://friflo.gitbook.io/ecs-wiki/Examples-Optimization)  
+- [**Examples - General**](../examples/General.md)  
+- [**Examples - Optimization**](../examples/Optimization.md)  
 
 Every new version is backward compatible to earlier versions.  
 Exceptions are labeled as  **Breaking change** / **Changed behavior**. These changes are made only on rarely used features.
@@ -11,7 +11,7 @@ Releases on nuget are available at
 [![nuget](https://img.shields.io/nuget/v/Friflo.Engine.ECS?logo=nuget&logoColor=white)](https://www.nuget.org/packages/Friflo.Engine.ECS)
 
 Detailed information for each release at
-[GitHub - Release Tags](https://github.com/friflo/Friflo.Json.Fliox/releases)
+[GitHub - Release Tags](https://github.com/friflo/Friflo.Engine.ECS/releases)
 
 <br/>
 
@@ -47,7 +47,7 @@ Detailed information for each release at
 ## 3.0.0-preview.2
 - For specific use cases there is now a set of specialized component interfaces providing additional features.    
   *Note:* Newly added features do not affect the behavior or performance of existing features.  
-  See documentation at: [Examples - Component-Types](https://friflo.gitbook.io/ecs-wiki/Examples-Component-Types)
+  See documentation at: [Examples - Component-Types](../examples/Component-Types.md)
 
   The specialized component types enable entity relationships, relations and full-text search.  
   Typical use case for entity relationships in games are:
@@ -74,21 +74,21 @@ public struct GenericComponent<T> : IComponent {
 ## 2.0.0
 ![new](../images/new.svg) **Features**
 - Introduced Systems, System Groups with command buffers and performance monitoring.  
-Details at [README - Systems](https://github.com/friflo/Friflo.Json.Fliox/blob/main/Engine/README.md#systems)
+Details at [README - Systems](https://github.com/friflo/Friflo.Engine.ECS/blob/main/README.md#%EF%B8%8F-systems)
 - Added support for Native AOT.  
-Details at [Wiki ⋅ General - Native AOT](https://friflo.gitbook.io/ecs-wiki/Examples-General#native-aot).
+Details at [Wiki ⋅ General - Native AOT](../examples/General.md#native-aot).
 - Enabled sharing a single [QueryFilter](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/QueryFilter.md) instance by multiple queries.  
 Changing a query filter - e.g. adding more constrains - directly changes the result set of all queries using the `queryFilter`.
 ```cs
 var query = store.Query<....>(queryFilter);
 ```
-- Added [CommandBuffer.Synced](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/CommandBuffer.Synced.md) intended to record entity changes in [parallel query jobs](https://friflo.gitbook.io/ecs-wiki/Examples-Optimization#parallel-query-job).
+- Added [CommandBuffer.Synced](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/CommandBuffer.Synced.md) intended to record entity changes in [parallel query jobs](../examples/General.md#parallel-query-job).
 
 **Performance**
 - Improved bulk creation of entities by 3x - 4x with [Archetype.CreateEntities(int count)](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/Archetype.CreateEntities(int).md).  
-See performance comparison at [ECS Benchamrks](https://github.com/friflo/Friflo.Json.Fliox/blob/main/Engine/README.md#ecs-benchmarks).
+See performance comparison at [ECS Benchamrks](https://github.com/friflo/Friflo.Engine.ECS?tab=readme-ov-file#-ecs-benchmarks).
 - Reduced memory footprint of an entity from 48 bytes to 16 bytes.  
-See column **Allocated** in [ECS Benchamrks](https://github.com/friflo/Friflo.Json.Fliox/blob/main/Engine/README.md#ecs-benchmarks).
+See column **Allocated** in [ECS Benchamrks](https://github.com/friflo/Friflo.Engine.ECS?tab=readme-ov-file#-ecs-benchmarks).
 - Decreased initial component type registration from 80 ms to 23 ms (Mac Mini M2).  
 Note: Component type registration runs only once per process on the first ECS API call.
 
@@ -108,8 +108,8 @@ Fix: `entities` now returns the entities assigned to a thread.
 
 **Project**
 - Simplify project structure for **Friflo.Engine.ECS**.
-Reduced number of files / folders in [Engine](https://github.com/friflo/Friflo.Json.Fliox/tree/main/Engine) folder from 21 to 7.
-- Moved documentation and examples from `README.md` to [GitHub ⋅ Wiki](https://friflo.gitbook.io/ecs-wiki) pages.
+Reduced number of files / folders in `Engine folder` from 21 to 7.
+- Moved documentation and examples from `README.md` to [GitBook.io ⋅ Wiki](https://friflo.gitbook.io/friflo.engine.ecs) pages.
 
 <br/>
 

@@ -4,7 +4,7 @@ The same functionality can be realized by using the features described in the ge
 Performance optimizations are achieved by SIMD, multi threading / parallelization, batching or bulk operations.
 
 Optimization examples are part of the unit tests see:
-[Tests/ECS/Examples](https://github.com/friflo/Friflo.Json.Fliox/tree/main/Engine/src/Tests/ECS/Examples)
+[Tests/ECS/Examples](https://github.com/friflo/Friflo.Engine.ECS/tree/main/src/Tests/ECS/Examples)
 
 <br/>
 
@@ -141,7 +141,7 @@ public static void QueryVectorization()
 **Optimization**: Process multiple entity events in a loop instead of individual event handlers.
 
 An alternative to process entity changes - see section
-[Event](https://friflo.gitbook.io/ecs-wiki/Examples-General#event) - are `EventFilter`'s.  
+[Event](../examples/General.md#event) - are `EventFilter`'s.  
 `EventFilter`'s can be used on its own or within a query like in the example below.  
 All events that need to be filtered - like added/removed components/tags - can be added to the `EventFilter`.  
 E.g. `ComponentAdded<Position>()` or `TagAdded<MyTag1>`.  

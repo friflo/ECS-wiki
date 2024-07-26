@@ -50,7 +50,7 @@ Build options:
 
 - Build time Windows: ~ 5 seconds, macOS (M2): 2,5 seconds.
 
-- Code coverage of the unit tests: 99,9%. See: [code-coverage.md](https://github.com/friflo/Friflo.Json.Fliox/blob/main/Engine/docs/code-coverage.md).
+- Code coverage of the unit tests: 99,9%. See: [code-coverage.md](https://github.com/friflo/Friflo.Engine.ECS/blob/main/docs/code-coverage.md).
 
 - Unit test execution: ~ 1 second.
 

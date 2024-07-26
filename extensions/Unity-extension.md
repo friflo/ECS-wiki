@@ -10,7 +10,7 @@ Package extension for Unity - with full Editor integration like
 [Arch.Unity](https://github.com/AnnulusGames/Arch.Unity).
 
 
-Check out the [README](https://github.com/friflo/Friflo.Json.Fliox/blob/main/Engine/README.md) for more information.
+Check out the [README](https://github.com/friflo/Friflo.Engine.ECS) for more information.
 
 <span>
   <img src="../images/ECS Store.png"  width="418" height="477"/>

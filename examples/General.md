@@ -1,6 +1,6 @@
 
 Examples using **Friflo.Engine.ECS** are part of the unit tests see:
-[Tests/ECS/Examples](https://github.com/friflo/Friflo.Json.Fliox/tree/main/Engine/src/Tests/ECS/Examples)
+[Tests/ECS/Examples](https://github.com/friflo/Friflo.Engine.ECS/tree/main/src/Tests/ECS/Examples)
 
 When testing the examples use a debugger to check entity state changes while stepping throw the code.
 

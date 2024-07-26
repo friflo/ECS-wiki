@@ -3,7 +3,7 @@
 
 The common component type applicable for most use cases is
 [IComponent](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/IComponent.md).  
-See component example in [Wiki ⋅ Examples General](https://friflo.gitbook.io/ecs-wiki/Examples-General#component)
+See component example in [Wiki ⋅ Examples General](../examples/General.md#component)
 
 For specific use cases there is a set of component interfaces providing additional features.  
 
@@ -16,7 +16,7 @@ For specific use cases there is a set of component interfaces providing addition
 
 
 Component types examples using **Friflo.Engine.ECS** are part of the unit tests see:
-[Tests/ECS/Examples](https://github.com/friflo/Friflo.Json.Fliox/tree/main/Engine/src/Tests/ECS/Examples)
+[Tests/ECS/Examples](https://github.com/friflo/Friflo.Engine.ECS/tree/main/src/Tests/ECS/Examples)
 
 <br/>
 
@@ -346,7 +346,7 @@ The number of link relations / relations per entity should not exceed 100.
 The reason is that inserting and removing a relation is executed in O(N).  
 N: number of relations per entity.
 
-*Benchmark* [see Tests](https://github.com/friflo/Friflo.Json.Fliox/blob/main/Engine/src/Tests/ECS/Relations/Test_Relations_Query.cs)  
+*Benchmark* [see Tests](https://github.com/friflo/Friflo.Engine.ECS/blob/main/src/Tests/ECS/Relations/Test_Relations_Query.cs)  
 Add 1.000.000 int relation components. Type:
 ```cs
 internal struct IntRelation : IRelationComponent<int> {
@@ -378,7 +378,7 @@ The number of components having the same key value should not exceed 100.
 The reason is that inserting and removing a component to / from the index is executed in O(N).  
 N: number of components having the same key value (duplicates).
 
-*Benchmark* [see Tests](https://github.com/friflo/Friflo.Json.Fliox/blob/main/Engine/src/Tests/ECS/Index/Test_Index.cs)  
+*Benchmark* [see Tests](https://github.com/friflo/Friflo.Engine.ECS/blob/main/src/Tests/ECS/Index/Test_Index.cs)  
 Add 1.000.000 indexed int components. Each to an individual entity. Type:
 ```cs
 public struct IndexedInt : IIndexedComponent<int> {

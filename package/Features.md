@@ -5,7 +5,7 @@ Friflo.Engine.ECS enables you integration in any C# based Game Engine and any .N
 
 - **Unity** - ![new](../images/new.svg) - Integration as nuget package. Tested 2022.3.20f1 (Mono & AOT/IL2CPP).  
     Use [NuGetForUnity](https://github.com/GlitchEnzo/NuGetForUnity) to install nuget package **Friflo.Engine.ECS**. 1.23.0 or higher.
-    Usage in [Unity script example](https://friflo.gitbook.io/ecs-wiki/Examples-General#unity-update-script).
+    Usage in [Unity script example](../examples/General.md#unity-update-script).
 - **.NET** - Supported target frameworks: **.NET Standard 2.1 .NET 5 .NET 6 .NET 7 .NET 8**. Supports **WASM / WebAssembly**.  
     Integration into a .NET project as nuget package see [nuget ⋅ Friflo.Engine.ECS](https://www.nuget.org/packages/Friflo.Engine.ECS/).  
 - **Godot** - Integration as nuget package. Tested with Godot 4.1.1.
@@ -34,7 +34,7 @@ See: [C++ ECS Benchmarks ⋅ Create Entities](https://github.com/abeimler/ecs_be
 
 - Developer friendly / OOP like API by exposing the [Entity API](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/Entity.md)
   **struct** as the main interface.  
-  Or compare the `Entity` API with other API's at [Engine-comparison.md](https://github.com/friflo/Friflo.Json.Fliox/blob/main/Engine/docs/Engine-comparison.md).  
+  Or compare the `Entity` API with other API's at [Engine-comparison.md](https://github.com/friflo/Friflo.Engine.ECS/blob/main/docs/Engine-comparison.md).  
   The typical alternative of an ECS implementations is providing a `World` class and using `int` parameters as entity `id`s.
 - Record entity changes on arbitrary threads using [CommandBuffer](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/CommandBuffer.md)'s.
 - Build a **hierarchy of entities** typically used in Games and Game Editors.
