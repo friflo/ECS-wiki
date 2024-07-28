@@ -209,13 +209,16 @@ public static void EntityQueries()
     var queryNames = store.Query<EntityName>();
     queryNames.ForEachEntity((ref EntityName name, Entity entity) => {
         // ... 3 matches
-    });
-    
+    });    
     // --- query components with tags
     var namesWithTags  = store.Query<EntityName>().AllTags(Tags.Get<MyTag1, MyTag2>());
     namesWithTags.ForEachEntity((ref EntityName name, Entity entity) => {
         // ... 1 match
-    });
+    });    
+    // --- use query.Entities in case an iteration requires no component access
+    foreach (var entity in queryNames.Entities) {
+        // ... 3 matches
+    }
 }
 ```
 
@@ -228,6 +231,7 @@ Some optional filter snippets used to shrink the result set returned by a query.
     .AllComponents(ComponentTypes.Get<Position>);   // query result contains only entities having all given components
 ```
 <br/>
+
 
 
 ## Archetype
