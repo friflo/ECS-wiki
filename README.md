@@ -1,9 +1,10 @@
 [![friflo ECS](images/friflo-ECS.svg)](https://github.com/friflo/Friflo.Engine.ECS)   ![splash](images/paint-splatter.svg)
 
 [![Github Repo](images/github-mark.svg)](https://github.com/friflo/Friflo.Engine.ECS)
-[![Github Repo](https://img.shields.io/badge/Repo-blue)](https://github.com/friflo/Friflo.Engine.ECS)
+[![Github Repo](https://img.shields.io/badge/Repository-grey)](https://github.com/friflo/Friflo.Engine.ECS)
+[![Demos](https://img.shields.io/badge/Demos-22aa22)](https://github.com/friflo/Friflo.Engine.ECS-Demos)
 [![C# API](https://img.shields.io/badge/C%23%20API-22aaaa)](https://github.com/friflo/Friflo.Engine-docs)
-[![Demos](https://img.shields.io/badge/Demos-22aa22)](https://github.com/friflo/Friflo.Engine.ECS-Demos)   
+[![Discord](https://img.shields.io/badge/Discord-5865F2)](https://discord.gg/nFfrhgQkb8)   
 [![Benchmarks](https://img.shields.io/badge/Benchmark%20🏁%20of%20C%23%20ECS%20frameworks-ffffff)](https://github.com/friflo/ECS.CSharp.Benchmark-common-use-cases)
 
 Welcome to the **Friflo.Engine.ECS** wiki. 👋
