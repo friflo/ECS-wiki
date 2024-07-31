@@ -28,6 +28,9 @@ Focus of preview.7 was performance improvements
   read / write access to multiple components of the same entity.  
   The cost to access a component is significant less than `Entity.GetComponent()`.
 
+- Change policy used to shrink the capacity of archetype containers.  
+  See: [EntityStore.ShrinkRatioThreshold](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/EntityStoreBase.ShrinkRatioThreshold.md)
+
 ## 3.0.0-preview.6
 - Same release as preview.5 build with GitHub Action in [new Repository](https://github.com/friflo/Friflo.Engine.ECS)
 
