@@ -17,6 +17,17 @@ Detailed information for each release at
 
 # 3.x Releases
 
+## 3.0.0-preview.7
+Focus of preview.7 was performance improvements
+
+- **Changed behavior** The ids of deleted entities are now recycled when creating new entities.  
+  Before: Every created entity got its own (incrementing ) unique id. This behavior lead to an every growing buffer when creating new entities.  
+  To switch to old behavior set [EntityStore.RecycleIds](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/EntityStore.RecycleIds.md) = false.
+
+- Introduced [EntityData](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/EntityData.md) struct to optimize
+  read / write access to multiple components of the same entity.  
+  The cost to access a component is significant less than `Entity.GetComponent()`.
+
 ## 3.0.0-preview.6
 - Same release as preview.5 build with GitHub Action in [new Repository](https://github.com/friflo/Friflo.Engine.ECS)
 
