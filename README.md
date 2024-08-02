@@ -13,7 +13,7 @@ The wiki pages provide you examples and documentation to all aspects of the libr
 
 # News
 
-- [x] Updated [Optimization](examples/Optimization.md#batching) examples. Updates are marked with ![New](images/new.svg) tag.
+- [x] Updated [Optimization](examples/Optimization.md#batching) examples. Updates are marked with 🔥 **Update** tag.
 
 ## Feedback
 

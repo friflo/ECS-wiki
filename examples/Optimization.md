@@ -40,7 +40,7 @@ public static void EnumerateQueryChunks()
     }
 }
 ```
-![New](../images/new.svg) Added note for slower iteration alternative.  
+🔥 **Update** - Added note for slower iteration alternative.  
 The alternative should be used only for small result set with less than 10 entities.
 
 <br/>
@@ -181,7 +181,7 @@ public static void FilterEntityEvents()
 
 ## Batch - Create Entity
 
-![New](../images/new.svg) Update example to use simpler / more performant approach to create entities.
+🔥 **Update** - New example to use simpler / more performant approach to create entities.
 
 **Optimization**  
 Minimize structural changes when creating entities.
@@ -206,7 +206,7 @@ public static void CreateEntityOperation()
 
 ## Bulk - Create entities
 
-![New](../images/new.svg) example for bulk creation of entities.
+🔥 **Update** - New example for bulk creation of entities.
 
 **Optimization**  
 Create multiple entities with the same set of components / tags in a single step.
@@ -229,7 +229,7 @@ public static void CreateEntities()
 
 ## Batch - Operations
 
-![New](../images/new.svg) Add example to batch **add**, **remove** and **get** components and tags.
+🔥 **Update** - Add example to batch **add**, **remove** and **get** components and tags.
 
 **Optimization**  
 Minimize structural changes when adding / removing **multiple** components or tags.
