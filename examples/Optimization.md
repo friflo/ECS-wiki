@@ -173,29 +173,20 @@ public static void FilterEntityEvents()
 
 ## Batch - Create Entity
 
-**Optimization**: Minimize structural changes when creating entities.
+![New](../images/new.svg) Update example to use simpler / more performant approach to create entities.
 
-Creating entities can be optimized if knowing the components and tags required by an entity in advance.  
-This prevent structural changes every time a component or tag is added to an exiting entity.  
-Entities can be created by using `store.Batch()` or an [CreateEntityBatch](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/CreateEntityBatch.md)
-instance.
+**Optimization**  
+Minimize structural changes when creating entities.
 
-It can also be used to create multiple entities all with the same set of components and tags.
+Entities can be created with multiple components and tags in a single step.<br/>
+This can be done by one of the [CreateEntity<T1, ... , Tn>](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/EntityStoreExtensions.md) overloads
 
 ```csharp
-public static void CreateEntityBatch()
+public static void CreateEntityOperation()
 {
     var store   = new EntityStore();
-    var entity  = store.Batch()
-        .Add(new EntityName("test"))
-        .Add(new Position(1,1,1))
-        .CreateEntity();
-    Console.WriteLine($"{entity}");         // > id: 1  "test"  [EntityName, Position]
-
-    // Create a batch - can be cached if needed.
-    var batch = new CreateEntityBatch(store).AddTag<MyTag1>();
     for (int n = 0; n < 10; n++) {
-        batch.CreateEntity();
+        store.CreateEntity(new EntityName("test"), new Position(), Tags.Get<MyTag1>());
     }
     var taggedEntities = store.Query().AllTags(Tags.Get<MyTag1>());
     Console.WriteLine(taggedEntities);      // > Query: [#MyTag1]  Count: 10
@@ -203,10 +194,57 @@ public static void CreateEntityBatch()
 ```
 <br/>
 
+## Batch - Operations
+
+![New](../images/new.svg) Add example to batch **add**, **remove** and **get** components and tags.
+
+**Optimization**  
+Minimize structural changes when adding / removing **multiple** components or tags to / from a **single entity**.
+
+Components can be added / removed **one by one** to / from an entity with `entity.AddComponent()` / `entity.RemoveComponent()`.  
+Every operation may cause a structural change which is an expensive operation.
+
+To execute these operations in a single step use the
+[EntityExtensions overloads](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/EntityExtensions.md).  
+This approach also reduces the amount of code to perform these operations.
+
+```csharp
+public static void EntityBatchOperations()
+{
+    var store   = new EntityStore();
+    var entity  = store.CreateEntity();
+    
+    // batch: add operations
+    entity.Add(
+        new Position(1, 2, 3),
+        new Scale3(4, 5, 6),
+        new EntityName("test"),
+        Tags.Get<MyTag1>());
+    Console.WriteLine(entity);  // id: 1  "test"  [EntityName, Position, Scale3, #MyTag1]
+    
+    // batch: get operations
+    var data    = entity.Data;  // introduced in 3.0.0-preview.7
+    var pos     = data.Get<Position>();
+    var scale   = data.Get<Scale3>();
+    var name    = data.Get<EntityName>();
+    var tags    = data.Tags;
+    Console.WriteLine($"({pos}), ({scale}), ({name})"); // (1, 2, 3), (4, 5, 6), ('test')
+    Console.WriteLine(tags);                            // Tags: [#MyTag1]
+    
+    // batch: remove operations
+    entity.Remove<Position, EntityName>(Tags.Get<MyTag1>());
+    Console.WriteLine(entity);  // id: 1  []
+}
+```
 
 ## Batch - Entity
 
-**Optimization**: Minimize structural changes when adding / removing components or tags to / from a **single entity**.
+**Optimization**  
+Minimize structural changes when adding **and** removing components or tags to / from a **single entity**.
+
+**Note**  
+An `EntityBatch` should only be used when adding <b>AND</b> removing components / tags to the same entity.<br/>
+If only adding <b>OR</b> removing components / tags use the **Add()** / **Remove()** overloads shown above.
 
 When adding/removing components or tags to/from a single entity it will be moved to a new archetype.  
 This is also called a *structural change* and in comparison to other methods a more costly operation.  
