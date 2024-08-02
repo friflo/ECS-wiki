@@ -51,3 +51,11 @@ The Wiki provide detailed information about the ECS and illustrate them by examp
   Integration possibilities, a complete feature list and performance characteristics 🔥.
 
 * [Library](package/Library.md)  
+
+
+### GitHub Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=friflo/Friflo.Engine.ECS&type=Date)](https://github.com/friflo/Friflo.Engine.ECS)
+
+💖 Do you like this project?  
+Leave a ⭐ on [GitHub ⋅ friflo/Friflo.Engine.ECS](https://github.com/friflo/Friflo.Engine.ECS)
