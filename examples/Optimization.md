@@ -8,6 +8,7 @@ Optimization examples are part of the unit tests see:
 
 <br/>
 
+
 # Entity Queries
 
 ## Enumerate Query Chunks
@@ -181,8 +182,8 @@ public static void FilterEntityEvents()
 **Optimization**  
 Minimize structural changes when creating entities.
 
-Entities can be created with multiple components and tags in a single step.<br/>
-This can be done by one of the [CreateEntity<T1, ... , Tn>](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/EntityStoreExtensions.md) overloads
+Entities can be created with multiple components and tags in a single step.  
+This can be done by one of the EntityStoreExtensions [CreateEntity<T1, ... , Tn>](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/EntityStoreExtensions.md) overloads
 
 ```csharp
 public static void CreateEntityOperation()
@@ -196,6 +197,30 @@ public static void CreateEntityOperation()
 }
 ```
 <br/>
+
+
+## Bulk - Create entities
+
+![New](../images/new.svg) example for bulk creation of entities.
+
+**Optimization**  
+Create multiple entities with the same set of components / tags in a single step.
+
+Entities can be created one by one with `store.CreateEntity()`.  
+To create multiple entities with the same set of components and tags use
+[archetype.CreateEntities(int count)](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/Archetype.CreateEntities(int).md).
+
+```csharp
+public static void CreateEntities()
+{
+    var store     = new EntityStore();
+    var archetype = store.GetArchetype(ComponentTypes.Get<Position, Scale3>(), Tags.Get<MyTag1>());
+    archetype.CreateEntities(100_000);  // ~ 0.5 ms
+    Console.WriteLine(store.Count);     // 100000
+}
+```
+<br/>
+
 
 ## Batch - Operations
 
