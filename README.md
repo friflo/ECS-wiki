@@ -11,6 +11,10 @@ Welcome to the **Friflo.Engine.ECS** wiki. 👋
 
 The wiki pages provide you examples and documentation to all aspects of the library.
 
+# News
+
+- [x] Updated [Optimization](examples/Optimization.md#batching) examples. Updates are marked with ![New](images/new.svg) tag.
+
 ## Feedback
 
 If you find something undocumented or unclear let me know. 🤔  

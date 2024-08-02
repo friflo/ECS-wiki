@@ -40,6 +40,9 @@ public static void EnumerateQueryChunks()
     }
 }
 ```
+![New](../images/new.svg) Added note for slower iteration alternative.  
+The alternative should be used only for small result set with less than 10 entities.
+
 <br/>
 
 
