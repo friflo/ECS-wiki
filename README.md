@@ -7,7 +7,7 @@
 [![Discord](https://img.shields.io/badge/Discord-5865F2)](https://discord.gg/nFfrhgQkb8)   
 [![Benchmarks](https://img.shields.io/badge/Benchmark%20🏁%20of%20C%23%20ECS%20frameworks-ffffff)](https://github.com/friflo/ECS.CSharp.Benchmark-common-use-cases)
 
-Welcome to the **Friflo.Engine.ECS** wiki. 👋
+Welcome to the **Friflo.Engine.ECS** wiki.
 
 The wiki pages provide you examples and documentation to all aspects of the library.
 
@@ -17,7 +17,7 @@ The wiki pages provide you examples and documentation to all aspects of the libr
 
 ## Feedback
 
-If you find something undocumented or unclear let me know. 🤔  
+If you find something undocumented or unclear let me know.  
 Use GitHub Discussions, Issues or any of the social media links on the profile.
 
 
