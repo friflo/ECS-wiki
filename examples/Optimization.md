@@ -208,6 +208,9 @@ To execute these operations in a single step use the
 [EntityExtensions overloads](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/EntityExtensions.md).  
 This approach also reduces the amount of code to perform these operations.
 
+In case accessing multiple components of the same entity use [entity.Data](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/EntityData.md)
+instead of multiple `entity.GetComponent<>()` calls.
+
 ```csharp
 public static void EntityBatchOperations()
 {
