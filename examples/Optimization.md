@@ -183,7 +183,8 @@ public static void FilterEntityEvents()
 Minimize structural changes when creating entities.
 
 Entities can be created with multiple components and tags in a single step.  
-This can be done by one of the EntityStoreExtensions [CreateEntity<T1, ... , Tn>](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/EntityStoreExtensions.md) overloads
+This can be done by one of the EntityStoreExtensions
+[CreateEntity<T1, ... , Tn>](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/EntityStoreExtensions.md) overloads.
 
 ```csharp
 public static void CreateEntityOperation()
@@ -207,7 +208,7 @@ public static void CreateEntityOperation()
 Create multiple entities with the same set of components / tags in a single step.
 
 Entities can be created one by one with `store.CreateEntity()`.  
-To create multiple entities with the same set of components and tags use
+To create multiple entities with the same set of components and tags use  
 [archetype.CreateEntities(int count)](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/Archetype.CreateEntities(int).md).
 
 ```csharp
@@ -227,9 +228,10 @@ public static void CreateEntities()
 ![New](../images/new.svg) Add example to batch **add**, **remove** and **get** components and tags.
 
 **Optimization**  
-Minimize structural changes when adding / removing **multiple** components or tags to / from a **single entity**.
+Minimize structural changes when adding / removing **multiple** components or tags.
 
-Components can be added / removed **one by one** to / from an entity with `entity.AddComponent()` / `entity.RemoveComponent()`.  
+Components can be added / removed **one by one** to / from an entity with  
+`entity.AddComponent()` / `entity.RemoveComponent()`.  
 Every operation may cause a structural change which is an expensive operation.
 
 To execute these operations in a single step use the
