@@ -40,7 +40,7 @@ public static void EnumerateQueryChunks()
     }
 }
 ```
-🔥 **Update** - Added note for slower iteration alternative.  
+🔥 **Update** - Added example code for slower iteration alternative.  
 The alternative should be used only for small result set with less than 10 entities.
 
 <br/>
