@@ -249,7 +249,7 @@ public static void EntityBatchOperations()
 Minimize structural changes when adding **and** removing components or tags to / from a **single entity**.
 
 **Note**  
-An `EntityBatch` should only be used when adding <b>AND</b> removing components / tags to the same entity.<br/>
+An `EntityBatch` should only be used when adding **AND** removing components / tags to an entity at the same entity.  
 If only adding <b>OR</b> removing components / tags use the **Add()** / **Remove()** overloads shown above.
 
 When adding/removing components or tags to/from a single entity it will be moved to a new archetype.  
