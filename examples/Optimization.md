@@ -8,6 +8,7 @@ Optimization examples are part of the unit tests see:
 
 <br/>
 
+# Entity Queries
 
 ## Enumerate Query Chunks
 
@@ -170,6 +171,8 @@ public static void FilterEntityEvents()
 ```
 <br/>
 
+
+# Batching
 
 ## Batch - Create Entity
 
