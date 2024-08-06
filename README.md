@@ -55,7 +55,7 @@ The Wiki provide detailed information about the ECS and illustrate them by examp
 
 ### GitHub Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=friflo/Friflo.Engine.ECS&type=Date)](https://star-history.com/#friflo/Friflo.Engine.ECS&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=friflo/Friflo.Engine.ECS&type=Timeline)](https://star-history.com/#friflo/Friflo.Engine.ECS&Timeline)
 
 💖 Do you like this project?  
 Leave a ⭐ on [GitHub ⋅ friflo/Friflo.Engine.ECS](https://github.com/friflo/Friflo.Engine.ECS)
