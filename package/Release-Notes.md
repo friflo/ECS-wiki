@@ -17,6 +17,15 @@ Detailed information for each release at
 
 # 3.x Releases
 
+## 3.0.0-preview.10
+
+*Same as 3.0.0-preview.8, 3.0.0-preview.9. Created until CI was successful*
+
+Published new nuget package [Friflo.Engine.ECS.Boost](https://www.nuget.org/packages/Friflo.Engine.ECS.Boost/3.0.0-preview.10#readme-body-tab)  
+A unique feature of **Friflo.Engine.ECS** is - it uses no **unsafe code**.  
+For maximum query performance unsafe code it required to elide array bounds checks.  
+The new Boost package contains an extension dll and make use of unsafe code to improve query performance for large results ~30%.
+
 ## 3.0.0-preview.7
 Focus of preview.7 was performance improvements
 
