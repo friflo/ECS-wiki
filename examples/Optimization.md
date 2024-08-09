@@ -13,7 +13,7 @@ Optimization examples are part of the unit tests see:
 
 ## Boosted Query
 
-🔥 **Update** - Introduced new query approach using [Friflo.Engine.ECS.Boost](https://www.nuget.org/packages/Friflo.Engine.ECS.Boost).
+🔥 **Update** - Introduced new query approach using [Friflo.Engine.ECS.Boost](https://www.nuget.org/packages/Friflo.Engine.ECS.Boost#readme-body-tab).
 
 **Optimization**: Use `query.Each()` and a struct implementing `Execute(...)` for maximum query performance.  
 
@@ -21,11 +21,12 @@ This query approach is the most performant approach - except Query vectorization
 A unique feature of **Friflo.Engine.ECS** - it uses no **unsafe code**. This enables running the dll in trusted environments.  
 For maximum performance unsafe code is required to elide bounds checks.  
 
-Instead of processing components in `query.ForEachEntity(...)` the `MoveEach` struct process components in its `Execute()` method.  
+Instead of processing components of a query with `query.ForEachEntity(...)`  
+the `MoveEach` struct below process components in its `Execute()` method.  
 The processing of all query components is performed by `query.Each(new MoveEach())`.
 
 The performance gain compared with `query.ForEachEntity(...)` is ~3x.  
-The method `query.Each()` requires adding the dependency [Friflo.Engine.ECS.Boost](https://www.nuget.org/packages/Friflo.Engine.ECS.Boost).
+The method `query.Each()` requires adding the dependency [Friflo.Engine.ECS.Boost](https://www.nuget.org/packages/Friflo.Engine.ECS.Boost#readme-body-tab).
 
 ```cs
 public struct Velocity : IComponent { public Vector3 value; }
