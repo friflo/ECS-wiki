@@ -22,7 +22,9 @@ A unique feature of **Friflo.Engine.ECS** - it uses no **unsafe code**. This ena
 For maximum performance unsafe code is required to elide bounds checks.  
 
 Instead of processing components in `query.ForEachEntity(...)` the `MoveEach` struct process components in its `Execute()` method.  
-The processing of all query components is performed by `query.Each(new MoveEach())`.  
+The processing of all query components is performed by `query.Each(new MoveEach())`.
+
+The performance gain compared with `query.ForEachEntity(...)` is ~3x.  
 The method `query.Each()` requires adding the dependency [Friflo.Engine.ECS.Boost](https://www.nuget.org/packages/Friflo.Engine.ECS.Boost).
 
 ```cs
