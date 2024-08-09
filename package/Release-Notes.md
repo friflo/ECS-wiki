@@ -24,7 +24,8 @@ Detailed information for each release at
 Published new nuget package [Friflo.Engine.ECS.Boost](https://www.nuget.org/packages/Friflo.Engine.ECS.Boost/3.0.0-preview.10#readme-body-tab)  
 A unique feature of **Friflo.Engine.ECS** is - it uses no **unsafe code**.  
 For maximum query performance unsafe code it required to elide array bounds checks.  
-The new Boost package contains an extension dll and make use of unsafe code to improve query performance for large results ~30%.
+The new Boost package contains an extension dll and make use of unsafe code to improve query performance for large results ~30%.  
+See [Boosted Query](../examples/Optimization.md#boosted-query) with example used for maximum query performance.
 
 ## 3.0.0-preview.7
 Focus of preview.7 was performance improvements
