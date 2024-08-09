@@ -11,6 +11,44 @@ Optimization examples are part of the unit tests see:
 
 # Entity Queries
 
+## Boosted Query
+
+🔥 **Update** - Introduced new query approach using [Friflo.Engine.ECS.Boost](https://www.nuget.org/packages/Friflo.Engine.ECS.Boost).
+
+**Optimization**: Use `query.Each()` and a struct implementing `Execute(...)` for maximum query performance.  
+
+This query approach is the most performant approach - except Query vectorization / SIMD.  
+A unique feature of **Friflo.Engine.ECS** - it uses no **unsafe code**. This enables running the dll in trusted environments.  
+For maximum performance unsafe code is required to elide bounds checks.  
+
+Instead of processing components in `query.ForEachEntity(...)` the `MoveEach` struct process components in its `Execute()` method.  
+The processing of all query components is performed by `query.Each(new MoveEach())`.  
+The method `query.Each()` requires adding the dependency [Friflo.Engine.ECS.Boost](https://www.nuget.org/packages/Friflo.Engine.ECS.Boost).
+
+```cs
+public struct Velocity : IComponent { public Vector3 value; }
+
+public static void BoostedQuery()
+{
+    var store   = new EntityStore();
+    for (int n = 0; n < 100; n++) {
+        store.CreateEntity(new Position(n, 0, 0), new Velocity{ value = new Vector3(0, n, 0)});
+    }
+    var query = store.Query<Position, Velocity>();
+    query.Each(new MoveEach()); // requires https://www.nuget.org/packages/Friflo.Engine.ECS.Boost
+}
+
+struct MoveEach : IEach<Position, Velocity>
+{
+    public void Execute(ref Position position, ref Velocity velocity) {
+        position.value += velocity.value;
+    }
+} 
+```
+
+<br/>
+
+
 ## Enumerate Query Chunks
 
 **Optimization**: Replace a `query.ForEachEntity(( ... ) => lambda)` by two `foreach` loops.  
