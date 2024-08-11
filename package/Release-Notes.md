@@ -17,6 +17,16 @@ Detailed information for each release at
 
 # 3.x Releases
 
+## 3.0.0-preview.11
+
+Return the passed `each` parameter in `QueryExtensions.Each(each)` methods.  
+This enables access to the state of the structs implementing `IEach<...>`.
+```cs
+    var query = store.Query<Position, Velocity>();
+    var each  = query.Each(new CountEach()); // returns the CountEach parameter
+    WriteLine(each.count);                   // in case CountEach count invocations
+```
+
 ## 3.0.0-preview.10
 
 *Same as 3.0.0-preview.8, 3.0.0-preview.9. Created until CI was successful*
