@@ -1,16 +1,13 @@
 
 ## **Friflo.Engine.ECS** for **Unity**
 
-![Coming soon...](https://img.shields.io/badge/Coming%20soon...-orange?style=for-the-badge)
-
 Package extension for Unity - with full Editor integration like
 [Entitas](https://github.com/sschmid/Entitas),
-[Unity DOTS](https://docs.unity3d.com/Packages/com.unity.entities@1.2/manual/index.html),
-[Morpeh](https://github.com/scellecs/morpeh) or
-[Arch.Unity](https://github.com/AnnulusGames/Arch.Unity).
+[Unity DOTS](https://docs.unity3d.com/Packages/com.unity.entities@1.2/manual/index.html) or
+[Morpeh](https://github.com/scellecs/morpeh).
 
 
-Check out the [README](https://github.com/friflo/Friflo.Engine.ECS) for more information.
+Check out the [friflo-ecs-unity · GitHub](https://github.com/friflo/friflo-ecs-unity).
 
 <span>
   <img src="../images/ECS Store.png"  width="418" height="477"/>
