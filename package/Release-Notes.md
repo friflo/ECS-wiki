@@ -19,7 +19,8 @@ Detailed information for each release at
 
 ## 3.0.0-preview.14
 
-Fixes specific to indexed components and relations.
+Fixes issues specific to indexed components and relations.
+- [Indexed component not found when adding component through EntityStore.CreateEntity - Issue #5](https://github.com/friflo/Friflo.Engine.ECS/issues/5)
 - [After deleting the entity, the target entity still has incoming links - Issue #13](https://github.com/friflo/Friflo.Engine.ECS/issues/13)
 - [After serialization/deserialization indexed components don't work - Issue #15](https://github.com/friflo/Friflo.Engine.ECS/issues/15)
 - [EntitySerializer throws when using a MemoryStream created from a byte[] - Issue #27](https://github.com/friflo/Friflo.Engine.ECS/issues/27)
