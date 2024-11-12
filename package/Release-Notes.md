@@ -17,6 +17,15 @@ Detailed information for each release at
 
 # 3.x Releases
 
+## 3.0.0-preview.14
+
+Fixes specific to indexed components and relations.
+- [After deleting the entity, the target entity still has incoming links - Issue #13](https://github.com/friflo/Friflo.Engine.ECS/issues/13)
+- [After serialization/deserialization indexed components don't work - Issue #15](https://github.com/friflo/Friflo.Engine.ECS/issues/15)
+- [EntitySerializer throws when using a MemoryStream created from a byte[] - Issue #27](https://github.com/friflo/Friflo.Engine.ECS/issues/27)
+- [New entities have the same parent of recycled entities - Issue #29](https://github.com/friflo/Friflo.Engine.ECS/issues/29)
+- [Use CommandBuffer.SetComponent then crash in Playback- Issue #31](https://github.com/friflo/Friflo.Engine.ECS/issues/31)
+
 ## 3.0.0-preview.11
 
 Return the passed `each` parameter in `QueryExtensions.Each(each)` methods.  
