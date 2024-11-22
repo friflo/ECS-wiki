@@ -491,7 +491,13 @@ public static void AddSignalHandler()
 ## JSON Serialization
 
 The entities stored in an EntityStore can be serialized as JSON using an
-[EntitySerializer](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/EntitySerializer.md).
+[EntitySerializer](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/EntitySerializer.md).  
+
+
+> **Note**  
+> Currently serialization / deserialization only support struct fields - properties not.
+> See [Issue #28](https://github.com/friflo/Friflo.Engine.ECS/issues/28).  
+> Component and relation types are required to be struct's.
 
 Writing the entities of a store to a JSON file is done with `WriteStore()`.  
 Reading the entities of a JSON file into a store with `ReadIntoStore()`.
