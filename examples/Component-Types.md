@@ -11,7 +11,7 @@ For specific use cases there is a set of component interfaces providing addition
 | --------------------------------------------- | ----------------------------------------- | --------------------------------------------
 | [Entity Relationships](#entity-relationships) | [Link Component](#link-component)         | A single link on an entity referencing another entity.
 |                                               | [Link Relation](#link-relation)           | Multiple links on an entity referencing other entities.
-| [Relations](#relations)                       | [Relation Component](#relation-component) | Add multiple components of the same type to an entity.
+| [Relations](#relations)                       | [Relation](#relation)                     | Add multiple components of the same type to an entity.
 | [Search & Range queries](#search)             | [Indexed Component](#indexed-component)   | Full text search of component fields executed in O(1).<br/>Range queries on component fields having a sort order.
 
 
@@ -210,7 +210,17 @@ public static void LinkRelations()
 
 # Relations
 
-A relation component enables adding multiple components of the same type to an entity.
+> [!MPORTANT]  
+> Breaking changes with `3.0.0-preview.16`
+>
+> 1. To avoid mixing up relations with components accidentally `IRelation` does not extends `IComponent` anymore.
+> 2. Renamed public API's  
+     `IRelationComponent<>` -> `IRelation<>`  
+     `RelationComponents<>` -> `Relations<>`
+
+
+
+A relation enables adding multiple components of the same type to an entity.
 
 A typical limitation of an archetype-based ECS is that an entity can only contain one component of a certain type.  
 When adding a component of a specific type to an entity already present the component is updated.  
@@ -220,10 +230,10 @@ An alternative approach is allowing undefined behavior like **Arch** resulting i
 A relation in mathematical context describes a connection between elements of two sets.  
 Transferred to this ECS: The first set are **all entities** the second set are all possible **relation keys**.
 
-## Relation Component
+## Relation
 
-A relation component that can be added to an entity multiple times must implement
-[`IRelationComponent<>`](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/IRelationComponent_TKey_.md).  
+A relation that can be added to an entity multiple times must implement
+[`IRelation<>`](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/IRelation_TKey_.md).  
 To distinguish between different relations, a relation type must implement `GetRelationKey()`.  
 Any type can be used as relation key type. E.g. enum, string, int, long, Guid, DateTime, ... .
 
@@ -245,13 +255,13 @@ enum ItemType {
     Axe     = 2,
 }
 
-struct InventoryItem : IRelationComponent<ItemType> {   // relation key type: ItemType
+struct InventoryItem : IRelation<ItemType> { // relation key type: ItemType
     public  ItemType    type;
     public  int         count;
-    public  ItemType    GetRelationKey() => type;       // unique relation key
+    public  ItemType    GetRelationKey() => type;     // unique relation key
 }
 
-public static void RelationComponents()
+public static void Relations()
 {
     var store   = new EntityStore();
     var entity  = store.CreateEntity();
@@ -347,9 +357,9 @@ The reason is that inserting and removing a relation is executed in O(N).
 N: number of relations per entity.
 
 *Benchmark* [see Tests](https://github.com/friflo/Friflo.Engine.ECS/blob/main/src/Tests/ECS/Relations/Test_Relations_Query.cs)  
-Add 1.000.000 int relation components. Type:
+Add 1.000.000 int relations. Type:
 ```cs
-internal struct IntRelation : IRelationComponent<int> {
+internal struct IntRelation : IRelation<int> {
     public          int     value;
     public          int     GetRelationKey()    => value;
 }

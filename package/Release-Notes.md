@@ -17,6 +17,16 @@ Detailed information for each release at
 
 # 3.x Releases
 
+## 3.0.0-preview.16
+
+> Breaking changes
+
+1. To avoid mixing up relations with components accidentally `IRelation` does not extends `IComponent` anymore.
+2. Renamed public API's  
+   `IRelationComponent<>` -> `IRelation<>`  
+   `RelationComponents<>` -> `Relations<>`
+
+
 ## 3.0.0-preview.15
 
 Support serialization of Entity fields in components. E.g.
