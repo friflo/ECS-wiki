@@ -210,7 +210,7 @@ public static void LinkRelations()
 
 # Relations
 
-> [!MPORTANT]  
+> [!IMPORTANT]
 > Breaking changes with `3.0.0-preview.16`
 >
 > 1. To avoid mixing up relations with components accidentally `IRelation` does not extends `IComponent` anymore.
