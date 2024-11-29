@@ -17,6 +17,12 @@ Detailed information for each release at
 
 # 3.x Releases
 
+## 3.0.0-preview.17
+
+- Added support of JSON serialization for [relations](../examples/Component-Types.md#serialization).
+- Added row `M` to systems perf log to indicate if `MonitorPerf` is enabled for a specific system.
+
+
 ## 3.0.0-preview.16
 
 > Breaking changes
@@ -29,7 +35,7 @@ Detailed information for each release at
 
 ## 3.0.0-preview.15
 
-Support serialization of Entity fields in components. E.g.
+Added support of serialization of `Entity` fields in components. E.g.
 ```cs
 struct RefComponent : IComponent {
     public Entity reference;

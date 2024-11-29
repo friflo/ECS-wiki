@@ -282,6 +282,24 @@ public static void Relations()
 }
 ```
 
+## Serialization
+
+Serialization of relations as JSON is supported since `3.0.0-preview.17` or higher.  
+Its encoding similar to the serialization of components.  
+In contrast to components relations are serialized as an array of components as a single entity can have multiple relations.
+
+```json
+{
+    "id": 42,
+    "components": {
+        "relations": [{"value":42},{"value":43}],
+        "component": {"value":42}
+    }
+}
+```
+
+
+
 <br/>
 
 
