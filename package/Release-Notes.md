@@ -17,6 +17,19 @@ Detailed information for each release at
 
 # 3.x Releases
 
+## 3.0.0-preview.18
+
+- Changed license to MIT. Used LGPL before.
+- Create `ComponentIndex` to simplify search entities with specific components in O(1).
+  ```cs
+    var store = new EntityStore();
+    store.CreateEntity(new Player { name = "Player One" });
+    var index = store.ComponentIndex<Player,string>();
+    var entities = index["Player One"];         // Count: 1
+  ```
+- Create `EntityRelations` to simplify iteration of relations.
+
+
 ## 3.0.0-preview.17
 
 - Added support of JSON serialization for [relations](../examples/Component-Types.md#serialization).

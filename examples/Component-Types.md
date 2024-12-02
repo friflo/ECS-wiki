@@ -60,8 +60,8 @@ This is absolutely correct but the specialized types provide the following featu
 
 - Automatically removing links from all entities having a link to a **target** entity that is deleted.
 
-- Get all entities in an EntityStore linked by a specific link type using  
-  `store.GetAllLinkedEntities<AttackComponent>()` in O(1).
+- Get all entities in an EntityStore linked by a specific link component using  
+  `store.LinkComponentIndex<AttackComponent>().Values` in O(1).
 
 - Add multiple links to a single entity using [Link Relations](#link-relation).
 
@@ -337,22 +337,23 @@ struct Player : IIndexedComponent<string>       // indexed field type: string
 public static void IndexedComponents()
 {
     var store   = new EntityStore();
+    var index   = store.ComponentIndex<Player,string>();
     for (int n = 0; n < 1000; n++) {
         var entity = store.CreateEntity();
         entity.AddComponent(new Player { name = $"Player-{n,0:000}"});
     }
     // get all entities where Player.name == "Player-001". O(1)
-    store.GetEntitiesWithComponentValue<Player,string>("Player-001");       // Count: 1
+    var entities = index["Player-001"];                                    // Count: 1
     
     // return same result as lookup using a Query(). O(1)
-    store.Query().HasValue    <Player,string>("Player-001");                // Count: 1
+    store.Query().HasValue    <Player,string>("Player-001");               // Count: 1
     
     // return all entities with a Player.name in the given range.
     // O(N ⋅ log N) - N: all unique player names
-    store.Query().ValueInRange<Player,string>("Player-000", "Player-099");  // Count: 100
+    store.Query().ValueInRange<Player,string>("Player-000", "Player-099"); // Count: 100
     
     // get all unique Player.name's. O(1)
-    store.GetAllIndexedComponentValues<Player,string>();                    // Count: 1000
+    var values = index.Values;                                             // Count: 1000
 }
 ```
 
