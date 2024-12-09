@@ -21,8 +21,8 @@ Detailed information for each release at
 
 - Changed implementation of `EntityStore.CloneEntity()`  
 
-  **Old:** Used JSON serialization as fallback if source entity has one or more *non-blittable* component field types.  
-         E.g. reference types like a `array`, `List<>` or `Dictionary<,>`.  
+  **Old:** Used JSON serialization as fallback if source entity has one or more *non-blittable* component types.  
+         E.g. a struct component containing fields with reference types like a `array`, `List<>` or `Dictionary<,>`.  
 
   **New:** *Non-blittable* components are now cloned using a static `CopyValue()` method with must part of component type.
   E.g.
