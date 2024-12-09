@@ -17,6 +17,31 @@ Detailed information for each release at
 
 # 3.x Releases
 
+## 3.0.0-preview.19
+
+- Changed implementation of `EntityStore.CloneEntity()`  
+
+  **Old:** Used JSON serialization as fallback if source entity has one or more *non-blittable* component field types.  
+         E.g. reference types like a `array`, `List<>` or `Dictionary<,>`.  
+
+  **New:** *Non-blittable* components are now cloned using a static `CopyValue()` method with must part of component type.
+  E.g.
+  ```cs
+  public struct MyComponent : IComponent
+  {
+      public int[]   array;
+    
+      static void CopyValue(in MyComponent source, ref MyComponent target, in CopyContext context) {
+          target.array = source.array?.ToArray();
+      }
+  }
+  ```
+  In case `CopyValue()` is missing an exception is thrown including the required method signature in the exception message.  
+  *Info:* Removing JSON serialization from cloning has additional advantages.
+  1. Much faster as JSON serialization/deserialization is expensive.
+  2. No precision loss when using floating point types.
+  
+
 ## 3.0.0-preview.18
 
 - Changed license to MIT. Used LGPL before.
