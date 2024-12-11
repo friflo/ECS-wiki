@@ -1,5 +1,7 @@
 # Table of contents
 
+* [Start](README.md)
+
 ## Examples
 
 * [General](examples/General.md)
