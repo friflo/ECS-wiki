@@ -23,17 +23,15 @@
 * [Relations](/docs/relations.md)
 * [Systems](/docs/systems.md)
 
-## 🔥 Optimization - wip
-
-* [Query Optimization](/docs/query-optimization.md)
-  * [Enumerate Chunks](/docs/query-optimization.md#enumerate-chunks)
-  * [Parallel Query / Multithreading](/docs/query-optimization.md#parallel-query)
-  * [SIMD](/docs/query-optimization.md#simd)
-  * [Boosted query](/docs/query-optimization.md#boosted-query)
-
-* [Batch](/docs/batch.md)
-    * [Create entities](/docs/batch.md#create-entities)
-    * [Add/Remove components](/docs/batch.md#add-remove-components)
+* Optimization
+    * [Query Optimization](/docs/query-optimization.md)
+        * [Enumerate Chunks](/docs/query-optimization.md#enumerate-chunks)
+        * [Parallel Query / Multithreading](/docs/query-optimization.md#parallel-query)
+        * [SIMD](/docs/query-optimization.md#simd)
+        * [Boosted query](/docs/query-optimization.md#boosted-query)
+    * [Batch](/docs/batch.md)
+        * [Create entities](/docs/batch.md#create-entities)
+        * [Add/Remove components](/docs/batch.md#add-remove-components)
 
 
 ## 📦 Project
