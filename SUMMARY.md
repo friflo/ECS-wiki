@@ -25,9 +25,9 @@
 
 * Optimization
     * [Query Optimization](/docs/query-optimization.md)
-        * [Enumerate Chunks](/docs/query-optimization.md#enumerate-chunks)
-        * [Parallel Query / Multithreading](/docs/query-optimization.md#parallel-query)
-        * [SIMD](/docs/query-optimization.md#simd)
+        * [Enumerate Chunks](/docs/query-optimization.md#enumerate-query-chunks)
+        * [Parallel Query / Multithreading](/docs/query-optimization.md#parallel-query-job)
+        * [SIMD](/docs/query-optimization.md#query-vectorization---simd)
         * [Boosted query](/docs/query-optimization.md#boosted-query)
     * [Batch / Bulk](/docs/batch-optimization.md)
         * [Create entities](/docs/batch-optimization.md#create-entities)
