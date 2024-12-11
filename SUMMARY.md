@@ -10,17 +10,20 @@
 
 * [Component Types](examples/Component-Types.md)
 
-## Documentation
+## 📖 Documentation
 
 * [Events](docs/events.md)
     * [Entity events](docs/events.md#entity-events)
     * [Signals](docs/events.md#signals)
     * [EventRecorder](docs/events.md#eventrecorder)
 
-* Extensions
-    * [Unity Extension](extensions/Unity-extension.md)
 
-* Package
-    * [Release Notes](package/Release-Notes.md)
-    * [Features](package/Features.md)
-    * [Library](package/Library.md)
+## 📦 Package
+
+* [Release Notes](package/Release-Notes.md)
+
+* [Features](package/Features.md)
+
+* [Library](package/Library.md)
+
+* [Unity Extension](extensions/Unity-extension.md)
