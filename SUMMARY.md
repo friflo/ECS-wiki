@@ -16,7 +16,7 @@
 
 * [Events](docs/events.md)
   * [Entity events](docs/events.md#entity-events)
-  * [Signals](docs/events.md#signals)
+  * [Signals](docs/events.md#Signals)
   * [EventRecorder](docs/events.md#eventrecorder)
 
 ## Extensions
