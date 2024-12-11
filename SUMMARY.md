@@ -1,9 +1,5 @@
 # Table of contents
 
-* [friflo ECS](README.md)
-
-* [![Github Repo](images/github-mark.svg)](https://github.com/friflo/Friflo.Engine.ECS)
-
 ## Examples
 
 * [General](examples/General.md)
