@@ -24,6 +24,11 @@
     * [Query components](/docs/query.md#query-components)
     * [CommandBuffer](/docs/query.md#commandbuffer)
 
+* [Events](/docs/events.md)
+    * [Entity events](/docs/events.md#entity-events)
+    * [Signals](/docs/events.md#signals)
+    * [EventRecorder](/docs/events.md#eventrecorder)
+
 * [Index / Search](/docs/component-index.md)
 
 * [Relationships](/docs/relationships.md)
