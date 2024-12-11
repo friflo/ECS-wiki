@@ -10,7 +10,7 @@
 
 * [Component Types](examples/Component-Types.md)
 
-## 📖 Documentation - WIP
+## 📖 Documentation - wip
 
 * [Events](docs/events.md)
     * [Entity events](docs/events.md#entity-events)
@@ -19,16 +19,27 @@
 
 * [CommandBuffer](/docs/command-buffer.md)
 * [Index / Search](/docs/component-index.md)
-* [Relationships](/docs/entity-relationships.md)
-* [Relations](/docs/entity-relations.md)
+* [Relationships](/docs/relationships.md)
+* [Relations](/docs/relations.md)
 * [Systems](/docs/systems.md)
 
-## 📦 Package
+## 🔥 Optimization - wip
 
-* [Release Notes](package/Release-Notes.md)
+* [Query Optimization](/docs/query-optimization.md)
+  * [Enumerate Chunks](/docs/query-optimization.md#enumerate-chunks)
+  * [Parallel Query / Multithreading](/docs/query-optimization.md#parallel-query)
+  * [SIMD](/docs/query-optimization.md#simd)
+  * [Boosted query](/docs/query-optimization.md#boosted-query)
 
-* [Features](package/Features.md)
+* [Batch](/docs/batch.md)
+    * [Create entities](/docs/batch.md#create-entities)
+    * [Add/Remove components](/docs/batch.md#add-remove-components)
 
-* [Library](package/Library.md)
 
+## 📦 Project
+
+* Package
+    * [Release Notes](package/Release-Notes.md)
+    * [Features](package/Features.md)
+    * [Library](package/Library.md)
 * [Unity Extension](extensions/Unity-extension.md)
