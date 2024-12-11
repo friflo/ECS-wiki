@@ -22,7 +22,7 @@
 
 * [Query](docs/query.md)
     * [Query components](/docs/query.md#query-components)
-    * [QueryFilter]((/docs/query.md#QueryFilter))
+    * [QueryFilter](/docs/query.md#QueryFilter)
     * [CommandBuffer](/docs/query.md#commandbuffer)
 
 * [Events](/docs/events.md)

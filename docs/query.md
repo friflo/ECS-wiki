@@ -1,6 +1,8 @@
 
 ## Query components
 
+## QueryFilter
+
 ## CommandBuffer
 
 A `CommandBuffer` is used to record changes on multiple entities. E.g. `AddComponent()`.  
