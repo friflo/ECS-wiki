@@ -164,7 +164,7 @@ If doing this on multiple threads the CPU cores are competing with access to mem
 <br/>
 
 
-## Query Vectorization - SIMD
+## Query Vectorization / SIMD
 
 **Optimization**: Utilize SIMD of your CPU to execute a `query`.  
 SIMD architectures: SSE, AVX, AVX2, AVX-512, AdvSIMD, Neon, ...

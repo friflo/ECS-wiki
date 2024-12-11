@@ -22,6 +22,7 @@
 
 * [Query](docs/query.md)
     * [Query components](/docs/query.md#query-components)
+    * [QueryFilter]((/docs/query.md#QueryFilter))
     * [CommandBuffer](/docs/query.md#commandbuffer)
 
 * [Events](/docs/events.md)
@@ -40,7 +41,7 @@
 * [Query Optimization](/docs/query-optimization.md)
     * [Enumerate Chunks](/docs/query-optimization.md#enumerate-query-chunks)
     * [Parallel Query / Multithreading](/docs/query-optimization.md#parallel-query-job)
-    * [SIMD](/docs/query-optimization.md#query-vectorization---simd)
+    * [SIMD](/docs/query-optimization.md#query-vectorization-/-simd)
     * [Boosted query](/docs/query-optimization.md#boosted-query)
 
 * [Batch Optimization](/docs/batch-optimization.md)
