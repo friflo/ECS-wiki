@@ -2,6 +2,8 @@
 
 * [Start](README.md)
 
+---
+
 ## Examples
 
 * [General](examples/General.md)
@@ -9,6 +11,8 @@
 * [Optimization](examples/Optimization.md)
 
 * [Component Types](examples/Component-Types.md)
+
+---
 
 ## 📖 Documentation - wip
 
@@ -48,6 +52,7 @@
     * [Create entities](/docs/batch-optimization.md#create-entities)
     * [Add/Remove components](/docs/batch-optimization.md#add-remove-components)
 
+---
 
 ## 📦 Project
 
