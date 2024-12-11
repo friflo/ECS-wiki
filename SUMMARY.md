@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Start](README.md)
+* [friflo ECS](README.md)
 
 * [![Github Repo](images/github-mark.svg)](https://github.com/friflo/Friflo.Engine.ECS)
 
@@ -11,6 +11,13 @@
 * [Optimization](examples/Optimization.md)
 
 * [Component Types](examples/Component-Types.md)
+
+## Documentation
+
+* [Events](docs/events.md)
+  * [Entity events](docs/events.md#entity-events)
+  * [Signals](docs/events.md#signals)
+  * [EventRecorder](docs/events.md#eventrecorder)
 
 ## Extensions
 
