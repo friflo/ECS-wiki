@@ -10,7 +10,7 @@
 
 * [Component Types](examples/Component-Types.md)
 
-## 📖 Documentation
+## 📖 Documentation - WIP
 
 * [Events](docs/events.md)
     * [Entity events](docs/events.md#entity-events)
@@ -18,8 +18,8 @@
     * [EventRecorder](docs/events.md#eventrecorder)
 
 * [CommandBuffer](/docs/command-buffer.md)
-* [ComponentIndex/Search](/docs/component-index.md)
-* [Entity Relationships](/docs/entity-relationships.md)
+* [Index / Search](/docs/component-index.md)
+* [Relationships](/docs/entity-relationships.md)
 * [Relations](/docs/entity-relations.md)
 * [Systems](/docs/systems.md)
 
