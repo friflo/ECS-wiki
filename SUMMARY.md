@@ -12,12 +12,17 @@
 
 ## 📖 Documentation - wip
 
-* [Events](docs/events.md)
-    * [Entity events](docs/events.md#entity-events)
-    * [Signals](docs/events.md#signals)
-    * [EventRecorder](docs/events.md#eventrecorder)
+* [Entity](docs/entity.md)
+    * [EntityStore](/docs/entity.md#entitystore)
+    * [Component](/docs/entity.md#component)
+    * [Tag](/docs/entity.md#tag)
+    * [Hierarchy / Scene tree](/docs/entity.md#hierarchy)
+    * [Archetype](/docs/entity.md#archetype)
+    * [JSON Serialization](/docs/entity.md#json-serialization)
 
-* [CommandBuffer](/docs/command-buffer.md)
+* [Query](docs/query.md)
+    * [Query components](/docs/query.md#query-components)
+    * [CommandBuffer](/docs/query.md#commandbuffer)
 
 * [Index / Search](/docs/component-index.md)
 
@@ -33,7 +38,7 @@
     * [SIMD](/docs/query-optimization.md#query-vectorization---simd)
     * [Boosted query](/docs/query-optimization.md#boosted-query)
 
-* [Batch / Bulk](/docs/batch-optimization.md)
+* [Batch Optimization](/docs/batch-optimization.md)
     * [Create entities](/docs/batch-optimization.md#create-entities)
     * [Add/Remove components](/docs/batch-optimization.md#add-remove-components)
 

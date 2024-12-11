@@ -1,4 +1,8 @@
 
+## Query components
+
+## CommandBuffer
+
 A `CommandBuffer` is used to record changes on multiple entities. E.g. `AddComponent()`.  
 These changes are applied to entities when calling `Playback()`.    
 Recording commands with a `CommandBuffer` instance can be done on **any** thread.  
