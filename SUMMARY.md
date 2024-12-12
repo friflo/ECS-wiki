@@ -25,8 +25,7 @@
     * [JSON Serialization](docs/entity.md#json-serialization)
 
 * [Query](docs/query.md)
-    * [Query components](docs/query.md#query-components)
-    * [QueryFilter](docs/query.md#queryfilter)
+    * [Query Filter](docs/query.md#query-filter)
     * [CommandBuffer](docs/query.md#commandbuffer)
 
 * [Events](docs/events.md)
