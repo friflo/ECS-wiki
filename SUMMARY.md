@@ -43,14 +43,14 @@
 * [Systems](/docs/systems.md)
 
 * [Query Optimization](/docs/query-optimization.md)
+    * [Boosted Query](/docs/query-optimization.md#boosted-query)
     * [Enumerate Chunks](/docs/query-optimization.md#enumerate-query-chunks)
     * [Parallel Query / Multithreading](/docs/query-optimization.md#parallel-query-job)
     * [Vectorization / SIMD](/docs/query-optimization.md#query-vectorization-simd)
-    * [Boosted Query](/docs/query-optimization.md#boosted-query)
 
-* [Batch Optimization](/docs/batch-optimization.md)
-    * [Create entities](/docs/batch-optimization.md#create-entities)
-    * [Add/Remove components](/docs/batch-optimization.md#add-remove-components)
+* [Batch Operations](/docs/batch.md)
+    * [Create entities](/docs/batch.md#create-entities)
+    * [Add/Remove components](/docs/batch.md#add-remove-components)
 
 ---
 
