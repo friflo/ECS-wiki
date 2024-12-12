@@ -2,7 +2,7 @@
 Queries are a fundamental feature of an ECS.  
 
 The major strength of an ECS is efficient / performant query execution.  
-An Archetype based ECS store components in arrays. A query result provide direct access to these arrays - aka 'Chunks'.  
+An Archetype based ECS store components in arrays. A query result provide direct access to these arrays - aka `Chunks`.  
 So the performance characteristic iterating a query result is the same as iterating an array.
 
 > **Info**  
@@ -11,7 +11,11 @@ So the performance characteristic iterating a query result is the same as iterat
 > - The **prefetcher** minimize caches misses as it detects the sequential array access which stores data in continuous memory.
 > - Efficient use of **instruction pipelining** as array iteration require minimal conditional branches.
 
-A query is build by specifying two aspects.
+<br/>
+
+**Query creation**
+
+A query is created by specifying two aspects.
 
 - The **components** a query returns when executed. They are passed a generic arguments to a `store.Query<>()`.  
   The query result contains only entities having all specified components.  
@@ -50,7 +54,7 @@ public static void EntityQueries()
 When iterating a query result its component values can be changed if needed.
 
 > **Important**  
-> Adding or removing components or tags within the iteration loop causes a *structural change* and invalidate the query result.  
+> Adding components or tags to entities or removing them while iterating causes a *structural change* and invalidate the query result.  
 > A *structural change* is also caused by creating or deleting entities.  
 > These type of operations require a [CommandBuffer](#commandbuffer) to defer *structural changes* and must be applied by `commandBuffer.Playback()` after the iteration finished.
 
@@ -66,7 +70,7 @@ As mentioned above by storing components in arrays aka `Chunks` additional [Quer
 To reduced the number of results returned by a query additional filters can by added to a `Query<>()`.  
 These filter can be used include or exclude entities with specific components or tags in the result.
 
-*Tag filter examples:*  
+**Tag filter examples:**  
 To return only entities having both tags `MyTag1` *AND* `MyTag2` the query would look like.
 ```csharp
 query = store.Query<EntityName>().AllTags(Tags.Get<MyTag1, MyTag2>());
@@ -90,7 +94,7 @@ query = store.Query<EntityName>()
             .WithoutAnyTags(Tags.Get<MyTag3>());
 ```
 
-*Component filter example:*  
+**Component filter example:**  
 To return only entities having  the component `MyComponent` the query would look like.
 ```csharp
 query = store.Query<EntityName>().AllComponents(ComponentTypes.Get<MyComponent>()
@@ -99,8 +103,8 @@ query = store.Query<EntityName>().AllComponents(ComponentTypes.Get<MyComponent>(
 See all available filters at the [QueryFilter - API](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/QueryFilter.md)
 
 > *Notes*
-> - A [QueryFilter] can be changed after query creation until calling `FreezeFilter()`.
-> - A single [QueryFilter] instance can shared by multiple queries if needed.
+> - The `QueryFilter` can be changed after query creation until calling `FreezeFilter()`.
+> - A single `QueryFilter` instance can be shared by multiple queries if needed.
 
 <br/>
 
