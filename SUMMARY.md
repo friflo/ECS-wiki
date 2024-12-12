@@ -50,7 +50,7 @@
     * [Features](package/Features.md)
     * [Library](package/Library.md)
     * [Native AOT](package/native-aot.md)
-    * [Deprecated]
+    * [Deprecated pages](deprecated-pages.md)
         * [General](examples/General.md)
         * [Optimization](examples/Optimization.md)
         * [Component Types](examples/Component-Types.md)
