@@ -1,4 +1,4 @@
-Events are messages sent used to notify about state changes on an `Entity`.
+Events are messages sent used to notify about state changes of an `Entity`.
 
 These events can be consumed in two different ways.
 - Process events directly by an event handler subscribed to an event like `entity.OnComponentChanged`.
@@ -33,6 +33,7 @@ public static void AddEventHandlers()
 
 ## EventRecorder
 
+An `EventRecorder` record all component and tag changes of an `EntityStore` when `Enabled`.  
 An `EventFilter` is used to process events recorded by an `EventRecorder`.  
 `EventFilter`'s can be used on its own or within a query like in the example below.  
 All events that need to be filtered - like added/removed components/tags - can be added to the `EventFilter`.  
