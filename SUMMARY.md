@@ -30,9 +30,9 @@
     * [CommandBuffer](docs/query.md#commandbuffer)
 
 * [Events](docs/events.md)
-    * [Entity events](docs/events.md#entity-events)
-    * [Signals](docs/events.md#signals)
+    * [Entity changes](docs/events.md#entity-changes)
     * [EventRecorder](docs/events.md#eventrecorder)
+    * [Signals](docs/events.md#signals)
 
 * [Index / Search](docs/component-index.md)
 
