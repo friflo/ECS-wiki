@@ -54,7 +54,7 @@
 
     * [Native AOT](package/native-aot.md)
 
-    * [Examples - deprecated](deprecated.md)
+    * [Examples - deprecated](/deprecated.md)
         * [General](/examples/General.md)
         * [Optimization](/examples/Optimization.md)
         * [Component Types](/examples/Component-Types.md)
