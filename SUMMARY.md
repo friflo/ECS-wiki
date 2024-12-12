@@ -1,9 +1,6 @@
 # Table of contents
 
-* [Start](README.md)
-
-
-## 📖 Documentation - wip
+## 📖 Documentation
 
 * [Entity](docs/entity.md)
     * [EntityStore](docs/entity.md#entitystore)
@@ -41,6 +38,7 @@
     * [Add/Remove components](docs/batch.md#add-remove-components)
 
 
+
 ## 📦 Project
 
 * Package
@@ -50,3 +48,8 @@
     * [Native AOT](package/native-aot.md)
 
 * [Unity Extension](extensions/Unity-extension.md)
+
+* Deprecated pages
+    * [General](examples/General.md)
+    * [Optimization](examples/Optimization.md)
+    * [Component Types](examples/Component-Types.md)
