@@ -153,7 +153,7 @@ public static void GetUniqueEntity()
 <br/>
 
 > **Info**  
-> Since version 3.0.0 there is more flexible and performant alternative available by using a [Component Index](component-index.md).  
+> Since version 3.0.0 there is more flexible and performant alternative available by using a [Component Index](/docs/component-index.md).  
 > It supports defining a custom `IIndexedComponent` type and have several advantages:
 > - The unique key can be of any type - e.g. `int`, `Guid`, `enum`, `string`, ... . The key of unique entities is always a `string`.
 > - The storage of a **Component Index** is optimized for low memory footprint and fast lookup.
