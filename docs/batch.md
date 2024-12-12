@@ -20,7 +20,7 @@ var entity = store.CreateEntity(new Position(1,2,3), new Transform(), new Entity
 - A **Bulk** operation performance the same operation for multiple entities.
 
 
-## Create entities
+# Create entities
 
 🔥 **Update** - New example to use simpler / more performant approach to create entities.
 
@@ -45,7 +45,7 @@ public static void CreateEntityOperation()
 <br/>
 
 
-### Bulk - Create entities
+## Bulk - Create entities
 
 🔥 **Update** - New example for bulk creation of entities.
 
@@ -68,7 +68,7 @@ public static void CreateEntities()
 <br/>
 
 
-## Add/Remove components
+# Add/Remove components
 
 🔥 **Update** - Add example to batch **add**, **remove** and **get** components and tags.
 
@@ -115,7 +115,7 @@ public static void EntityBatchOperations()
 }
 ```
 
-### Add/Remove components with `EntityBatch`
+## Add/Remove components with `EntityBatch`
 
 **Optimization**  
 Minimize structural changes when adding **and** removing components or tags to / from a **single entity**.
@@ -149,7 +149,7 @@ public static void EntityBatch()
 <br/>
 
 
-### `EntityBatch` - Bulk execution
+## `EntityBatch` - Bulk execution
 
 **Optimization**: Minimize structural changes when adding / removing components or tags to / from **multiple entities**.
 
@@ -181,7 +181,7 @@ public static void BulkBatch()
 <br/>
 
 
-### Apply `EntityBatch` to an `EntityList`
+## Apply `EntityBatch` to an `EntityList`
 
 An [EntityList](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/EntityList.md) is a container
 of entities added to the list.  

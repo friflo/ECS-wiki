@@ -59,5 +59,6 @@
     * [Release Notes](package/Release-Notes.md)
     * [Features](package/Features.md)
     * [Library](package/Library.md)
+    * [Native AOT](package/native-aot.md)
 
 * [Unity Extension](extensions/Unity-extension.md)
