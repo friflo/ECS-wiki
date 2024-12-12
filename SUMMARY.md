@@ -1,5 +1,9 @@
 # Table of contents
 
+* [Start](README.md)
+
+
+
 ## 📖 Documentation
 
 * [Entity](docs/entity.md)
@@ -46,10 +50,11 @@
     * [Features](package/Features.md)
     * [Library](package/Library.md)
     * [Native AOT](package/native-aot.md)
+    * Deprecated pages
+        * [General](examples/General.md)
+        * [Optimization](examples/Optimization.md)
+        * [Component Types](examples/Component-Types.md)
 
 * [Unity Extension](extensions/Unity-extension.md)
 
-* Deprecated pages
-    * [General](examples/General.md)
-    * [Optimization](examples/Optimization.md)
-    * [Component Types](examples/Component-Types.md)
+
