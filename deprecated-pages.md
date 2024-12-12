@@ -1,6 +1,6 @@
 
-[General](/examples/General.md)
+[General](/examples/general)
 
-[Optimization](/examples/Optimization.md)
+[Optimization](/examples/optimization)
 
-[Component Types](/examples/Component-Types.md)
+[Component Types](/examples/component-types)
