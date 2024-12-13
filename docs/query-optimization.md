@@ -30,9 +30,14 @@ Query optimizations can be achieved by using various query technics like:
 - [Query Vectorization - SIMD](#query-vectorization---simd)
 
 
-*Info:* Query optimization examples are part of the unit tests see:
+Query optimization examples are part of the unit tests see:
 [Tests/ECS/Examples](https://github.com/friflo/Friflo.Engine.ECS/tree/main/src/Tests/ECS/Examples)
 
+> **Info**  
+> In general *friflo ECS* provides in many areas only a single API variant to implement a specific behavior.  
+> This avoids confusion to select a one of multiple variants.  
+> **Query optimization** and **Batch operations** are an exception to this rule.  
+> The reason is to provide provide room for significant performance gains if needed.
 
 <br/>
 
