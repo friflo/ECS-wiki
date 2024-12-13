@@ -8,8 +8,16 @@ A typical limitation of an archetype-based ECS is that an entity can only contai
 When adding a component of a specific type to an entity already present the component is updated.  
 This is the common behavior implemented by most ECS implementations like **EnTT**, **flecs**, **BEVY**, **fenn**ecs, ... .  
 
-A relation in mathematical context describes a connection between elements of two sets.  
-Transferred to this ECS: The first set are **all entities** the second set are all possible **relation keys**.
+**Terminology**  
+A relation in mathematical context describes a connection between the elements of two sets: *Set-1* & *Set-2*.  
+In other words - a relation is a pair (element of *Set-1*, element of *Set-2*).
+
+In friflo ECS a relation is a type implementing either `IRelation<>` or `IRelationLink<>`.  
+An entity containing a relation creates a relation between this entity and the relation key.  
+So *Set-1* are always **all entities** and *Set-2* are all possible **relation keys**.  
+
+- A **relation** implements `IRelation<>` and is a pair (entity, relation key)
+- A **relationship** implements `IRelationLink<>` and is a pair (entity, linked entity)
 
 ## Relation
 

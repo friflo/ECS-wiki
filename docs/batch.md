@@ -16,8 +16,8 @@ var entity = store.CreateEntity(new Position(1,2,3), new Transform(), new Entity
 ```
 
 *Terminology*
-- A **Batch** combines multiple component changes in a single operation.
-- A **Bulk** operation performance the same operation for multiple entities.
+- A **Batch** combines multiple component changes in a single operation on the same entity.
+- A **Bulk** operation performance the same operation on multiple entities.
 
 
 # Create entities
