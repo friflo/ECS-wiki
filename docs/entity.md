@@ -154,10 +154,10 @@ public static void GetUniqueEntity()
 
 > **Info**  
 > Since version 3.0.0 there is more flexible and performant alternative available by using a [Component Index](/docs/component-index.md).  
-> It supports defining a custom `IIndexedComponent` type and have several advantages:
+> It supports defining a custom `IIndexedComponent<>` type and have several advantages:
 > - The unique key can be of any type - e.g. `int`, `Guid`, `enum`, `string`, ... . The key of unique entities is always a `string`.
 > - The storage of a **Component Index** is optimized for low memory footprint and fast lookup.
-> - Additional fields can added to an `IIndexedComponent`.
+> - Additional fields can be added to an `IIndexedComponent<>` type.
 
 
 ## Tag
@@ -190,9 +190,9 @@ public static void AddTags()
 
 ## Hierarchy
 
-A typical use case in Games or Editor is to build up a hierarchy of entities.  
+A typical use case in an Game or Editor is to build up a hierarchy of entities.  
 To add an entity as a child to another entity use `Entity.AddChild()`.  
-In case the added child already has a parent it gest removed from the old parent.  
+In case the added child already has a parent it gets removed from the old parent.  
 The children of the added (moved) entity remain being its children.  
 If removing a child from its parent all its children are removed from the hierarchy.
 

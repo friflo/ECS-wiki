@@ -7,9 +7,16 @@ So the performance characteristic iterating a query result is the same as iterat
 
 > **Info**  
 > Iterating arrays is the most efficient way to iterate large data sets by efficient use of the CPU L1 cache, its prefetcher and instruction pipelining.
-> - 100% of the data to store components in **L1 cache lines** (typically 64 or 128 bytes) is utilized.
+> - All data in **L1 cache lines** (typically 64 or 128 bytes) storing components is utilized.
 > - The **prefetcher** minimize caches misses as it detects the sequential array access which stores data in continuous memory.
 > - Efficient use of **instruction pipelining** as array iteration require minimal conditional branches.
+
+The second aspect for fast query execution in an Archetype based ECS is its *runtime complexity* required for filtering.  
+Components are stored in archetypes. Query execution requires access only to matching archetypes for filtering.  
+The runtime cost for non matching archetypes is **0**. This prevents *full table scan* or access to data which is not part of the query result.
+
+> **Info**  
+> The **runtime complexity** of query execution is **O(N)** with **N**: number of the result elements.
 
 <br/>
 
