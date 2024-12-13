@@ -219,6 +219,10 @@ public static void AddChildEntities()
 An `Archetype` defines a specific set of components and tags for its entities.  
 At the same time it is also a container of entities with exactly this combination of components and tags.  
 
+> **Explanation**  
+> An `Archetype` instance corresponds to an SQL `TABLE` where its components are the counterpart of the table rows.  
+> In contrast to tables archetypes are created automatically on demand. A relational database requires to create tables upfront.
+
 The following comparison shows the difference in modeling types in **ECS** vs **OOP**.  
 
 <table>
