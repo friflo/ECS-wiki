@@ -67,7 +67,8 @@ public static void FilterEntityEvents()
 
 ## Signals
 
-`Signal`s are similar to events. They are used to send and receive custom events on entity level in an application.  
+**Signals** are similar to events. They are used to **send** and **subscribe** **custom events** on entity level in an application.  
+To prevent heap allocations signal types must be structs.  
 They have the same characteristics as events described in the section above.  
 The use of `Signal`'s is intended for scenarios when something happens occasionally.  
 This avoids the need to check a state every frame.
