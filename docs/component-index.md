@@ -13,6 +13,9 @@ Adding, removing or updating an indexed component updates the index.
 These operations are executed in O(1) but significant slower than the non indexed counterparts ~10x.  
 *Performance:* Indexing 1000 different component values ~60 μs.
 
+The [ComponentIndex<,>](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/ComponentIndex_TIndexedComponent,TValue_.md)
+provide access to indexed components.
+
 ```cs
 struct TileComponent : IIndexedComponent<int> // indexed field type: int
 {
@@ -35,12 +38,10 @@ public static void ComponentLookup()
 }
 ```
 
-**Range query**
+## Range query
 
 In case the indexed component type implements `IComparable<>` like int, string, DateTime, ... range queries can be executed.  
 A range query returns all entities with a component value in the specified range. See example code.
-
-Methods to query indexed components are at [IndexExtensions](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/IndexExtensions.md).
 
 ```cs
 struct Player : IIndexedComponent<string>       // indexed field type: string
