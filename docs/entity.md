@@ -188,6 +188,35 @@ public static void AddTags()
 <br/>
 
 
+## Script
+
+`Script`s are similar to components and can be added / removed to / from entities.  
+`Script`s are classes and can also be used to store data.  
+Additional to components they enable adding behavior in the common OOP style.
+
+In case dealing only with a few thousands of entities `Script`s are fine.  
+If dealing with a multiple of 10.000 components should be used for efficiency / performance.
+
+```csharp
+public class MyScript : Script { public int data; }
+
+public static void AddScript()
+{
+    var store   = new EntityStore();
+    var entity  = store.CreateEntity();
+    
+    // add script
+    entity.AddScript(new MyScript{ data = 123 });
+    Console.WriteLine($"entity: {entity}");             // > entity: id: 1  [*MyScript]
+    
+    // get script
+    var myScript = entity.GetScript<MyScript>();
+    Console.WriteLine($"data: {myScript.data}");        // > data: 123
+}
+```
+<br/>
+
+
 ## Hierarchy
 
 A typical use case in an Game or Editor is to build up a hierarchy of entities.  
