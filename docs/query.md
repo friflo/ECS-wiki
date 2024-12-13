@@ -20,7 +20,7 @@ The runtime cost for non matching archetypes is **0**. This prevents *full table
 
 <br/>
 
-**Query creation**
+## Query creation
 
 A query is created by specifying two aspects.
 
