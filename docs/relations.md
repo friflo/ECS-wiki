@@ -21,7 +21,7 @@ So *Set-1* are always **all entities** and *Set-2* are all possible **relation k
 
 ## Relation
 
-A relation that can be added to an entity multiple times must implement
+Multiple relations can be added to a single entity and must implement
 [`IRelation<>`](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/IRelation_TKey_.md).  
 To distinguish between different relations, a relation type must implement `GetRelationKey()`.  
 Any type can be used as relation key type. E.g. enum, string, int, long, Guid, DateTime, ... .
