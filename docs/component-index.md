@@ -1,8 +1,11 @@
 
-A **ComponentIndex** enables efficient search of indexed component field values.  
+A **Component Index** enables efficient search of indexed component field values.  
 This enables **lookup** aka **search** of entities having components with specific a specific value like in the example below.  
 Any type can be used as indexed component type. E.g. `int`, `long`, `float`, `Guid`, `DateTime`, `enum`, ... .  
 A search / query for a specific value executes in O(1).
+
+> **Info**  
+> A component index is the counterpart of database index used to index a column with `CREATE INDEX` in SQL.
 
 ## Indexed Components
 
