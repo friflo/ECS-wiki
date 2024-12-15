@@ -31,12 +31,12 @@ An ECS has two major strengths:
 </details>
 
 
-## Overview
+# Overview
 
 A common ECS provide the basic features listed bellow.  
 To solve other common use-cases non covered by a basic implementation this ECS provide the listed extensions.
 
-### Basic features
+## Basic features
 
 > An ECS acts like an in-memory database and stores entities in an [EntityStore](docs/entity.md#entitystore).  
 > An [Entity](docs/entity.md) is a value type - aka `struct` - with a unique `Id`.
@@ -48,7 +48,7 @@ To solve other common use-cases non covered by a basic implementation this ECS p
 > [Query filters](docs/query.md#query-filter) are used to reduce the amount of components returned by the query result.
 
 
-### Extended features
+## Extended features
 
 > Support [Events](docs/events.md) to subscribe entity changes like adding or removing components.  
 > Event handlers can be added to a single `Entity` or the entire `EntityStore`.
@@ -80,7 +80,7 @@ To solve other common use-cases non covered by a basic implementation this ECS p
 <br>
 
 
-## Project
+# Project
 
 [Release Notes](package/Release-Notes.md) to document all nuget releases.
 
