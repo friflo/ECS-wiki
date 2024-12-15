@@ -33,6 +33,9 @@ An ECS has two major strengths:
 
 ## Overview
 
+A common ECS provide the basic features listed bellow.  
+To solve other common use-cases non covered by a basic implementation this ECS provide the listed extensions.
+
 ### Basic features
 
 > An ECS acts like an in-memory database and stores entities in an [EntityStore](docs/entity.md#entitystore).  
@@ -45,14 +48,14 @@ An ECS has two major strengths:
 > [Query filters](docs/query.md#query-filter) are used to reduce the amount of components returned by the query result.
 
 
-
-### Unique features
+### Extended features
 
 > Support [Events](docs/events.md) to subscribe entity changes like adding or removing components.  
 > Event handlers can be added to a single `Entity` or the entire `EntityStore`.
 
 > [Index / Search](docs/component-index.md) to enable lookup entities with specific component values.  
-> A lookup for a specific component value - aka search - executes in **O(1)** ~ 4 ns.
+> A lookup for a specific component value - aka search - executes in **O(1)** ~ 4 ns.  
+> *Possibly the first and only ECS that supports indexing.*
 
 > [Relationships](docs/relationships.md) to create links between entities.  
 > Links are directed and bidirectional.
@@ -61,9 +64,9 @@ An ECS has two major strengths:
 > Relations are not implemented as components to avoid *archetype fragmentation*.
 
 > [Hierarchy / Scene tree](docs/entity.md#hierarchy) used to setup a child/parent relationship between entities.  
-> En entity in the hierarchy provide direct access to its children and parent.
+> An entity in the hierarchy provide direct access to its children and parent.
 
-> [Systems](docs/systems.md) are optional and used to group a sequence of queries or custom operations.  
+> [Systems](docs/systems.md) are optional. They are used to group queries or custom operations.  
 > Systems support logging and realtime monitoring to find bottlenecks.
 
 
@@ -79,11 +82,11 @@ An ECS has two major strengths:
 
 ## Project
 
-[Release Notes](package/Release-Notes.md) documentation the changes of all nuget releases.
+[Release Notes](package/Release-Notes.md) to document all nuget releases.
 
-[Library](package/Library.md) describe the assembly specific characteristics.
+[Library](package/Library.md) describes assembly specific characteristics.
 
-[Unity Extension](extensions/Unity-extension.md) with integration in Unity Editor.
+[Unity Extension](extensions/Unity-extension.md) with ECS integration in Unity Editor.
 
 
 ## External Links
@@ -94,7 +97,7 @@ Discord: [friflo ECS](https://discord.gg/nFfrhgQkb8)
 
 Benchmark: [C# ECS Benchmarks](https://github.com/friflo/ECS.CSharp.Benchmark-common-use-cases)
 
-
+<br/>
 
 
 ## GitHub
