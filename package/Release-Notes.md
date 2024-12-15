@@ -17,6 +17,11 @@ Detailed information for each release at
 
 # 3.x Releases
 
+## 3.0.0
+
+Finally after 6 months in **preview** all new features are completed.
+- Updated test dependencies and ensured compatibility with MonoGame, Godot, Unity (Mono, IL2CPP & WebGL) and Native AOT.
+
 ## 3.0.0-preview.19
 
 - Changed implementation of `EntityStore.CloneEntity()`  
