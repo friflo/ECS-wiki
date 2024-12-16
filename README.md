@@ -75,7 +75,7 @@ To solve other common use-cases not covered by basic implementations this ECS pr
 ## Library features
 
 > 100% verifiably safe 🔒 C#. No [*unsafe code*](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/unsafe-code)
-> or natives bindings.  
+> or native bindings.  
 > This prevents *segmentation faults* or *access violations* crashing a process instantaneously.
 
 > Aims for 100% test coverage: See [![codecov](https://img.shields.io/codecov/c/gh/friflo/Friflo.Engine.ECS?logo=codecov&logoColor=white&label=codecov)](https://app.codecov.io/gh/friflo/Friflo.Engine.ECS/tree/main/src/ECS)
