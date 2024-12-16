@@ -34,11 +34,11 @@ An ECS has two major strengths:
 # Overview
 
 A common ECS provide the basic features listed bellow.  
-To solve other common use-cases non covered by a basic implementation this ECS provide the listed extensions.
+To solve other common use-cases not covered by basic implementations this ECS provide the listed extensions.
 
 ## Basic features
 
-> An ECS acts like an in-memory database and stores entities in an [EntityStore](docs/entity.md#entitystore).  
+> An ECS acts like an in-memory database and stores entities in an [EntityStore](docs/entity.md#entitystore) aka *World*.  
 > An [Entity](docs/entity.md) is a value type - aka `struct` - with a unique `Id`.
 
 > Data is stored in [Components](docs/entity.md#component) added to entities.  
@@ -63,17 +63,20 @@ To solve other common use-cases non covered by a basic implementation this ECS p
 > [Relations](docs/relations.md) to add multiple *"components"* to an entity.  
 > Relations are not implemented as components to avoid *archetype fragmentation*.
 
+> [Systems](docs/systems.md) are optional. They are used to group queries or custom operations.  
+> Systems support logging and realtime monitoring to find bottlenecks.
+
 > [Hierarchy / Scene tree](docs/entity.md#hierarchy) used to setup a child/parent relationship between entities.  
 > An entity in the hierarchy provide direct access to its children and parent.
 
-> [Systems](docs/systems.md) are optional. They are used to group queries or custom operations.  
-> Systems support logging and realtime monitoring to find bottlenecks.
+> [JSON Serialization](docs/entity.md#json-serialization) to serialize entities or the entire EntityStore as JSON.
 
 
 ## Library features
 
-> 100% verifiably safe 🔒 C#. No [*unsafe code*](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/unsafe-code).  
-> This avoids surprises getting *segmentation faults* or *access violations* leading to instant process termination.
+> 100% verifiably safe 🔒 C#. No [*unsafe code*](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/unsafe-code)
+> or natives bindings.  
+> This prevents *segmentation faults* or *access violations* crashing a process instantaneously.
 
 > Aims for 100% test coverage: See [![codecov](https://img.shields.io/codecov/c/gh/friflo/Friflo.Engine.ECS?logo=codecov&logoColor=white&label=codecov)](https://app.codecov.io/gh/friflo/Friflo.Engine.ECS/tree/main/src/ECS)
 
@@ -82,7 +85,7 @@ To solve other common use-cases non covered by a basic implementation this ECS p
 
 # Project
 
-[Release Notes](package/Release-Notes.md) to document all nuget releases.
+[Release Notes](package/Release-Notes.md) - document all nuget releases.
 
 [Library](package/Library.md) describes assembly specific characteristics.
 
@@ -91,7 +94,7 @@ To solve other common use-cases non covered by a basic implementation this ECS p
 
 ## External Links
 
-GitHub: [Friflo.Engine.ECS](https://github.com/friflo/Friflo.Engine.ECS)
+GitHub: [https://github.com/friflo/Friflo.Engine.ECS](https://github.com/friflo/Friflo.Engine.ECS)
 
 Discord: [friflo ECS](https://discord.gg/nFfrhgQkb8)
 
