@@ -58,7 +58,7 @@ To solve other common use-cases not covered by basic implementations this ECS pr
 > *Possibly the first and only ECS that supports indexing.*
 
 > [Relationships](docs/relationships.md) to create links between entities.  
-> Links are directed and bidirectional.
+> A link is directed and bidirectional. Deleting *source* or *target* entity removes a link.
 
 > [Relations](docs/relations.md) to add multiple *"components"* to an entity.  
 > Relations are not implemented as components to avoid *archetype fragmentation*.
