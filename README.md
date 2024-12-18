@@ -53,14 +53,14 @@ To solve other common use-cases not covered by basic implementations this ECS pr
 > Support [Events](docs/events.md) to subscribe entity changes like adding or removing components.  
 > Event handlers can be added to a single `Entity` or the entire `EntityStore`.
 
-> [Index / Search](docs/component-index.md) to enable lookup entities with specific component values.  
+> [Index / Search](docs/component-index.md) to enable lookup entities with specific component values. **v3.0.0**  
 > A lookup for a specific component value - aka search - executes in **O(1)** ~ 4 ns.  
 > *Possibly the first and only ECS that supports indexing.*
 
-> [Relationships](docs/relationships.md) to create links between entities.  
+> [Relationships](docs/relationships.md) to create links between entities. **v3.0.0**  
 > A link is directed and bidirectional. Deleting *source* or *target* entity removes a link.
 
-> [Relations](docs/relations.md) to add multiple *"components"* to an entity.  
+> [Relations](docs/relations.md) to add multiple *"components"* to an entity. **v3.0.0**  
 > Relations are not implemented as components to avoid *archetype fragmentation*.
 
 > [Systems](docs/systems.md) are optional. They are used to group queries or custom operations.  
