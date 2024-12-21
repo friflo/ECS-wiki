@@ -78,7 +78,19 @@ To solve other common use-cases not covered by basic implementations this ECS pr
 > or native bindings.  
 > This prevents *segmentation faults* or *access violations* crashing a process instantaneously.
 
-> Aims for 100% test coverage: See [![codecov](https://img.shields.io/codecov/c/gh/friflo/Friflo.Engine.ECS?logo=codecov&logoColor=white&label=codecov)](https://app.codecov.io/gh/friflo/Friflo.Engine.ECS/tree/main/src/ECS)
+> Minimal heap allocations.  
+> After internal buffers grown large enough no heap allocation will occur.  
+> At this point no garbage collection will be executed. This avoids frame stuttering / lagging caused caused be GC runs.  
+> Especially no allocation when
+> - Creating or deleting entities
+> - Adding or removing components / tags
+> - Adding or removing relations or relationships
+> - Emitting events
+> - Changes in entity hierarchy
+> - Query or system execution
+
+> Aims for 100% test coverage:  
+> Code coverage: [![codecov](https://img.shields.io/codecov/c/gh/friflo/Friflo.Engine.ECS?logo=codecov&logoColor=white&label=codecov)](https://app.codecov.io/gh/friflo/Friflo.Engine.ECS/tree/main/src/ECS)
 
 <br>
 
