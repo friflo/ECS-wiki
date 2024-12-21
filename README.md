@@ -80,7 +80,7 @@ To solve other common use-cases not covered by basic implementations this ECS pr
 
 > Minimal heap allocations.  
 > After internal buffers grown large enough no heap allocation will occur.  
-> At this point no garbage collection will be executed. This avoids frame stuttering / lagging caused caused be GC runs.  
+> At this point no garbage collection will be executed. This avoids frame stuttering / lagging caused be GC runs.  
 > Especially no allocation when
 > - Creating or deleting entities
 > - Adding or removing components / tags
