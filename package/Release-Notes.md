@@ -1,12 +1,12 @@
-
-<a href="https://github.com/friflo/Friflo.Engine.ECS"/><img src="../images/friflo-ECS.svg" width="40" height="30"></a>
+<div style="float: right;">
+<a href="https://github.com/friflo/Friflo.Engine.ECS"/><img src="../images/friflo-ECS-small.svg"></a>
 <span width="40" style="display:inline;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <a href="https://github.com/friflo/Friflo.Engine.ECS"/><img src="../images/github-mark.svg"></a>
 <a href="https://github.com/friflo/Friflo.Engine.ECS"/><img src="https://img.shields.io/badge/GitHub-grey"></a>
 <span width="40" style="display:inline;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <a href="https://discord.gg/nFfrhgQkb8"/><img src="../images/discord.svg"></a>
 <a href="https://discord.gg/nFfrhgQkb8"/><img src="https://img.shields.io/badge/Discord-5865F2"></a>
-
+</div>
 
 
 Features in this list are also explained in the GitHub Wiki.  

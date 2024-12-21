@@ -1,7 +1,7 @@
 [![friflo ECS](images/friflo-ECS.svg)](https://github.com/friflo/Friflo.Engine.ECS)   ![splash](images/paint-splatter.svg)
 
 [![Github Repo](images/github-mark.svg)](https://github.com/friflo/Friflo.Engine.ECS)
-[![Github Repo](https://img.shields.io/badge/Repository-grey)](https://github.com/friflo/Friflo.Engine.ECS)
+[![Github Repo](https://img.shields.io/badge/GitHub-grey)](https://github.com/friflo/Friflo.Engine.ECS)
 [![Demos](https://img.shields.io/badge/Demos-22aa22)](https://github.com/friflo/Friflo.Engine.ECS-Demos)
 [![C# API](https://img.shields.io/badge/C%23%20API-22aaaa)](https://github.com/friflo/Friflo.Engine-docs)
 [![Discord](https://img.shields.io/badge/Discord-5865F2)](https://discord.gg/nFfrhgQkb8)   
