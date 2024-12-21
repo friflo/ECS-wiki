@@ -1,4 +1,6 @@
-<div style="float: right;">
+<div style="display: flex;">
+<div style="flex-grow: 1;"></div>
+<div>
 <a href="https://github.com/friflo/Friflo.Engine.ECS"/><img src="../images/friflo-ECS-small.svg"></a>
 <span width="40" style="display:inline;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <a href="https://github.com/friflo/Friflo.Engine.ECS"/><img src="../images/github-mark.svg"></a>
@@ -6,6 +8,7 @@
 <span width="40" style="display:inline;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <a href="https://discord.gg/nFfrhgQkb8"/><img src="../images/discord.svg"></a>
 <a href="https://discord.gg/nFfrhgQkb8"/><img src="https://img.shields.io/badge/Discord-5865F2"></a>
+</div>
 </div>
 
 
