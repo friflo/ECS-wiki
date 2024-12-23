@@ -39,13 +39,14 @@ Fast entity creation and component changes.
 <details>
 <summary>🪄 Simple API</summary>
 Small and clear API.<br/>
-No boilerplate.
+No boilerplate code.
 </details>
 
 <details>
 <summary>🔄 Low memory footprint</summary>
 Minimal heap allocations at start phase.<br/>
-No heap allocations after internal buffers grown large enough. No GC pauses / no frame drops.
+No heap allocations after internal buffers grown large enough.<br/>
+No GC pauses / no frame drops.
 </details>
 
 <details>
@@ -53,8 +54,6 @@ No heap allocations after internal buffers grown large enough. No GC pauses / no
 Friflo.Engine.ECS.dll size: only 320 kb.  <br/>
 No code generation. No 3rd party dependencies.
 </details>
-
-<br/>
 
 
 # Overview
