@@ -10,11 +10,10 @@
 
 
 **friflo ECS** is an archetype based ECS - Entity Component System.  
-It set its focus on high-performance, low-memory footprint and minimal heap allocations.
+The design goals of this library are performance and simplicity.
 
 <details>
-
-<summary>What is an Entity Component System?</summary>
+<summary>🛈 What is an Entity Component System?</summary>
 
 An Entity Component System (**ECS**) is a software architecture pattern. See [ECS ⋅ Wikipedia](https://en.wikipedia.org/wiki/Entity_component_system).  
 It is often used in software development for **Games**, **Simulation**, **Analytics** and **In-Memory Database** providing high performant data processing.
@@ -27,8 +26,35 @@ An ECS has two major strengths:
 2. It provides **high performant query execution** by storing components in continuous memory to leverage L1 CPU cache and its prefetcher.  
    It improves CPU branch prediction by minimizing conditional branches when processing components in tight loops.
    See [DoD - Data-oriented design](https://en.wikipedia.org/wiki/Data-oriented_design).
-
 </details>
+
+## Design goals
+
+<details>
+<summary>🔥 High Performance</summary>
+Optimal and efficient query / system execution.<br/>
+Fast entity creation and component changes.
+</details>
+
+<details>
+<summary>🪄 Simple API</summary>
+Small and clear API.<br/>
+No boilerplate.
+</details>
+
+<details>
+<summary>🔄 Low memory footprint</summary>
+Minimal heap allocations at start phase.<br/>
+No heap allocations after internal buffers grown large enough. No GC pauses / no frame drops.
+</details>
+
+<details>
+<summary>🤏 Small library</summary>
+Friflo.Engine.ECS.dll size: only 320 kb.  <br/>
+No code generation. No 3rd party dependencies.
+</details>
+
+<br/>
 
 
 # Overview
