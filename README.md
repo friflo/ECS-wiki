@@ -37,7 +37,7 @@ Fast entity creation and component changes.
 </details>
 
 <details>
-<summary>🪄 Simple API</summary>
+<summary>🎯 Simple API</summary>
 Small and clear API.<br/>
 No boilerplate code.
 </details>
