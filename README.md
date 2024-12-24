@@ -97,7 +97,7 @@ To solve other common use-cases not covered by basic implementations this ECS pr
 > [JSON Serialization](docs/entity.md#json-serialization) to serialize entities or the entire EntityStore as JSON.
 
 
-## Library features
+## Library
 
 > 100% verifiably safe 🔒 C#. No [*unsafe code*](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/unsafe-code)
 > or native bindings.  
