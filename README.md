@@ -15,7 +15,7 @@ The design goals of this library are performance and simplicity.
 <details>
 <summary>🛈 What is an Entity Component System?</summary>
 
-An Entity Component System (**ECS**) is a software architecture pattern. See [ECS ⋅ Wikipedia](https://en.wikipedia.org/wiki/Entity_component_system).  
+An Entity Component System (**ECS**) is a software architecture pattern. [Wikipedia](https://en.wikipedia.org/wiki/Entity_component_system).  
 It is often used in software development for **Games**, **Simulation**, **Analytics** and **In-Memory Database** providing high performant data processing.
 
 An ECS has two major strengths:
@@ -25,7 +25,7 @@ An ECS has two major strengths:
   
 2. It provides **high performant query execution** by storing components in continuous memory to leverage L1 CPU cache and its prefetcher.  
    It improves CPU branch prediction by minimizing conditional branches when processing components in tight loops.
-   See [DoD - Data-oriented design](https://en.wikipedia.org/wiki/Data-oriented_design).
+   [Data-oriented design ⋅ Wikipedia](https://en.wikipedia.org/wiki/Data-oriented_design).
 </details>
 
 ## Design goals
