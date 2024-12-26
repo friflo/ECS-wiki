@@ -50,7 +50,13 @@ No GC pauses / no frame drops.
 </details>
 
 <details>
-<summary>🤏 Small library</summary>
+<summary>🛡️ Reliable</summary>
+100% verifiably safe C#. No <b>unsafe</b> code or native bindings.<br/>
+Full test coverage. Expressive runtime error messages.
+</details>
+
+<details>
+<summary>🤏 Small</summary>
 Friflo.Engine.ECS.dll size: only 320 kb.  <br/>
 No code generation. No 3rd party dependencies.
 </details>
