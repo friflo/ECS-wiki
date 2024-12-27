@@ -95,7 +95,7 @@ To solve other common use-cases not covered by basic implementations this ECS pr
 > Relations are not implemented as components to avoid *archetype fragmentation*.
 
 > [Systems](docs/systems.md) are optional. They are used to group queries or custom operations.  
-> Systems support logging and realtime monitoring to find bottlenecks.
+> They support logging / monitoring of execution times and memory allocations in realtime.
 
 > [Hierarchy / Scene tree](docs/entity.md#hierarchy) used to setup a child/parent relationship between entities.  
 > An entity in the hierarchy provide direct access to its children and parent.
