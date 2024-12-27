@@ -1,4 +1,4 @@
-[![friflo ECS](images/friflo-ECS.svg)](https://github.com/friflo/Friflo.Engine.ECS)   ![splash](images/paint-splatter.svg)
+[![friflo ECS](images/friflo-ECS.svg)](https://github.com/friflo/Friflo.Engine.ECS)
 
 [![Github Repo](images/github-mark.svg)](https://github.com/friflo/Friflo.Engine.ECS)
 [![Github Repo](https://img.shields.io/badge/GitHub-grey)](https://github.com/friflo/Friflo.Engine.ECS)
