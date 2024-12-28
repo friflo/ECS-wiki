@@ -136,7 +136,7 @@ protected override void OnAddStore(EntityStore store)
 Use cases for custom systems are:
 - Need to make structural changes via the parent group `CommandBuffer`.
 - Want direct access to an `EntityStore`.
-- Execute multiple queries in a single system. E.g. to execute multiple queries in nested loops.
+- Execute multiple / nested queries in a single system. E.g. to execute them in nested loops.
 
 ```cs
 public static void CustomSystem()
