@@ -71,7 +71,7 @@ class PulseSystem : QuerySystem<Scale3>
 }
 ```
 
-### ⏱ System monitoring
+# System monitoring
 
 System performance monitoring is disabled by default.  
 To enable monitoring call:
@@ -87,7 +87,7 @@ When enabled system monitoring captures
 - The number of entities matching a query system.
 
 
-#### Realtime monitoring
+## Realtime monitoring
 
 In a game editor like Unity system monitoring is available in the **ECS System Set** component.
 <details>
@@ -96,7 +96,7 @@ In a game editor like Unity system monitoring is available in the **ECS System S
 </details>
 
 
-#### Log monitoring
+## Log monitoring
 
 The performance statistics available at [SystemPerf](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/SystemPerf.md).  
 To get performance statistics on console use:
@@ -120,4 +120,59 @@ last ms, sum ms     last/sum system execution time in ms
 updates             number of executions
 last mem, sum mem   last/sum allocated bytes
 entities            number of entities matching a QuerySystem
+```
+
+<br/>
+
+
+# Custom System
+
+In cases a system requires code which goes beyond common query execution a system can be customized.  
+Therefor a system can override `OnAddStore()`
+```cs
+protected override void OnAddStore(EntityStore store)
+```
+
+Use cases for custom systems are:
+- Need to make structural changes via the parent group `CommandBuffer`.
+- Want direct access to an `EntityStore`.
+- Execute multiple queries in a single system. E.g. to execute multiple queries in nested loops.
+
+```cs
+public static void CustomSystem()
+{
+    var world = new EntityStore();
+    var entity = world.CreateEntity(new Position(0, 0, 0));
+    var root = new SystemRoot(world) {
+        new CustomQuerySystem()
+    };
+    root.Update(default);
+    
+    Console.WriteLine($"entity: {entity}");  // entity: id: 1  [Position, Velocity]
+}
+```
+
+The example shows how to create a custom system that
+- creates a `customQuery` and
+- make structural changes via the parent group `CommandBuffer`.
+
+The system adds a `Velocity` component for every entity having a `Position` component. 
+```cs
+class CustomQuerySystem : QuerySystem
+{
+    private ArchetypeQuery<Position> customQuery;
+    
+    protected override void OnAddStore(EntityStore store) {
+        customQuery = store.Query<Position>();
+        base.OnAddStore(store); // must be called to ensure execution of OnUpdate()
+    }
+    
+    /// Executes the customQuery instead of the base class Query.
+    protected override void OnUpdate() {
+        var buffer = CommandBuffer;
+        customQuery.ForEachEntity((ref Position component1, Entity entity) => {
+            buffer.AddComponent(entity.Id, new Velocity());
+        });
+    }
+}
 ```
