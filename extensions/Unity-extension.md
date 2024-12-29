@@ -20,8 +20,4 @@ ECS - dead simple. Highlights
 - Support **Edit** & **Play** Mode with synchronization of `GameObject` position, scale, rotation and activeSelf.
 - Entities & Systems are stored in scene file and support: Cut/Copy/Paste, Duplicate/Delete, Undo/Redo and Drag & Drop.
 
-Will write a post when extension is available. 
-[![reddit](https://img.shields.io/badge/FrisoFlo-FF4500?logo=reddit&logoColor=white)](https://www.reddit.com/user/FrisoFlo/)
-[![Twitter](https://img.shields.io/badge/FrisoFlo-000000?logo=X&logoColor=white)](https://twitter.com/FrisoFlo)
-[![Discord](https://img.shields.io/badge/friflo-5865F2?logo=discord&logoColor=white)](https://discord.gg/nFfrhgQkb8)
-[![LinkedIn](https://img.shields.io/badge/Ullrich%20Praetz-0A66C2?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ullrich-praetz/)
+

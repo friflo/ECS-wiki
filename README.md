@@ -121,7 +121,7 @@ To solve other common use-cases not covered by basic implementations this ECS pr
 > - Query or system execution
 
 > Aims for 100% test coverage:  
-> Code coverage: [![codecov](https://img.shields.io/codecov/c/gh/friflo/Friflo.Engine.ECS?logo=codecov&logoColor=white&label=codecov)](https://app.codecov.io/gh/friflo/Friflo.Engine.ECS/tree/main/src/ECS)
+> Code coverage: [![codecov](https://img.shields.io/codecov/c/gh/friflo/Friflo.Engine.ECS?logoColor=white&label=codecov)](https://app.codecov.io/gh/friflo/Friflo.Engine.ECS/tree/main/src/ECS)
 
 <br>
 

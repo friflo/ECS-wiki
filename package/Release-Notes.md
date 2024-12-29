@@ -20,7 +20,7 @@ Every new version is backward compatible to earlier versions.
 Exceptions are labeled as  **Breaking change** / **Changed behavior**. These changes are made only on rarely used features.
 
 Releases on nuget are available at  
-[![nuget](https://img.shields.io/nuget/v/Friflo.Engine.ECS?logo=nuget&logoColor=white)](https://www.nuget.org/packages/Friflo.Engine.ECS)
+[![nuget](https://img.shields.io/nuget/v/Friflo.Engine.ECS?logoColor=white)](https://www.nuget.org/packages/Friflo.Engine.ECS)
 
 Detailed information for each release at
 [GitHub - Release Tags](https://github.com/friflo/Friflo.Engine.ECS/releases)
