@@ -134,9 +134,10 @@ protected override void OnAddStore(EntityStore store)
 ```
 
 Use cases for custom systems are:
+- Handle Player Input
+- Execute multiple / nested queries in a single system. E.g. to execute them in nested loops.
 - Need to make structural changes via the parent group `CommandBuffer`.
 - Want direct access to an `EntityStore`.
-- Execute multiple / nested queries in a single system. E.g. to execute them in nested loops.
 
 ```cs
 public static void CustomSystem()
