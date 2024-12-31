@@ -34,10 +34,20 @@ public static void AddEventHandlers()
 ## EventRecorder
 
 An `EventRecorder` record all component and tag changes of an `EntityStore` when `Enabled`.  
-An `EventFilter` is used to process events recorded by an `EventRecorder`.  
+It its required for queries using `EventFilter`'s.
+
+### EventFilter
+
+The intended use-case for `EventFilter`'s are queries.  
+When iterating the entities of a query result it can be checked if an entity was changed by an operation matching the specified filters.  
+E.g a specific component or tag was added.
+```cs
+    query.EventFilter.ComponentAdded<Position>();
+    query.EventFilter.TagAdded<MyTag1>();
+```
+
 `EventFilter`'s can be used on its own or within a query like in the example below.  
 All events that need to be filtered - like added/removed components/tags - can be added to the `EventFilter`.  
-E.g. `ComponentAdded<Position>()` or `TagAdded<MyTag1>`.  
 
 ```csharp
 public static void FilterEntityEvents()
