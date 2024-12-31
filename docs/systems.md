@@ -161,7 +161,7 @@ Each `QuerySystem` can **override** the following methods.
 
 The execution of these methods of the group children is shown in the pseudo below.  
 Each group has a single `CommandBuffer` per `EntityStore`.  
-Its `Playback()` is called after execution of all `OnUpdate()` methods.
+`CommandBuffer.Playback()` is called after execution of all `OnUpdate()` methods.
 
 Execution order using a **single** `EntityStore`.
 ```cs
