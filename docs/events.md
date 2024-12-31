@@ -34,7 +34,9 @@ public static void AddEventHandlers()
 ## EventRecorder
 
 An `EventRecorder` record all component and tag changes of an `EntityStore` when `Enabled`.  
-It its required for queries using `EventFilter`'s.
+A recorder is required for queries using `EventFilter`'s.  
+To clear all recorded events use `store.EventRecorder.ClearEvents()` typically performed for every new frame.  
+To stop recording events entirely use `store.EventRecorder.Enabled = false`.
 
 ### EventFilter
 
