@@ -49,7 +49,7 @@ E.g a specific component or tag was added.
     query.EventFilter.TagAdded<MyTag1>();
 ```
 
-`EventFilter`'s can be used on its own or within a query, see the examples below below.  
+`EventFilter`'s can be used on its own or within a query, see the examples below.  
 All events that need to be filtered - like added/removed components/tags - can be added to the `EventFilter`.  
 
 ```csharp
