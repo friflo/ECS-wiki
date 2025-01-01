@@ -49,7 +49,7 @@ E.g a specific component or tag was added.
     query.EventFilter.TagAdded<MyTag1>();
 ```
 
-`EventFilter`'s can be used on its own or within a query like in the example below.  
+`EventFilter`'s can be used on its own or within a query, see the examples below.  
 All events that need to be filtered - like added/removed components/tags - can be added to the `EventFilter`.  
 
 ```csharp
@@ -72,6 +72,28 @@ public static void FilterEntityEvents()
     // > id: 1  [] - hasEvent: False
     // > id: 2  [Position] - hasEvent: True
     // > id: 3  [#MyTag1] - hasEvent: True
+}
+```
+
+```csharp
+public static void FilterEventsQuery()
+{
+        var store = new EntityStore();
+        store.EventRecorder.Enabled = true; // required for EventFilter
+
+        store.CreateEntity(new Position(), Tags.Get<MyTag1>());
+
+        var query = store.Query<Position, MyTag1>();
+        query.EventFilter.ComponentAdded<Position>();
+        query.EventFilter.TagAdded<MyTag1>();
+
+        query.ForEachEntity((ref Position, Entity entity) =>
+        {
+            bool hasEvent = query.HasEvent(entity.Id);
+            Console.WriteLine($"{entity} - hasEvent: {hasEvent}");
+        });
+
+        // > [Position] - hasEvent: True
 }
 ```
 
