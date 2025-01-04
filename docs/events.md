@@ -69,6 +69,44 @@ Update new: 'Paul'  old: 'Peter'
 Remove old: 'Paul
 ```
 
+## Tag events
+
+Event handlers for tag changes notify which entity tags are changed.
+- `AddedTags` - tags added to an entity.
+- `RemovedTags` - tags removed from an entity.
+- `ChangedTags` - tags added or removed from an entity.
+
+```csharp
+public struct MyTag1 : ITag { }
+public struct MyTag2 : ITag { }
+
+public static void TagEvents()
+{
+    var store  = new EntityStore();
+    var entity = store.CreateEntity();
+    entity.OnTagsChanged += ev =>
+    {
+        string log = "";
+        if (ev.AddedTags.  Has<MyTag1>()) { log += ", added:   MyTag1"; }
+        if (ev.RemovedTags.Has<MyTag1>()) { log += ", removed: MyTag1"; }
+        
+        if (ev.AddedTags.  Has<MyTag2>()) { log += ", added:   MyTag2"; }
+        if (ev.RemovedTags.Has<MyTag2>()) { log += ", removed: MyTag2"; }
+        
+        Console.WriteLine($"entity {entity.Id}{log}");
+    };
+    entity.AddTag<MyTag1>();
+    entity.RemoveTag<MyTag1>();
+    entity.AddTags(Tags.Get<MyTag1, MyTag2>());
+}
+```
+
+Log Output 
+```js
+entity 1, added:   MyTag1
+entity 1, removed: MyTag1
+entity 1, added:   MyTag1, added:   MyTag2
+```
 <br/>
 
 
