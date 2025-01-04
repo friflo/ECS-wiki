@@ -148,7 +148,7 @@ Benchmark: [C# ECS Benchmarks](https://github.com/friflo/ECS.CSharp.Benchmark-co
 
 ## GitHub
 
-[![Star History Chart](https://api.star-history.com/svg?repos=friflo/Friflo.Engine.ECS&type=Timeline)](https://github.com/friflo/Friflo.Engine.ECS)
+[![Star History Chart](https://api.star-history.com/svg?repos=friflo/Friflo.Engine.ECS)](https://github.com/friflo/Friflo.Engine.ECS)
 
 💖 In case you like this project?  
 Leave a ⭐ on [GitHub ⋅ friflo/Friflo.Engine.ECS](https://github.com/friflo/Friflo.Engine.ECS)
