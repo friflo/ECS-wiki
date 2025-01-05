@@ -413,9 +413,9 @@ Writing the entities of a store to a JSON file is done with `WriteStore()`.
 Reading the entities of a JSON file into a store with `ReadIntoStore()`.
 
 Following attributes can be used to customize JSON serialization
-- `[ComponentKey("data")]` - the attributed class uses `"data"` as component key
-- `[Ignore]` - the attributed field is ignored
-- `[Serialize("n")]` - the attributed field uses `"n"` as field key
+- `[ComponentKey("data")]` - the attributed component `struct` uses `"data"` as component key
+- `[Ignore]` - the attributed component field is ignored
+- `[Serialize("n")]` - the attributed component field uses `"n"` as JSON key
 
 ```csharp
 [ComponentKey("data")]  // use "data" as component key in JSON
