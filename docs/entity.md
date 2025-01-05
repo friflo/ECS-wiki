@@ -413,23 +413,34 @@ Writing the entities of a store to a JSON file is done with `WriteStore()`.
 Reading the entities of a JSON file into a store with `ReadIntoStore()`.
 
 ```csharp
+[ComponentKey("data")]  // use "data" as component key in JSON
+struct DataComponent : IComponent
+{
+    [Ignore]            // field is ignored in JSON
+    public int          temp;
+    
+    [Serialize("n")]    // use "n" as field key in JSON 
+    public string       name;
+}
+
 public static void JsonSerialization()
 {
     var store = new EntityStore();
     store.CreateEntity(new EntityName("hello JSON"));
     store.CreateEntity(new Position(1, 2, 3));
+    store.CreateEntity(new DataComponent{ temp = 42, name = "foo" });
 
     // --- Write store entities as JSON array
     var serializer = new EntitySerializer();
     var writeStream = new FileStream("entity-store.json", FileMode.Create);
     serializer.WriteStore(store, writeStream);
     writeStream.Close();
-    
+
     // --- Read JSON array into new store
     var targetStore = new EntityStore();
     serializer.ReadIntoStore(targetStore, new FileStream("entity-store.json", FileMode.Open));
-    
-    Console.WriteLine($"entities: {targetStore.Count}"); // > entities: 2
+
+    Console.WriteLine($"entities: {targetStore.Count}"); // > entities: 3
 }
 ```
 
@@ -444,6 +455,11 @@ The JSON content of the file `"entity-store.json"` created with `serializer.Writ
     "id": 2,
     "components": {
         "pos": {"x":1,"y":2,"z":3}
+    }
+},{
+    "id": 3,
+    "components": {
+        "data": {"n":"foo"}
     }
 }]
 ```
