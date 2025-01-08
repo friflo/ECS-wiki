@@ -181,22 +181,47 @@ public static void FilterEventsQuery()
 
 # Signals
 
-**Signals** are similar to events. They are used to **send** and **subscribe** **custom events** on entity level in an application.  
+**Signals** are similar to events.  
+They are used to **send** and **subscribe** **custom events** on entity level in an application.  
 To prevent heap allocations signal types must be structs.  
-They have the same characteristics as events described in the section above.  
-The use of `Signal`'s is intended for scenarios when something happens occasionally.  
-This avoids the need to check a state every frame.
+
+The use of signals is intended for scenarios when something happens occasionally.  
+This avoids the need to check a state every frame to detect a specific condition.  
+For example signals could be used to react on collisions between entities.
+
+Signal handlers can be added as shown below and remove if needed.
+```csharp
+    var handler = entity.AddSignalHandler<MyEvent2>(signal => { ... });
+    entity.RemoveSignalHandler(handler);
+```
+Multiple signal handlers can be added to an entity and are automatically removed if the entity is deleted.
 
 ```csharp
-public readonly struct MySignal { } 
+public struct CollisionSignal {
+    public Entity other;
+}
 
 public static void AddSignalHandler()
 {
-    var store   = new EntityStore();
-    var entity  = store.CreateEntity();
-    entity.AddSignalHandler<MySignal>(signal => { Console.WriteLine(signal); }); // > entity: 1 - signal > MySignal    
-    entity.EmitSignal(new MySignal());
+    var store  = new EntityStore();
+    var player = store.CreateEntity(1);
+    player.AddSignalHandler<CollisionSignal>(signal => {
+        Console.WriteLine($"player collision with entity: {signal.Event.other.Id}");
+        // > player collision with entity: 2
+    });
+    var npc = store.CreateEntity(2);
+    // ... detect collisions with a collision system. In case of collision:
+    player.EmitSignal(new CollisionSignal{ other = npc });
 }
 ```
+
+> **Note** Avoid emitting signals inside a query loop.
+
+When using a query loop to detect collisions signals should not be emitted directly.  
+The the event handler may perform a structural change - e.g removing or adding a components.  
+Doing this will invalidate the query loop.  
+To avoid this detected collisions can be stored inside the query loop in a `List<>`.  
+After the collision loop finishes collision events can me emitted and are able to perform structural changes.
+
 <br/>
 
