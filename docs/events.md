@@ -189,7 +189,7 @@ The use of signals is intended for scenarios when something happens occasionally
 This avoids the need to check a state every frame to detect a specific condition.  
 For example signals could be used to react on collisions between entities.
 
-Signal handlers can be added as shown below and remove if needed.
+Signal handlers can be added as shown below and removed if needed.
 ```csharp
     var handler = entity.AddSignalHandler<MyEvent2>(signal => { ... });
     entity.RemoveSignalHandler(handler);
@@ -221,7 +221,7 @@ When using a query loop to detect collisions signals should not be emitted direc
 The the event handler may perform a structural change - e.g removing or adding a components.  
 Doing this will invalidate the query loop.  
 To avoid this detected collisions can be stored inside the query loop in a `List<>`.  
-After the collision loop finishes collision events can me emitted and are able to perform structural changes.
+After the collision loop finishes collision events can be emitted and are able to perform structural changes.
 
 <br/>
 
