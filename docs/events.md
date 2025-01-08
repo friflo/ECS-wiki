@@ -220,8 +220,8 @@ public static void AddSignalHandler()
 When using a query loop to detect collisions signals should not be emitted directly.  
 The the event handler may perform a structural change - e.g removing or adding a components.  
 Doing this will invalidate the query loop.  
-To avoid this detected collisions can be stored inside the query loop in a `List<>`.  
-After the collision loop finishes collision events can be emitted and are able to perform structural changes.
+To avoid this detected collisions can be stored inside the query loop in a `List<Event, CollisionSignal>`.  
+After the collision loop finishes collision events can be emitted and are allowed to perform structural changes.
 
 <br/>
 
