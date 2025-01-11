@@ -29,6 +29,12 @@ Detailed information for each release at
 
 # 3.x Releases
 
+## 3.0.1
+
+- Simplify - Made `BaseSystem.OnAddStore()` and `BaseSystem.OnRemoveStore()` noop methods.  
+  An `override` of these method are not required to call the base implementation anymore which happened accidentally.
+- Fixed `AsSpan...<>()` when used in multithreaded queries. See https://github.com/friflo/Friflo.Engine.ECS/issues/47
+
 ## 3.0.0
 
 Finally after 6 months in **preview** all new features are completed.
