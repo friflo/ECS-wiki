@@ -23,6 +23,11 @@ Using Systems is optional but they have some significant advantages.
   `root.Update()` will execute every system on all worlds.
 
 
+# Example
+
+The example shows the setup of a small system hierarchy.  
+Multiple systems can be added to a system hierarchy.
+
 ```csharp
 public static void HelloSystem()
 {
@@ -53,6 +58,10 @@ Adding the `PulseSystem` below to the `SystemRoot` above is trivial.
 This system uses a `foreach (var entity in Query.Entities)` as an alternative to `Query.ForEachEntity((...) => {...})`  
 to iterate the query result.
 
+The example also shows how to set a `Filter` in a system constructor to limit the query result to entities matching this `Filter`.  
+See all available filters at the [QueryFilter - API](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/QueryFilter.md).
+
+
 ```csharp
 struct Pulsating : ITag { }
 
@@ -70,6 +79,26 @@ class PulseSystem : QuerySystem<Scale3>
     }
 }
 ```
+
+The system hierarchy can be modified at runtime.  
+New systems can be added, inserted or removed.
+
+```cs
+    var root = new SystemRoot();
+    var mySystem1 = new MySystem1();
+    var mySystem2 = new MySystem2();
+    root.Add(mySystem1);
+    root.Insert(1, mySystem2);
+    root.Remove(mySystem1);
+```
+
+To prevent running a system when executing `Update()` without changing the hierarchy
+a system can be disabled with
+```cs
+    system.Enabled = false;  
+```
+
+<br/>
 
 # System monitoring
 
