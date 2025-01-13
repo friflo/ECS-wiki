@@ -41,6 +41,15 @@ public static void ComponentLookup()
 }
 ```
 
+> **Important**  
+> When changing the indexed component value `entity.AddComponent<>()` must be used to enable the store updating the index.  
+> Changing the indexed component with `ref` access don't update the index.  
+> E.g. with `entity.GetComponent<>()` or within a `Query()` using the `ref` parameter of a component.
+```cs
+store.AddComponent(new TileComponent{ tileId = 33 }); // OK
+store.GetComponent<TileComponent>().tileId = 33;      // No index update
+```
+
 ## Range query
 
 In case the indexed component type implements `IComparable<>` like int, string, DateTime, ... range queries can be executed.  
