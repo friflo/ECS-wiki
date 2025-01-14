@@ -206,13 +206,17 @@ public static void AddSignalHandler()
     var store  = new EntityStore();
     var player = store.CreateEntity(1);
     player.AddSignalHandler<CollisionSignal>(signal => {
-        Console.WriteLine($"player collision with entity: {signal.Event.other.Id}");
-        // > player collision with entity: 2
+        Console.WriteLine($"collision signal - entity: {signal.Entity.Id} other: {signal.Event.other.Id}");
     });
     var npc = store.CreateEntity(2);
-    // ... detect collisions with a collision system. In case of collision:
+    // ... detect collision. e.g. with a collision system. In case of collision:
     player.EmitSignal(new CollisionSignal{ other = npc });
 }
+```
+
+Log Output 
+```js
+collision signal - entity: 1 other: 2
 ```
 
 > **Note** Avoid emitting signals inside a query loop.
