@@ -53,7 +53,7 @@ public static void ComponentEvents()
                 Remove => $"old: {ev.OldComponent<EntityName>()}",
                 _      => null
             };
-            Console.WriteLine($"{ev.Action} {log}");
+            Console.WriteLine($"entity: {ev.Entity.Id} - {ev.Action} {log}");
         }
     };
     entity.AddComponent(new EntityName("Peter"));
@@ -64,9 +64,9 @@ public static void ComponentEvents()
 
 Log Output 
 ```js
-Add new: 'Peter'
-Update new: 'Paul'  old: 'Peter'
-Remove old: 'Paul
+entity: 1 - Add new: 'Peter'
+entity: 1 - Update new: 'Paul'  old: 'Peter'
+entity: 1 - Remove old: 'Paul'
 ```
 
 ## Tag events
@@ -87,13 +87,13 @@ public static void TagEvents()
     entity.OnTagsChanged += ev =>
     {
         string log = "";
-        if (ev.AddedTags.  Has<MyTag1>()) { log += ", added:   MyTag1"; }
-        if (ev.RemovedTags.Has<MyTag1>()) { log += ", removed: MyTag1"; }
+        if (ev.AddedTags.  Has<MyTag1>()) { log += " added:   MyTag1"; }
+        if (ev.RemovedTags.Has<MyTag1>()) { log += " removed: MyTag1"; }
         
-        if (ev.AddedTags.  Has<MyTag2>()) { log += ", added:   MyTag2"; }
-        if (ev.RemovedTags.Has<MyTag2>()) { log += ", removed: MyTag2"; }
+        if (ev.AddedTags.  Has<MyTag2>()) { log += " added:   MyTag2"; }
+        if (ev.RemovedTags.Has<MyTag2>()) { log += " removed: MyTag2"; }
         
-        Console.WriteLine($"entity {entity.Id}{log}");
+        Console.WriteLine($"entity: {entity.Id} -{log}");
     };
     entity.AddTag<MyTag1>();
     entity.RemoveTag<MyTag1>();
@@ -103,9 +103,9 @@ public static void TagEvents()
 
 Log Output 
 ```js
-entity 1, added:   MyTag1
-entity 1, removed: MyTag1
-entity 1, added:   MyTag1, added:   MyTag2
+entity: 1 - added:   MyTag1
+entity: 1 - removed: MyTag1
+entity: 1 - added:   MyTag1 added:   MyTag2
 ```
 <br/>
 
