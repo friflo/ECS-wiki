@@ -134,7 +134,8 @@ Link relations are added, removed and queried with
     entity.AddRelation(new AttackRelation { target = entity2 });
     entity.RemoveRelation <AttackRelation>(entity1);
     entity.GetRelations   <AttackRelation>();               // O(1)
-    entity.GetRelation    <AttackRelation,Entity>(entity2); // O(1)
+    entity.GetRelation    <AttackRelation,Entity>(entity2); // O(N)
+    // N: number of relations on a single entity
 ```
 
 Methods to mutate and query link relation are at

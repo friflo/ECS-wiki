@@ -32,7 +32,8 @@ Relations are added, removed and queried with
     entity.AddRelation(new InventoryItem { type = ItemType.Axe  });
     entity.RemoveRelation <InventoryItem,ItemType>(ItemType.Coin);
     entity.GetRelations   <InventoryItem>();                        // O(1)
-    entity.GetRelation    <InventoryItem,ItemType>(ItemType.Axe);   // O(1)
+    entity.GetRelation    <InventoryItem,ItemType>(ItemType.Axe);   // O(N)
+    // N: number of relations on a single entity
 ```
 
 The following example illustrates the state changes of a specific entity regarding its relations.  
@@ -62,7 +63,7 @@ public static void Relations()
     // Get all relations added to an entity.   O(1)
     entity.GetRelations  <InventoryItem>();                       // { Coin, Axe }
     
-    // Get a specific relation from an entity. O(1)
+    // Get a specific relation from an entity. O(N)
     entity.GetRelation   <InventoryItem,ItemType>(ItemType.Coin); // {type=Coin, count=42}
     
     // Remove a specific relation from an entity

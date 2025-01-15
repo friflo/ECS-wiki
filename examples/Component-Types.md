@@ -159,7 +159,8 @@ Link relations are added, removed and queried with
     entity.AddRelation(new AttackRelation { target = entity2 });
     entity.RemoveRelation <AttackRelation>(entity1);
     entity.GetRelations   <AttackRelation>();               // O(1)
-    entity.GetRelation    <AttackRelation,Entity>(entity2); // O(1)
+    entity.GetRelation    <AttackRelation,Entity>(entity2); // O(N)
+    // N: number of relations on a single entity
 ```
 
 Methods to mutate and query link relation are at
@@ -243,7 +244,8 @@ Relations are added, removed and queried with
     entity.AddRelation(new InventoryItem { type = ItemType.Axe  });
     entity.RemoveRelation <InventoryItem,ItemType>(ItemType.Coin);
     entity.GetRelations   <InventoryItem>();                        // O(1)
-    entity.GetRelation    <InventoryItem,ItemType>(ItemType.Axe);   // O(1)
+    entity.GetRelation    <InventoryItem,ItemType>(ItemType.Axe);   // O(N)
+    // N: number of relations on a single entity
 ```
 
 The following example illustrates the state changes of a specific entity regarding its relations.  
