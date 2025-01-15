@@ -15,7 +15,7 @@ The entity containing a link component / relation is the **source** entity.
 There are two interfaces used to define entity relationships with entity links:
 
 1. [ILinkComponent](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/ILinkComponent.md) -
-   An entity can have only one link component at a time.
+   An entity can have only one link component per type at a time.
 
 2. [ILinkRelation](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/ILinkRelation.md) -
    An entity can have multiple link relations - one per **target** entity.
@@ -78,7 +78,7 @@ for the challenge to improve the feature set and performance of this project!
 ## Link Component
 
 A link component enables adding a link to another **target** entity.  
-An entity can have only one link component at a time.  
+An entity can have only one link component per type at a time.  
 Link components are added, removed and queried like common components with
 ```cs
     entity.AddComponent(new AttackComponent { target = entity2 });
