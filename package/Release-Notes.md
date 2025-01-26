@@ -29,6 +29,12 @@ Detailed information for each release at
 
 # 3.x Releases
 
+## 3.0.2
+- Implemented `Entity.Equals(object)` and `Entity.GetHashCode()` to enable use in `Dictionary<Entity,>` and `HashSet<Entity>`.  
+  See [FitHub Issue#56 - Entity.Equals() throws "Not implemented to avoid excessive boxing."](https://github.com/friflo/Friflo.Engine.ECS/issues/56)
+- Fixed [GitHub Issue#55 - SystemRoot.GetPerfLog() throws ArgumentOutOfRange when system names are too long.](https://github.com/friflo/Friflo.Engine.ECS/issues/55).  
+  The length of the System name column can now be customized in `system.GetPerfLog(int nameColLen)`.
+
 ## 3.0.1
 
 - Simplify - Made `BaseSystem.OnAddStore()` and `BaseSystem.OnRemoveStore()` noop methods.  
