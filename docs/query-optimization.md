@@ -159,6 +159,11 @@ These changes are adding / removing components, tags or child entities and the c
 Note: `CommandBuffer` is **_not_** thread safe. `CommandBuffer.Synced` **_is_** thread safe.  
 After `RunParallel()` returns these changes can be applied to the `EntityStore` by calling `CommandBuffer.Playback()`.
 
+**Re-use QueryJob**
+
+The `QueryJob` returned by `query.ForEach(...)` is intended to be re-used.  
+This ensures that subsequent calls to `queryJob.RunParallel()` do not perform allocations on GC heap.
+
 **Recommendation**  
 A parallel query achieves notable performance gains in case using only arithmetic computations like * / + - sin(), cos(), ... in the loop.  
 
