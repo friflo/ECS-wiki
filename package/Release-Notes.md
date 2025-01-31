@@ -29,6 +29,12 @@ Detailed information for each release at
 
 # 3.x Releases
 
+## 3.0.3
+- Add Native AOT support for specialized component types and relations introduced in v3.0.0:  
+  `IIndexedComponent<>`, `ILinkComponent`, `IRelation<>` and `ILinkRelation`.  
+  These types must be registered with: `NativeAOT.RegisterIndexedComponent()` or `NativeAOT.RegisterRelation()`.
+
+
 ## 3.0.2
 - Implemented `Entity.Equals(object)` and `Entity.GetHashCode()` to enable use in `Dictionary<Entity,>` and `HashSet<Entity>`.  
   See [FitHub Issue#56 - Entity.Equals() throws "Not implemented to avoid excessive boxing."](https://github.com/friflo/Friflo.Engine.ECS/issues/56)
