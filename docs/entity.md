@@ -214,6 +214,29 @@ public static void AddScript()
     Console.WriteLine($"data: {myScript.data}");        // > data: 123
 }
 ```
+
+`Script`s enable to `override` their `Start()` and `Update()`.
+```cs
+public class MyScript : Script
+{
+    public override void Start()  { }
+    public override void Update() { }
+}
+```
+
+These methods need to be called manually. The ECS has no build mechanism to execute these methods.    
+The ECS provide only access to all scripts added to entities of an `EntityStore`.  
+E.g. Executing `Update()` of all scripts in a store use:
+```cs
+foreach (var scripts in store.EntityScripts) {
+    foreach (var script in scripts) {
+        script.Update();
+    }
+}
+```
+
+
+
 <br/>
 
 
