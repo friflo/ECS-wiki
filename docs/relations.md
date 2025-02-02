@@ -72,6 +72,14 @@ public static void Relations()
 }
 ```
 
+The relations of an `Entity` can be modified within a `foreach` loop by accessing the elements by `ref`.
+```cs
+    var relations = entity.GetRelations<InventoryItem>();
+    foreach(ref var relation in relations) {
+        relation.count += 1;
+    }
+````
+
 > **Remarks**  
 > Breaking changes since `3.0.0-preview.16`
 >
