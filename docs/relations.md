@@ -78,15 +78,18 @@ The relations of an `Entity` can be modified within a `foreach` loop by accessin
     foreach(ref var relation in relations) {
         relation.count += 1;
     }
-````
+```
+> **Important**  
+> Within loop iteration relations must not be added or removed.  
+> Doing this invalidates the iteration result.
 
-> **Remarks**  
-> Breaking changes since `3.0.0-preview.16`
->
-> 1. To avoid mixing up relations with components accidentally `IRelation` does not extends `IComponent` anymore.
-> 2. Renamed public API's  
-     `IRelationComponent<>` -> `IRelation<>`  
-     `RelationComponents<>` -> `Relations<>`
+
+**Note** - Breaking changes since `3.0.0-preview.16`
+
+1. To avoid mixing up relations with components accidentally `IRelation` does not extends `IComponent` anymore.
+2. Renamed public API's  
+   `IRelationComponent<>` -> `IRelation<>`  
+   `RelationComponents<>` -> `Relations<>`
 
 <br/>
 
