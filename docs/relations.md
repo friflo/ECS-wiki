@@ -97,11 +97,6 @@ public static void AllRelations()
     entity2.AddRelation(new InventoryItem { type = ItemType.Axe,  count =  1 });
     
     var allRelations = store.EntityRelations<InventoryItem>();
-    // all entities with relations
-    var uniqueEntities = allRelations.Entities;         // count: 2
-    
-    // all entity relation pairs
-    var allRelations = store.EntityRelations<InventoryItem>();
     
     // all entities with relations
     var uniqueEntities = allRelations.Entities;     // count: 2
