@@ -83,6 +83,34 @@ The relations of an `Entity` can be modified within a `foreach` loop by accessin
 > Within loop iteration relations must not be added or removed.  
 > Doing this invalidates the iteration result.
 
+Retrieving all entity relations is shown by the example below.
+```cs
+public static void AllRelations()
+{
+    var store   = new EntityStore();
+    var entity1 = store.CreateEntity();
+    var entity2 = store.CreateEntity();
+    
+    // add relations to multiple entities
+    entity1.AddRelation(new InventoryItem { type = ItemType.Coin, count = 10 });
+    entity2.AddRelation(new InventoryItem { type = ItemType.Coin, count = 20 });
+    entity2.AddRelation(new InventoryItem { type = ItemType.Axe,  count =  1 });
+    
+    var allRelations = store.EntityRelations<InventoryItem>();
+    // all entities with relations
+    var uniqueEntities = allRelations.Entities;         // count: 2
+    
+    // all entity relation pairs
+    var allRelations = store.EntityRelations<InventoryItem>();
+    
+    // all entities with relations
+    var uniqueEntities = allRelations.Entities;     // count: 2
+    
+    // all entity relation pairs
+    var (entities, relations) = allRelations.Pairs; // count: 3
+}
+```
+
 
 **Note** - Breaking changes since `3.0.0-preview.16`
 
