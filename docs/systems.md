@@ -219,41 +219,41 @@ Execution order when using **multiple** `EntityStore`'s.
 <br/>
 
 
-# Custom System
+# Customize Systems
 
-In cases a system requires code which goes beyond common query execution a system can be customized.  
+In cases a system requires code which goes beyond common `Query` execution a system can be customized.  
 Therefor a system can override `OnAddStore()`
 ```cs
 protected override void OnAddStore(EntityStore store)
 ```
 
 Use cases for custom systems are:
-- Handle Player Input
+- Handle user input.
+- Moving the Camera. E.g. based on user input.
 - Execute multiple / nested queries in a single system.  
   E.g. to detect collisions between two different entity sets and iterating both sets in nested loops.
 - Need to make structural changes via the parent group `CommandBuffer`.
 - Want direct access to an `EntityStore`.
 
+## Extend `QuerySystem`
+
+Example show how to extend a `QuerySystem` and execute a `customQuery`.  
+A `QuerySystem` enable access to the `CommandBuffer`.
+
 ```cs
-public static void CustomSystem()
+public static void CustomizeQuerySystem()
 {
     var world = new EntityStore();
-    var entity = world.CreateEntity(new Position(0, 0, 0));
+    world.CreateEntity(new Position(0, 0, 0));
     var root = new SystemRoot(world) {
         new CustomQuerySystem()
     };
     root.Update(default);
-    
-    Console.WriteLine($"entity: {entity}");  // entity: id: 1  [Position, Velocity]
 }
-```
 
-The example shows how to create a custom system that
-- creates a `customQuery` and
-- make structural changes via the parent group `CommandBuffer`.
-
-The system adds a `Velocity` component for every entity having a `Position` component. 
-```cs
+// The example shows how to create a custom QuerySystem that:
+// - creates a customQuery and
+// - make structural changes via the parent group CommandBuffer.
 class CustomQuerySystem : QuerySystem
 {
     private ArchetypeQuery<Position> customQuery;
@@ -262,12 +262,46 @@ class CustomQuerySystem : QuerySystem
         customQuery = store.Query<Position>();
     }
     
-    /// Executes the customQuery instead of the base class Query.
     protected override void OnUpdate() {
         var buffer = CommandBuffer;
+        // Executes the customQuery instead of the base class Query.
         customQuery.ForEachEntity((ref Position component1, Entity entity) => {
             buffer.AddComponent(entity.Id, new Velocity());
         });
+    }
+}
+```
+
+## Extend `BaseSystem`
+
+Example show how to extend a `BaseSystem` to call arbitrary method ony the `EntityStore`.  
+In this case to deal with `UniqueEntity`'s.  
+*Note:* A `BaseSystem` has no access to the `CommandBuffer`.
+
+```cs
+public static void CustomizeBaseSystem()
+{
+    var world = new EntityStore();
+    world.CreateEntity(new UniqueEntity("Camera"), new Position(0, 0, 0));
+    var root = new SystemRoot(world) {
+        new CameraSystem()
+    };
+    root.Update(default);
+}
+
+// Example of a system that does not require a Query.
+// E.g. find and access a UniqueEntity as shown below. 
+class CameraSystem : BaseSystem
+{
+    private Entity camera;
+    
+    protected override void OnAddStore(EntityStore store) {
+        camera = store.GetUniqueEntity("Camera");
+    }
+    
+    protected override void OnUpdateGroup() {
+        ref var position = ref camera.GetComponent<Position>();
+        // Update camera position based on user input
     }
 }
 ```
