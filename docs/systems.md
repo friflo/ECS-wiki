@@ -274,7 +274,7 @@ class CustomQuerySystem : QuerySystem
 
 ## Extend `BaseSystem`
 
-Example show how to extend a `BaseSystem` to call arbitrary method ony the `EntityStore`.  
+Example shows how to extend a `BaseSystem` to call arbitrary methods on the `EntityStore`.  
 In this case to deal with `UniqueEntity`'s.  
 *Note:* A `BaseSystem` has no access to the `CommandBuffer`.
 
