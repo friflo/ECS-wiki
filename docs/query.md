@@ -123,7 +123,7 @@ A structural changes is:
 - Add / Remove Components
 - Add / Remove Tags
 
-Performing structural changes within a query result in unexpected entity states without any notice.  
+Performing structural changes within a query may result in unexpected entity states without any notice.  
 This behavior applies to all ECS implementations out there. C#, C/C++, ...  
 
 The result of this behavior are bugs which hard to find.  
