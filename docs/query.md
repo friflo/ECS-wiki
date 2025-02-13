@@ -72,6 +72,9 @@ As mentioned above by storing components in arrays aka `Chunks` additional [Quer
 <br/>
 
 
+## StructuralChangeException
+
+
 ## Query Filter
 
 To reduced the number of results returned by a query additional filters can by added to a `Query<>()`.  
