@@ -72,6 +72,50 @@ As mentioned above by storing components in arrays aka `Chunks` additional [Quer
 <br/>
 
 
+## Query Filter
+
+To reduced the number of results returned by a query additional filters can by added to a `Query<>()`.  
+These filter can be used include or exclude entities with specific components or tags in the result.
+
+**Tag filter examples:**  
+To return only entities having both tags `MyTag1` *AND* `MyTag2` the query would look like.
+```csharp
+query = store.Query<EntityName>().AllTags(Tags.Get<MyTag1, MyTag2>());
+```
+
+To return entities having either the tag `MyTag1` *OR* `MyTag2` the query filter is.
+```csharp
+query = store.Query<EntityName>().AnyTags(Tags.Get<MyTag1, MyTag2>());
+```
+
+A filter can also be used to exclude specific entities from a query result.  
+To exclude entities from the result having the tag `MyTag3` the filter is.
+```csharp
+query = store.Query<EntityName>().WithoutAnyTags(Tags.Get<MyTag3>());
+```
+
+Multiple query filters can be combined by chaining.
+```csharp
+query = store.Query<EntityName>()
+            .AllTags(Tags.Get<MyTag1>())
+            .WithoutAnyTags(Tags.Get<MyTag3>());
+```
+
+**Component filter example:**  
+To return only entities having  the component `MyComponent` the query would look like.
+```csharp
+query = store.Query<EntityName>().AllComponents(ComponentTypes.Get<MyComponent>()
+```
+
+See all available filters at the [QueryFilter - API](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/QueryFilter.md)
+
+> *Notes*
+> - The `QueryFilter` can be changed after query creation until calling `FreezeFilter()`.
+> - A single `QueryFilter` instance can be shared by multiple queries if needed.
+
+<br/>
+
+
 ## StructuralChangeException
 
 The `StructuralChangeException` is introduced **v3.1.0** and will be thrown when performing **structural changes** within a query loop.
@@ -147,51 +191,6 @@ class QueryPositionSystem : QuerySystem<Position>
     }
 }
 ```
-
-<br/>
-
-
-## Query Filter
-
-To reduced the number of results returned by a query additional filters can by added to a `Query<>()`.  
-These filter can be used include or exclude entities with specific components or tags in the result.
-
-**Tag filter examples:**  
-To return only entities having both tags `MyTag1` *AND* `MyTag2` the query would look like.
-```csharp
-query = store.Query<EntityName>().AllTags(Tags.Get<MyTag1, MyTag2>());
-```
-
-To return entities having either the tag `MyTag1` *OR* `MyTag2` the query filter is.
-```csharp
-query = store.Query<EntityName>().AnyTags(Tags.Get<MyTag1, MyTag2>());
-```
-
-A filter can also be used to exclude specific entities from a query result.  
-To exclude entities from the result having the tag `MyTag3` the filter is.
-```csharp
-query = store.Query<EntityName>().WithoutAnyTags(Tags.Get<MyTag3>());
-```
-
-Multiple query filters can be combined by chaining.
-```csharp
-query = store.Query<EntityName>()
-            .AllTags(Tags.Get<MyTag1>())
-            .WithoutAnyTags(Tags.Get<MyTag3>());
-```
-
-**Component filter example:**  
-To return only entities having  the component `MyComponent` the query would look like.
-```csharp
-query = store.Query<EntityName>().AllComponents(ComponentTypes.Get<MyComponent>()
-```
-
-See all available filters at the [QueryFilter - API](https://github.com/friflo/Friflo.Engine-docs/blob/main/api/QueryFilter.md)
-
-> *Notes*
-> - The `QueryFilter` can be changed after query creation until calling `FreezeFilter()`.
-> - A single `QueryFilter` instance can be shared by multiple queries if needed.
-
 <br/>
 
 
