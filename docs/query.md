@@ -20,7 +20,7 @@ The runtime cost for non matching archetypes is **0**. This prevents *full table
 
 <br/>
 
-## Query creation
+# Query creation
 
 A query is created by specifying two aspects.
 
@@ -72,7 +72,7 @@ As mentioned above by storing components in arrays aka `Chunks` additional [Quer
 <br/>
 
 
-## Query Filter
+# Query Filter
 
 To reduced the number of results returned by a query additional filters can by added to a `Query<>()`.  
 These filter can be used include or exclude entities with specific components or tags in the result.
@@ -116,7 +116,7 @@ See all available filters at the [QueryFilter - API](https://github.com/friflo/F
 <br/>
 
 
-## StructuralChangeException
+# StructuralChangeException
 
 The `StructuralChangeException` is introduced **v3.1.0** and will be thrown when performing **structural changes** within a query loop.
 A structural changes is:
@@ -192,7 +192,7 @@ class QueryPositionSystem : QuerySystem<Position>
 }
 ```
 
-### Update projects prior v3.1.0
+## Update projects prior v3.1.0
 
 In case updating existing projects prior to **v3.1.0** and now observing `StructuralChangeException`'s
 the old behavior can be retained for specific queries with:
@@ -203,7 +203,7 @@ the old behavior can be retained for specific queries with:
 <br/>
 
 
-## CommandBuffer
+# CommandBuffer
 
 A `CommandBuffer` is used to record changes on multiple entities. E.g. `AddComponent()`.  
 These changes are applied to entities when calling `Playback()`.    
