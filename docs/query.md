@@ -202,6 +202,9 @@ the old behavior can be retained for specific queries to enable incremental migr
 ```
 After fixing a query loop the `ThrowOnStructuralChange = false` workaround should be removed!
 
+In case updating a project without getting `StructuralChangeException`'s  
+Congratulations - you read the Query documentation carefully!
+
 <br/>
 
 
