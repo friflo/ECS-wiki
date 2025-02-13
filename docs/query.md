@@ -194,11 +194,13 @@ class QueryPositionSystem : QuerySystem<Position>
 
 ## Projects prior v3.1.0
 
+Projects prior v3.1.0 did not throw `StructuralChangeException`'s.  
 In case updating existing projects prior to **v3.1.0** and now observing `StructuralChangeException`'s
-the old behavior can be retained for specific queries with:
+the old behavior can be retained for specific queries to enable incremental migration with:
 ```cs
     query.ThrowOnStructuralChange = false;
 ```
+After fixing a query loop the `ThrowOnStructuralChange = false` workaround should be removed!
 
 <br/>
 
