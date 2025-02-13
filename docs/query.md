@@ -74,8 +74,7 @@ As mentioned above by storing components in arrays aka `Chunks` additional [Quer
 
 ## StructuralChangeException
 
-The `StructuralChangeException` is introduced **v3.1.0** and will be thrown when performing structural changes within a query loop.  
-Docs will follow.
+The `StructuralChangeException` is introduced **v3.1.0** and will be thrown when performing structural changes within a query loop.
 
 This exception is similar to the behavior in C# when adding an element to a `List<>` within a loop iterating a list. E.g.
 ```cs
