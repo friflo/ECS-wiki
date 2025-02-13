@@ -192,7 +192,7 @@ class QueryPositionSystem : QuerySystem<Position>
 }
 ```
 
-## Update projects prior v3.1.0
+## Projects prior v3.1.0
 
 In case updating existing projects prior to **v3.1.0** and now observing `StructuralChangeException`'s
 the old behavior can be retained for specific queries with:
