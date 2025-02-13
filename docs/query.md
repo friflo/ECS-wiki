@@ -74,8 +74,16 @@ As mentioned above by storing components in arrays aka `Chunks` additional [Quer
 
 ## StructuralChangeException
 
-The `StructuralChangeException` is introduced **v3.1.0** and will be thrown when performing structural changes within a query loop.
+The `StructuralChangeException` is introduced **v3.1.0** and will be thrown when performing **structural changes** within a query loop.
 
+Performing structural changes within a query result in unexpected entity states without any notice.  
+This behavior applies to all ECS implementation out there. C#, C/C++, ...  
+
+The result of this behavior are bugs which hard to find.  
+The query causing the issue and the code point detecting the issue are often not colocated.  
+To prevent this problem a `StructuralChangeException` is now thrown instantaneously.
+
+*Explanation*  
 This exception is similar to the behavior in C# when adding an element to a `List<>` within a loop iterating a list. E.g.
 ```cs
     var list = new List<int> { 1, 2, 3 };
