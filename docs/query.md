@@ -118,7 +118,7 @@ The following use of a `Query<>()` demonstrates the issue and a solution to fix 
     buffer.Playback();
 ```
 
-In case of using systems the issue and its solution is show the the snippet below.
+In case of using systems the issue and its solution is show the by snippet below.
 ```cs
 public static void QuerySystemException() {
     var store = new EntityStore();
