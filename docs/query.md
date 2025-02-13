@@ -119,6 +119,9 @@ See all available filters at the [QueryFilter - API](https://github.com/friflo/F
 ## StructuralChangeException
 
 The `StructuralChangeException` is introduced **v3.1.0** and will be thrown when performing **structural changes** within a query loop.
+A structural changes is:
+- Add / Remove Components
+- Add / Remove Tags
 
 Performing structural changes within a query result in unexpected entity states without any notice.  
 This behavior applies to all ECS implementations out there. C#, C/C++, ...  
@@ -137,10 +140,7 @@ This exception is similar to the behavior in C# when adding an element to a `Lis
     }
 ```
 
-The counterpart of this behavior in this ECS is throwing a `StructuralChangeException` when structural changes are performed within a query loop.  
-A structural changes is:
-- adding / removing components
-- adding / removing tags
+The counterpart of this behavior in this ECS is throwing a `StructuralChangeException` when structural changes are performed within a query loop.
 
 The following use of a `Query<>()` demonstrates the issue and a solution to fix this.
 ```cs
@@ -191,6 +191,15 @@ class QueryPositionSystem : QuerySystem<Position>
     }
 }
 ```
+
+### Update projects prior v3.1.0
+
+In case updating existing projects prior to **v3.1.0** and now observing `StructuralChangeException`'s
+the old behavior can be retained for specific queries with:
+```cs
+    query.ThrowOnStructuralChange = false;
+```
+
 <br/>
 
 
