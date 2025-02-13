@@ -34,6 +34,15 @@ Detailed information for each release at
   Detailed information at [Query - StructuralChangeException](https://friflo.gitbook.io/friflo.engine.ecs/documentation/query#structuralchangeexception)
 - Component type `UniqueEntity` now implements `IIndexedComponent<string>` to improve performance of `EntityStore.GetUniqueEntity(string uid)`.
 
+## 3.0.4
+- `RelationsEnumerator<>.Current` returns entities now by ref. This enables to modify relations in a `GetRelations<>()` loop.
+   E.g.
+  ```cs
+    foreach (ref var relation in entity.GetRelations<MyRelation>()) {
+        relation.Value += 1;
+    }
+  ```
+
 ## 3.0.3
 - Add Native AOT support for specialized component types and relations introduced in v3.0.0:  
   `IIndexedComponent<>`, `ILinkComponent`, `IRelation<>` and `ILinkRelation`.  
