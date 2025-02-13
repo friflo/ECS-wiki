@@ -102,7 +102,7 @@ The following use of a `Query<>()` demonstrates the issue and a solution to fix 
         entity.Add(new EntityName("test"));
     });
     
-    // Solution: Ussing a CommandBuffer 
+    // Solution: Using a CommandBuffer 
     var buffer = store.GetCommandBuffer();
     query.ForEachEntity((ref Position position, Entity entity) => {
         buffer.AddComponent(entity.Id, new EntityName("test"));
