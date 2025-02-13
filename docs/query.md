@@ -74,8 +74,75 @@ As mentioned above by storing components in arrays aka `Chunks` additional [Quer
 
 ## StructuralChangeException
 
-New in v3.1.0.  
+The `StructuralChangeException` is introduced **v3.1.0** and will be thrown when performing structural changes within a query loop.  
 Docs will follow.
+
+This exception is similar to the behavior in C# when adding an element to a `List<>` within a loop iterating a list. E.g.
+```cs
+    var list = new List<int> { 1, 2, 3 };
+    foreach (var item in list) {
+        // throws InvalidOperationException : Collection was modified; enumeration operation may not execute.
+        list.Add(42);
+    }
+```
+
+The counterpart in ECS of this behavior is throwing a `StructuralChangeException` when structural changes are performed within a query loop.  
+A structural changes is:
+- adding / removing components
+- adding / removing tags
+
+The following use of a `Query<>()` demonstrates the issue and a solution to fix this.
+```cs
+    var store = new EntityStore();
+    store.CreateEntity(new Position());
+
+    var query = store.Query<Position>();
+    query.ForEachEntity((ref Position position, Entity entity) =>
+    {
+        // throws StructuralChangeException: within query loop. See: https://friflo.gitbook.io/friflo.engine.ecs/documentation/query#structuralchangeexception
+        entity.Add(new EntityName("test"));
+    });
+    
+    // Solution: Ussing a CommandBuffer 
+    var buffer = store.GetCommandBuffer();
+    query.ForEachEntity((ref Position position, Entity entity) => {
+        buffer.AddComponent(entity.Id, new EntityName("test"));
+    });
+    buffer.Playback();
+```
+
+In case of using systems the issue and its solution is show the the snippet below.
+```cs
+public static void QuerySystemException() {
+    var store = new EntityStore();
+    store.CreateEntity(new Position());
+
+    var root = new SystemRoot(store) {
+        new QueryPositionSystem()
+    };
+    root.Update(default); 
+}
+
+class QueryPositionSystem : QuerySystem<Position>
+{
+    protected override void OnUpdate() {
+        Query.ForEachEntity((ref Position component1, Entity entity) => {
+            // throws StructuralChangeException: within query loop. See: https://friflo.gitbook.io/friflo.engine.ecs/documentation/query#structuralchangeexception
+            entity.Add(new EntityName("test"));
+        });
+        
+        // Solution: Using the system CommandBuffer 
+        var buffer = CommandBuffer;
+        Query.ForEachEntity((ref Position component1, Entity entity) => {
+            buffer.AddComponent(entity.Id, new EntityName("test"));
+        });
+        // changes made via CommandBuffer are applied by parent group
+    }
+}
+```
+
+<br/>
+
 
 ## Query Filter
 
