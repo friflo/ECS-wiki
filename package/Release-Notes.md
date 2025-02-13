@@ -29,6 +29,11 @@ Detailed information for each release at
 
 # 3.x Releases
 
+## 3.1.0
+- Introduced `StructuralChangeException` which is thrown when executing **structural changes** within a `Query<>()` loop.  
+  Detailed information at [Query - StructuralChangeException](https://friflo.gitbook.io/friflo.engine.ecs/documentation/query#structuralchangeexception)
+- Component type `UniqueEntity` now implements `IIndexedComponent<string>` to improve performance of `EntityStore.GetUniqueEntity(string uid)`.
+
 ## 3.0.3
 - Add Native AOT support for specialized component types and relations introduced in v3.0.0:  
   `IIndexedComponent<>`, `ILinkComponent`, `IRelation<>` and `ILinkRelation`.  
