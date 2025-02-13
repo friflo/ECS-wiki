@@ -74,6 +74,8 @@ As mentioned above by storing components in arrays aka `Chunks` additional [Quer
 
 ## StructuralChangeException
 
+New in v3.1.0.  
+Docs will follow.
 
 ## Query Filter
 
