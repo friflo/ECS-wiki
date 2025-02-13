@@ -84,7 +84,7 @@ The query causing the issue and the code point detecting the issue are often not
 To prevent this problem a `StructuralChangeException` is now thrown instantaneously.
 
 *Explanation*  
-This exception is similar to the behavior in C# when adding an element to a `List<>` within a loop iterating a list. E.g.
+This exception is similar to the behavior in C# when adding an element to a `List<>` within a loop iterating the list. E.g.
 ```cs
     var list = new List<int> { 1, 2, 3 };
     foreach (var item in list) {
@@ -93,7 +93,7 @@ This exception is similar to the behavior in C# when adding an element to a `Lis
     }
 ```
 
-The counterpart in ECS of this behavior is throwing a `StructuralChangeException` when structural changes are performed within a query loop.  
+The counterpart of this behavior in this ECS is throwing a `StructuralChangeException` when structural changes are performed within a query loop.  
 A structural changes is:
 - adding / removing components
 - adding / removing tags
