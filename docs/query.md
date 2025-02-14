@@ -140,9 +140,9 @@ This exception is similar to the behavior in C# when adding an element to a `Lis
     }
 ```
 
-## Example: Query<>()
-
 The counterpart of this behavior in this ECS is throwing a `StructuralChangeException` when structural changes are performed within a query loop.
+
+## Example: Query<>()
 
 The following use of a `Query<>()` demonstrates the issue and a solution to fix this.
 ```cs
