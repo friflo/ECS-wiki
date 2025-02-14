@@ -151,7 +151,7 @@ The following use of a `Query<>()` demonstrates the issue and a solution to fix 
     query.ForEachEntity((ref Position position, Entity entity) =>
     {
         // throws StructuralChangeException: within query loop. See: https://friflo.gitbook.io/friflo.engine.ecs/documentation/query#structuralchangeexception
-        entity.Add(new EntityName("test"));
+        entity.AddComponent(new EntityName("test"));
     });
     
     // Solution: Using a CommandBuffer 
@@ -179,7 +179,7 @@ class QueryPositionSystem : QuerySystem<Position>
     protected override void OnUpdate() {
         Query.ForEachEntity((ref Position component1, Entity entity) => {
             // throws StructuralChangeException: within query loop. See: https://friflo.gitbook.io/friflo.engine.ecs/documentation/query#structuralchangeexception
-            entity.Add(new EntityName("test"));
+            entity.AddComponent(new EntityName("test"));
         });
         
         // Solution: Using the system CommandBuffer 
