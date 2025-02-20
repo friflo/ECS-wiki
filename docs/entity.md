@@ -187,6 +187,58 @@ public static void AddTags()
 ```
 <br/>
 
+## Clone / Copy entity
+
+The methods `Entity.CloneEntity()` and `Entity.CopyEntity(Entity target)` are used to copy all
+components and tags of one entity to another.
+
+- `CloneEntity()` create a new entity having the same components and tags as the original entity.
+- `CopyEntity(Entity target)` copy all components and tags to the given `target` entity.  
+  The target entity can be in the same or in a different store.
+
+This example creates - "clones" - a new entity with the same components and tags as the original entity.
+
+```cs
+public static void CloneEntity()
+{
+    var store   = new EntityStore();
+    var entity  = store.CreateEntity(new Position(1,2,3), Tags.Get<MyTag1>());
+    
+    var clone = entity.CloneEntity();
+    // the cloned entity have the same components and tags as the original entity.
+}
+```
+
+`CopyEntity()` can be used to copy a subset of all entities of one store to another store.  
+The entities in the target store will have the same entities ids as in the original store.  
+
+```cs
+public struct NetTag : ITag { }
+
+public static void CopyEntities()
+{
+    var store       = new EntityStore();
+    var targetStore = new EntityStore();
+        
+    store.CreateEntity(new Position(1,1,1));                     // 1
+    store.CreateEntity(new Position(2,2,2), Tags.Get<NetTag>()); // 2
+    store.CreateEntity(new Position(3,3,3));                     // 3
+    store.CreateEntity(new Position(4,4,4), Tags.Get<NetTag>()); // 4
+    store.CreateEntity(new Position(5,5,5));                     // 5
+        
+    // Query will copy only entities [2, 4] having a NetTag
+    var query = store.Query().AnyTags(Tags.Get<NetTag>());
+    foreach (var entity in query.Entities) {
+        // preserve same entity ids in target store
+        if (!targetStore.TryGetEntityById(entity.Id, out Entity targetEntity)) {
+            targetEntity = targetStore.CreateEntity(entity.Id);
+        }
+        entity.CopyEntity(targetEntity);
+    }
+    // target store contains two entities [2, 4] with same components and tags as in the original store
+} 
+```
+
 
 ## Script
 
