@@ -29,6 +29,16 @@ Detailed information for each release at
 
 # 3.x Releases
 
+## 3.2.1
+Simplified API
+- Added `Entity.CopyEntity(Entity target)`  
+  Intended to backup the entities from one `EntityStore` to another.  
+  See: [Docs - Clone / Copy entity](https://friflo.gitbook.io/friflo.engine.ecs/documentation/entity#clone-copy-entity)
+- Added `Entity.CloneEntity()`
+
+## 3.2.0
+- New feature: added `EntityStore.CopyEntity(Entity source, Entity target)`
+
 ## 3.1.0
 - Introduced `StructuralChangeException` which is thrown when executing **structural changes** within a `Query<>()` loop.  
   Detailed information at [Query - StructuralChangeException](https://friflo.gitbook.io/friflo.engine.ecs/documentation/query#structuralchangeexception)
