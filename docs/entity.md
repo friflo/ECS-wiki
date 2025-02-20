@@ -192,11 +192,11 @@ public static void AddTags()
 The methods `Entity.CloneEntity()` and `Entity.CopyEntity(Entity target)` are used to copy all
 components and tags of one entity to another.
 
-- `CloneEntity()` create a new entity having the same components and tags as the original entity.
+- `CloneEntity()` creates a new entity having the same components and tags as the original entity.
 - `CopyEntity(Entity target)` copy all components and tags to the given `target` entity.  
   The target entity can be in the same or in a different store.
 
-This example creates - "clones" - a new entity with the same components and tags as the original entity.
+The example creates a new entity with the same components and tags as the original entity.
 
 ```cs
 public static void CloneEntity()
@@ -209,7 +209,7 @@ public static void CloneEntity()
 }
 ```
 
-`CopyEntity()` can be used to copy a subset of all entities of one store to another store.  
+`CopyEntity()` can be used to copy a subset or all entities of one store to another store.  
 The entities in the target store will have the same entities ids as in the original store.  
 
 ```cs
