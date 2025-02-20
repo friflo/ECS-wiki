@@ -190,7 +190,7 @@ public static void AddTags()
 ## Clone / Copy entity
 
 The methods `Entity.CloneEntity()` and `Entity.CopyEntity(Entity target)` are used to copy all
-components and tags of one entity to another.
+components and tags from one entity to another.
 
 - `CloneEntity()` creates a new entity having the same components and tags as the original entity.
 - `CopyEntity(Entity target)` copy all components and tags to the given `target` entity.  
