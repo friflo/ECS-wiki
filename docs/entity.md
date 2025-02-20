@@ -209,7 +209,7 @@ public static void CloneEntity()
 }
 ```
 
-`CopyEntity()` can be used to copy a subset or all entities of one store to another store.  
+`CopyEntity(Entity target)` can be used to copy a subset or all entities of one store to another store.  
 The entities in the target store will have the same entities ids as in the original store.  
 
 ```cs
