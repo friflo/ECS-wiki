@@ -31,33 +31,33 @@ An ECS has two major strengths:
 ## Design goals
 
 <details>
-<summary>🔥 High Performance</summary>
+<summary>🔥 <strong>High Performance</strong></summary>
 Optimal and efficient query / system execution.<br/>
 Fast entity creation and component changes.
 </details>
 
 <details>
-<summary>🎯 Simple</summary>
+<summary>🎯 <strong>Simple</strong></summary>
 Simple API - convenient to debug.<br/>
 No boilerplate code.
 </details>
 
 <details>
-<summary>🔄 Low memory footprint</summary>
+<summary>🔄 <strong>Low memory footprint</strong></summary>
 Minimal heap allocations at start phase.<br/>
 No heap allocations after internal buffers grown large enough.<br/>
 No GC pauses / no frame drops.
 </details>
 
 <details>
-<summary>🛡️ Reliable</summary>
+<summary>🛡️ <strong>Reliable</strong></summary>
 100% verifiably <strong>safe C#</strong>. No <strong>unsafe</strong> code or native bindings.<br/>
 Full test coverage. Expressive runtime errors. Actively maintained.<br/>
 Your code requires no <strong>Unsafe</strong> quirks for maximum performance.
 </details>
 
 <details>
-<summary>🤏 Small</summary>
+<summary>🤏 <strong>Small</strong></summary>
 Friflo.Engine.ECS.dll size: only 320 kb.  <br/>
 No code generation. No 3rd party dependencies.
 </details>
