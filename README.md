@@ -9,8 +9,8 @@
 
 
 
-**friflo ECS** is an archetype based ECS - Entity Component System.  
-The design goals of this library are performance and simplicity.
+**friflo ECS**, a small and high-performance **C# ECS** - Entity Component System.  
+Its an archetype based ECS with focus on performance and simplicity.
 
 <details>
 <summary>🛈 What is an Entity Component System?</summary>
@@ -24,7 +24,7 @@ An ECS has two major strengths:
    Code decoupling is accomplished by dividing implementation in pure data structures (**Component types**) - and code (**Systems**) to process them.  
   
 2. It provides **high performant query execution** by storing components in continuous memory to leverage L1 CPU cache and its prefetcher.  
-   It improves CPU branch prediction by minimizing conditional branches when processing components in tight loops.
+   It improves CPU branch prediction by minimizing conditional branches when processing components in tight loops. 
    [Data-oriented design ⋅ Wikipedia](https://en.wikipedia.org/wiki/Data-oriented_design).
 </details>
 
