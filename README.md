@@ -52,8 +52,8 @@ No GC pauses / no frame drops.
 <details>
 <summary>🛡️ Reliable</summary>
 100% verifiably safe C#. No <b>unsafe</b> code or native bindings.<br/>
-Full test coverage. Expressive runtime errors. Actively maintained.
-
+Full test coverage. Expressive runtime errors. Actively maintained.<br/>
+Your code requires no **unsafe** code for maximum performance.
 </details>
 
 <details>
