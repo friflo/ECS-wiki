@@ -61,10 +61,13 @@ The main differences are:
   It is completely different from common component handling.
   See [flecs ⋅ Relationships](https://github.com/SanderMertens/flecs/blob/master/docs/Relationships.md)
 
-- Adding, removing or updating a link does not cause [archetype fragmentation](https://www.flecs.dev/flecs/md_docs_2Relationships.html#fragmentation).  
+- Adding, removing or updating a `ILinkRelation` does not cause [archetype fragmentation](https://www.flecs.dev/flecs/md_docs_2Relationships.html#fragmentation).  
   In **flecs** every relationship between two entities creates an individual archetype only containing a single entity / component.  
   So each entity relationship allocates ~ 1000 bytes required by the archetype stored in the heap for each link.  
   The more significant performance penalty is the side effect in queries. Many archetypes need to be iterated if they are query matches.
+
+- Adding, removing or updating a `ILinkComponent` cause archetype fragmentation.  
+  `ILinkComponent`'s are components and including behavior.
 
 - Changing an entity link does not cause a structural change.  
   In **flecs** a new archetype needs to be created and the old archetype gets empty.  
