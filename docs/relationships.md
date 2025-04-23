@@ -67,7 +67,7 @@ The main differences are:
   The more significant performance penalty is the side effect in queries. Many archetypes need to be iterated if they are query matches.
 
 - Adding, removing or updating a `ILinkComponent` cause archetype fragmentation.  
-  `ILinkComponent`'s are components and including behavior.
+  `ILinkComponent`'s are components including their behavior.
 
 - Changing an entity link does not cause a structural change.  
   In **flecs** a new archetype needs to be created and the old archetype gets empty.  
