@@ -31,3 +31,26 @@ Stack Trace:
    at Friflo.Engine.ECS.Entity.AddComponent[T](T&) + 0x4e
    at MyApplication.UseUnregisteredComponent() + 0x7c
 ```
+
+
+
+### Other Trimmings issues
+
+Community feedback on Discord.  
+In case you get an exception like:
+```
+System.IndexOutOfRangeException: Index was outside the bounds of the array.
+ Stack Trace:
+   at Friflo.Engine.ECS.Relations.AbstractEntityRelations.GetEntityRelations(EntityStoreBase, Int32) + 0xd5
+   at Friflo.Engine.ECS.Relations.AbstractEntityRelations.AddRelation[TRelation](EntityStoreBase, Int32, TRelation&)
+   ...
+```
+
+Add the `<TrimmerRootAssembly>` to your *.csproj.  
+See: [Trimming options > Root assemblies](https://learn.microsoft.com/en-us/dotnet/core/deploying/trimming/trimming-options#root-assemblies)
+
+```xml
+<ItemGroup>
+  <TrimmerRootAssembly Include="Friflo.Engine.ECS" />
+</ItemGroup>
+```
