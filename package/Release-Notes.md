@@ -29,6 +29,24 @@ Detailed information for each release at
 
 # 3.x Releases
 
+## 3.3.0
+New features
+- Support sorting an `EntityList` with `SortByComponentField<,>()` and `SortByEntityId()`.
+- Support to filter an `EntityList` using `Filter(Func<Entity, bool> filter)` with a predicate delegate.
+
+Bugfix
+- Fixed [Native AOT - System.NotSupportedException](https://github.com/friflo/Friflo.Engine.ECS/issues/65)
+
+
+The main focus of this release was to add support for **EcGui** - an In-Game GUI utilizing [ImGui.NET](https://github.com/ImGuiNET/ImGui.NET).  
+**EcGui** is an extension for the ECS and acts as an overlay over the Game screen.  
+It provides instant access to entities their components, tags and relations at runtime via **Explorer** and **Inspector** window.
+
+Minimal Demos showing how to integrate EcGui in: [MonoGame](https://github.com/friflo/friflo-EcGui-MonoGame), Godot, SDL3 GPU and Silk.NET.OpenGL.
+
+![friflo-EcGui-MonoGame](https://github.com/user-attachments/assets/5150eafe-fad8-4502-88c9-7ceb9b60cbc6)
+
+
 ## 3.2.1
 Simplified API
 - Added `Entity.CopyEntity(Entity target)`  
