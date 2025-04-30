@@ -42,7 +42,8 @@ The main focus of this release was to add support for **EcGui** - an In-Game GUI
 **EcGui** is an extension for the ECS and acts as an overlay over the Game screen.  
 It provides instant access to entities their components, tags and relations at runtime via **Explorer** and **Inspector** window.
 
-Minimal Demos showing how to integrate EcGui in: [MonoGame](https://github.com/friflo/friflo-EcGui-MonoGame), Godot, SDL3 GPU and Silk.NET.OpenGL.
+Minimal Demos showing how to integrate EcGui in: [MonoGame](https://github.com/friflo/friflo-EcGui-MonoGame),
+[Godot](https://github.com/friflo/friflo-EcGui-Godot), SDL3 GPU and Silk.NET.OpenGL.
 
 ![friflo-EcGui-MonoGame](https://github.com/user-attachments/assets/5150eafe-fad8-4502-88c9-7ceb9b60cbc6)
 
