@@ -30,17 +30,42 @@ Detailed information for each release at
 # 3.x Releases
 
 ## 3.3.0
-New features
+
+The main focus of this release was to add support for **EcGui** - an In-Game GUI utilizing ImGui.NET.  
+The GUI is an optional extension and acts as an overlay over the Game screen.  
+It provides instant access to entities their components, tags and relations at runtime via **Explorer** and **Inspector** window.
+
+### New Features
+To enable sorting and filtering in **EcGui** the following features were added to the ECS.
 - Support sorting an `EntityList` with `SortByComponentField<,>()` and `SortByEntityId()`.
 - Support to filter an `EntityList` using `Filter(Func<Entity, bool> filter)` with a predicate delegate.
 
-Bugfix
+### Bugfix
 - Fixed [Native AOT - System.NotSupportedException](https://github.com/friflo/Friflo.Engine.ECS/issues/65)
 
 
-The main focus of this release was to add support for **EcGui** - an In-Game GUI utilizing [ImGui.NET](https://github.com/ImGuiNET/ImGui.NET).  
-**EcGui** is an extension for the ECS and acts as an overlay over the Game screen.  
-It provides instant access to entities their components, tags and relations at runtime via **Explorer** and **Inspector** window.
+### **EcGui**
+
+**EcGui** can be integrated in all environments that support **ImGui**. This means all desktop platforms: Windows, macOS & Linux.  
+It supports various graphic backends: Direct3D, Vulkan, Metal, OpenGL, ...
+
+#### Features
+- Requires only a few method calls (3 at minimum) to connect  **ECS** store, queries and systems to **EcGui**.
+  ```cs
+  // on startup
+  EcGui.AddExplorerStore("Store", store);
+  // in render loop
+  EcGui.ExplorerWindow();
+  EcGui.InspectorWindow();
+  ```
+- Renders the Explorer & Inspector in ~0.1 - 0.5 ms per frame. Rendering is allocation free.  
+  The time for rendering is independent from entity count. E.g. 1, 10, ..., 1.000 or 1.000.000 entities.
+- Explore ECS queries added to the **Explorer** in real time.
+- Filter and sort entity components in the explorer table.
+- Edit, Cut, Copy or Paste entities and components in the **Explorer** table.
+- Export Explorer table as **CSV** or **Markdown**.
+- View and edit all entity components, tags and relations in the **Inspector** window.
+
 
 Minimal Demos showing how to integrate **EcGui** in **MonoGame**, **Godot**, **SDL3** & **Silk.NET**  
 See: [**EcGui Demo List**](https://github.com/friflo?tab=repositories&q=ecgui&type=public&language=&sort=name)
