@@ -67,8 +67,7 @@ It supports various graphic backends: Direct3D, Vulkan, Metal, OpenGL, ...
 - View and edit all entity components, tags and relations in the **Inspector** window.
 
 
-Minimal Demos showing how to integrate
-**EcGui** in
+Minimal Demos showing how to integrate **EcGui** in 
 [MonoGame](https://github.com/friflo/friflo-EcGui-MonoGame),
 [Godot](https://github.com/friflo/friflo-EcGui-Godot),
 [SDL3](https://github.com/friflo/friflo-EcGui-SDL3.GPU) &
