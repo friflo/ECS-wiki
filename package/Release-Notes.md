@@ -29,6 +29,11 @@ Detailed information for each release at
 
 # 3.x Releases
 
+## 3.3.2
+- Added runtime assertions that indicates the value of an indexed component was changed previously.  
+  E.g. `"Indexed value of 'AttackComponent' not found. Reason: indexed values MUST NOT be changed. See: ..."`  
+  More info at **Important** disclaimer at: https://friflo.gitbook.io/friflo.engine.ecs/documentation/component-index#indexed-components
+
 ## 3.3.1
 - Added runtime assertions for `ChildEntities` and `Entities` indexer.  
   E.g. if  `ChildEntities.Count == 3` calling the indexer with `ChildEntities[3]` throws `IndexOutOfRangeException`.
