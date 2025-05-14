@@ -123,6 +123,16 @@ public static void LinkComponents()
     entity2.HasComponent    <AttackComponent>();        // false
 }
 ```
+
+> **Important**  
+> When changing the indexed component value `entity.AddComponent<>()` must be used to enable the store updating the index.  
+> Changing the indexed component with `ref` access don't update the index.  
+> E.g. with `entity.GetComponent<>()` or within a `Query()` using the `ref` parameter of a component.
+```cs
+store.AddComponent(new AttackComponent{ target = entity1 }); // OK
+store.GetComponent<AttackComponent>().target = entity1;      // No index update
+```
+
 <br/>
 
 
