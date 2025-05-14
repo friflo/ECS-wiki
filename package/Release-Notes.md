@@ -29,6 +29,11 @@ Detailed information for each release at
 
 # 3.x Releases
 
+## 3.3.1
+- Added runtime assertions for `ChildEntities` and `Entities` indexer.  
+  E.g. if  `ChildEntities.Count == 3` calling the indexer with `ChildEntities[3]` throws `IndexOutOfRangeException`.
+
+
 ## 3.3.0
 
 The main focus of this release was to add support for **EcGui** - an In-Game GUI utilizing ImGui.NET.  
