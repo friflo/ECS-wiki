@@ -38,8 +38,9 @@ Fast entity creation and component changes.
 
 <details>
 <summary>🎯 <strong>Simple</strong></summary>
-Simple API - convenient to debug.<br/>
-No boilerplate code.
+Simple API - convenient to debug. No boilerplate code.<br/>
+CLS Compliant API - supporting all .NET languages: C#, F#, VB.NET,...
+
 </details>
 
 <details>
