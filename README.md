@@ -109,7 +109,7 @@ To solve other common use-cases not covered by basic implementations this ECS pr
 
 > 100% verifiably safe 🔒 C#. No [*unsafe code*](https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/unsafe-code)
 > or native bindings.  
-> This prevents *segmentation faults* or *access violations* crashing a process instantaneously.
+> This prevents *segmentation faults*, *access violations* and *memory corruption*.
 
 > Minimal heap allocations.  
 > After internal buffers grown large enough no heap allocation will occur.  
