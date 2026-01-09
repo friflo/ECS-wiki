@@ -95,6 +95,9 @@ public static void CreateStore()
 Multiple components with different types can be added / removed to / from an entity.  
 If adding a component using a type already stored in the entity its value gets updated. 
 
+> **Limitation**  
+> The number of component types is currently limited to 256.
+
 ```csharp
 [ComponentKey("my-component")]
 public struct MyComponent : IComponent {
@@ -165,6 +168,9 @@ public static void GetUniqueEntity()
 `Tags` are `struct`s similar to components - except they store no data.  
 They can be utilized in queries similar as components to restrict the amount of entities returned by a query.  
 If adding a tag using a type already attached to the entity the entity remains unchanged.
+
+> **Limitation**  
+> The number of tag types is currently limited to 256.
 
 ```csharp
 public struct MyTag1 : ITag { }
