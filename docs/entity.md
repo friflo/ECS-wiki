@@ -137,6 +137,7 @@ Result of `entity.DebugJSON`:
 <br/>
 
 
+
 ## Unique entity
 
 Add a `UniqueEntity` component to an entity to mark it as a *"singleton"* with a unique `string` id.  
