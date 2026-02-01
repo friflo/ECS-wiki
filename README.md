@@ -1,4 +1,4 @@
-![friflo ECS](images/friflo-ECS.svg)
+![](images/friflo-ECS.svg)
 
 
 **friflo ECS**, a small and high-performance **C# ECS** - Entity Component System.  
