@@ -110,6 +110,128 @@ entity: 1 - added:   MyTag1 added:   MyTag2
 <br/>
 
 
+# Map Component types to enums
+
+**🚀 New feature in v3.5.0**
+
+Component types can now be mapped to `enum` ids with the `[MapComponent<>]` attribute.  
+The mapped id can be retrieved with `ComponentType.AsEnum<>()`.  
+
+This is especially useful in event handlers like `store.OnComponentAdded` or `store.OnComponentRemoved`.  
+Before v3.5.0 a chain of `if`, `else if`, ... branches were required to execute code specific for a component type.  
+This pattern had two downsides:
+- The CPU had to execute multiple branches slowing down performance.
+- It is easy to forget a curly bracket and the execution is not as intended.
+
+```cs
+store.OnComponentAdded += (componentChanged) =>
+{
+    var type = componentChanged.ComponentType.Type;
+    if      (type == typeof(Burning))  { ShowFlameParticles(componentChanged.Entity); }
+    else if (type == typeof(Frozen))   { ShowIceOverlay(componentChanged.Entity); }
+    else if (type == typeof(Poisoned)) { ShowPoisonIcon(componentChanged.Entity); }
+    else if (type == typeof(Stunned))  { ShowStunStars(componentChanged.Entity); }
+};
+```
+
+With v3.5.0 component types mapped to enum ids can be used in switch statements or expressions.  
+So a chain of `if`, `else if`, ... branches converts to a single switch statement.  
+The compiler can now create a fast jump table which enables direct branching to specific code.  
+The new pattern also enables to check that a switch statement is *exhaustive* by the compiler.  
+
+With this new pattern an `enum` needs to be declare which maps component types to enum ids.
+```cs
+public enum StatusEffect
+{
+    None = 0,
+    [MapComponent<Burning>]   Burning,
+    [MapComponent<Frozen>]    Frozen,
+    [MapComponent<Poisoned>]  Poisoned,
+    [MapComponent<Stunned>]   Stunned,
+}
+```
+
+The event handler code will now convert to
+```cs
+store.OnComponentAdded += (componentChanged) =>
+{
+    switch (componentChanged.ComponentType.AsEnum<StatusEffect>())
+    {
+        case StatusEffect.Burning:  ShowFlameParticles(componentChanged.Entity);  break;
+        case StatusEffect.Frozen:   ShowIceOverlay(componentChanged.Entity);      break;
+        case StatusEffect.Poisoned: ShowPoisonIcon(componentChanged.Entity);      break;
+        case StatusEffect.Stunned:  ShowStunStars(componentChanged.Entity);       break;
+    }
+};
+```
+`ComponentType.AsEnum<>()` executes in O(1) - a simple array index lookup.
+
+<br/>
+
+
+# Map tag types to enums
+
+**🚀 New feature in v3.5.0**
+
+For tag types this feature is similar to component types.  
+
+Tag types are mapped to `enum` ids with the `[MapTag<>]` attribute.  
+The mapped id can be retrieved with `TagType.AsEnum<>()`.  
+
+This is especially useful in the event handler `store.OnTagsChanged` using `TagsChanged.AddedTags` or `TagsChanged.RemovedTags`.  
+Before v3.5.0 a chain of `if`, `else if`, ... branches were required to execute code for added or removed tags.  
+This pattern had two downsides:
+- The CPU had to execute multiple branches slowing down performance.
+- It is easy to forget a curly bracket and the execution is not as intended.
+
+```cs
+store.OnTagsChanged += (tagsChanged) =>
+{
+    var addedTags = tagsChanged.AddedTags;    
+    if      (addedTags.Has<Burning>)  { ShowFlameParticles(componentChanged.Entity); }
+    else if (addedTags.Has<Frozen>)   { ShowIceOverlay(componentChanged.Entity); }
+    else if (addedTags.Has<Poisoned>) { ShowPoisonIcon(componentChanged.Entity); }
+    else if (addedTags.Has<Stunned>)  { ShowStunStars(componentChanged.Entity); }    
+};
+```
+
+With v3.5.0 tag types mapped to enum ids can be used in switch statements or expressions.  
+So a chain of `if`, `else if`, ... branches converts to a single switch statement.  
+The compiler can now create a fast jump table which enables direct branching to specific code.  
+The new pattern also enables to check that a switch statement is *exhaustive* by the compiler.  
+
+With this new pattern an `enum` needs to be declare which maps tag types to enum ids.
+```cs
+public enum StatusEffectTags
+{
+    None = 0,
+    [MapTag<Burning>]   Burning,
+    [MapTag<Frozen>]    Frozen,
+    [MapTag<Poisoned>]  Poisoned,
+    [MapTag<Stunned>]   Stunned,
+}
+```
+
+The event handler code will now convert to
+```cs
+store.OnComponentAdded += (componentChanged) =>
+{
+    foreach (var tag in tagsChanged.AddedTags) {
+        switch (tag.AsEnum<StatusEffectTags>())
+        {
+            case StatusEffect.Burning:  ShowFlameParticles(componentChanged.Entity);  break;
+            case StatusEffect.Frozen:   ShowIceOverlay(componentChanged.Entity);      break;
+            case StatusEffect.Poisoned: ShowPoisonIcon(componentChanged.Entity);      break;
+            case StatusEffect.Stunned:  ShowStunStars(componentChanged.Entity);       break;
+        }
+    }
+};
+```
+`TagType.AsEnum<>()` executes in O(1) - a simple array index lookup.
+
+<br/>
+
+
 # EventRecorder
 
 An `EventRecorder` record all component and tag changes of an `EntityStore` when `Enabled`.  
