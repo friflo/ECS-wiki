@@ -202,7 +202,7 @@ The new pattern also enables to check that a switch statement is *exhaustive* by
 
 With this new pattern an `enum` needs to be declare which maps tag types to enum ids.
 ```cs
-public enum StatusEffectTags
+public enum EffectTags
 {
     None = 0,
     [MapTag<Burning>]   Burning,
@@ -217,12 +217,12 @@ The event handler code will now convert to
 store.OnTagsChanged += (tagsChanged) =>
 {
     foreach (var addedTag in tagsChanged.AddedTags) {
-        switch (addedTag.AsEnum<StatusEffectTags>())
+        switch (addedTag.AsEnum<EffectTags>())
         {
-            case StatusEffectTags.Burning:  ShowFlameParticles(componentChanged.Entity);  break;
-            case StatusEffectTags.Frozen:   ShowIceOverlay(componentChanged.Entity);      break;
-            case StatusEffectTags.Poisoned: ShowPoisonIcon(componentChanged.Entity);      break;
-            case StatusEffectTags.Stunned:  ShowStunStars(componentChanged.Entity);       break;
+            case EffectTags.Burning:  ShowFlameParticles(componentChanged.Entity);  break;
+            case EffectTags.Frozen:   ShowIceOverlay(componentChanged.Entity);      break;
+            case EffectTags.Poisoned: ShowPoisonIcon(componentChanged.Entity);      break;
+            case EffectTags.Stunned:  ShowStunStars(componentChanged.Entity);       break;
         }
     }
 };
