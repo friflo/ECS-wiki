@@ -4,8 +4,8 @@ These events can be consumed in two different ways.
 - Process events directly by an event handler subscribed to an event like `entity.OnComponentChanged`.
 - Or by recording all events using an [EventRecorder](#eventrecorder) and process recorded events later within a `Query`.
 
-**🚀 Note**  
-**v3.5.0** introduced a new pattern to process events on adding/removing components or tags more performant and concise.  
+**🚀 New in v3.5.0**  
+Introduced a new pattern to process events on adding/removing components or tags more performant and concise.
 See: [Map components to enums](#map-components-to-enums) and [Map tags to enums](#map-tags-to-enums).
 
 # Entity changes
