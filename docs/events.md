@@ -182,7 +182,8 @@ For tag types this feature is similar to component types.
 Tag types are mapped to `enum` ids with the `[MapTag<>]` attribute.  
 The mapped id can be retrieved with `TagType.AsEnum<>()`.  
 
-This is especially useful in the event handler `store.OnTagsChanged` using `TagsChanged.AddedTags` or `TagsChanged.RemovedTags`.  
+This is especially useful in the event handler `store.OnTagsChanged` accessing the properties `TagsChanged.AddedTags`
+or `TagsChanged.RemovedTags`. Typically both properties contain none or only a single `TagType`.  
 Before v3.5.0 a chain of `if`, `else if`, ... branches were required to execute code for added or removed tags.  
 This pattern had two downsides:
 - The CPU had to execute multiple branches slowing down performance.
