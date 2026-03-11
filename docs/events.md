@@ -214,15 +214,15 @@ public enum StatusEffectTags
 
 The event handler code will now convert to
 ```cs
-store.OnComponentAdded += (componentChanged) =>
+store.OnTagsChanged += (tagsChanged) =>
 {
-    foreach (var tag in tagsChanged.AddedTags) {
-        switch (tag.AsEnum<StatusEffectTags>())
+    foreach (var addedTag in tagsChanged.AddedTags) {
+        switch (addedTag.AsEnum<StatusEffectTags>())
         {
-            case StatusEffect.Burning:  ShowFlameParticles(componentChanged.Entity);  break;
-            case StatusEffect.Frozen:   ShowIceOverlay(componentChanged.Entity);      break;
-            case StatusEffect.Poisoned: ShowPoisonIcon(componentChanged.Entity);      break;
-            case StatusEffect.Stunned:  ShowStunStars(componentChanged.Entity);       break;
+            case StatusEffectTags.Burning:  ShowFlameParticles(componentChanged.Entity);  break;
+            case StatusEffectTags.Frozen:   ShowIceOverlay(componentChanged.Entity);      break;
+            case StatusEffectTags.Poisoned: ShowPoisonIcon(componentChanged.Entity);      break;
+            case StatusEffectTags.Stunned:  ShowStunStars(componentChanged.Entity);       break;
         }
     }
 };
