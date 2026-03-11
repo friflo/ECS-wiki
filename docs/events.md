@@ -110,7 +110,7 @@ entity: 1 - added:   MyTag1 added:   MyTag2
 <br/>
 
 
-# Map Component types to enums
+# Map components to enums
 
 **🚀 New feature in v3.5.0**
 
@@ -169,7 +169,7 @@ store.OnComponentAdded += (componentChanged) =>
 <br/>
 
 
-# Map tag types to enums
+# Map tags to enums
 
 **🚀 New feature in v3.5.0**
 
