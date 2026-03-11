@@ -20,6 +20,8 @@
 
 * [Events](docs/events.md)
     * [Entity changes](docs/events.md#entity-changes)
+    * [Map Component types to enums](docs/events.md#docs/map-component-types-to-enums)
+    * [Map tag types to enums](docs/events.md#docs/map-tag-types-to-enums)
     * [EventRecorder](docs/events.md#eventrecorder)
     * [Signals](docs/events.md#signals)
 
