@@ -139,7 +139,7 @@ So a chain of `if`, `else if`, ... branches converts to a single switch statemen
 The compiler can now create a fast jump table which enables direct branching to specific code.  
 The new pattern also enables to check that a switch statement is *exhaustive* by the compiler.  
 
-With this new pattern an `enum` needs to be declare which maps component types to enum ids.
+With this new pattern an `enum` needs to be declared which maps component types to enum ids.
 ```cs
 public enum StatusEffect
 {
@@ -200,7 +200,7 @@ So a chain of `if`, `else if`, ... branches converts to a single switch statemen
 The compiler can now create a fast jump table which enables direct branching to specific code.  
 The new pattern also enables to check that a switch statement is *exhaustive* by the compiler.  
 
-With this new pattern an `enum` needs to be declare which maps tag types to enum ids.
+With this new pattern an `enum` needs to be declared which maps tag types to enum ids.
 ```cs
 public enum EffectTags
 {
