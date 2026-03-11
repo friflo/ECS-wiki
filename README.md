@@ -4,6 +4,10 @@
 **friflo ECS**, a small and high-performance **C# ECS** - Entity Component System.  
 Its an archetype based ECS with focus on performance and simplicity.
 
+**🚀 New in v3.5.0**  
+Introduced new pattern to process events on adding/removing components or tags more performant and concise.  
+See: [Map components to enums](docs/events.md#map-components-to-enums) and [Map tags to enums](docs/events.md#map-tags-to-enums).
+
 <details>
 <summary>🛈 What is an Entity Component System?</summary>
 
@@ -19,6 +23,7 @@ An ECS has two major strengths:
    It improves CPU branch prediction by minimizing conditional branches when processing components in tight loops. 
    [Data-oriented design ⋅ Wikipedia](https://en.wikipedia.org/wiki/Data-oriented_design).
 </details>
+
 
 ## Design goals
 
