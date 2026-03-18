@@ -34,6 +34,7 @@
 * [Systems](docs/systems.md)
 
 * [Query Optimization](docs/query-optimization.md)
+    * [Query Generator](docs/query-optimization.md#query-generator)
     * [Boosted Query](docs/query-optimization.md#boosted-query)
     * [Enumerate Chunks](docs/query-optimization.md#enumerate-query-chunks)
     * [Parallel Query / Multithreading](docs/query-optimization.md#parallel-query-job)

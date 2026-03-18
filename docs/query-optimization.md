@@ -41,6 +41,58 @@ Query optimization examples are part of the unit tests see:
 
 <br/>
 
+
+## Query Generator
+
+**🚀 New feature in v3.6.0** - *not published on nuget right now*.
+
+The goal of the **Query Generator** is to generate highly efficient query code and reduce the amount of boiler plate to a minimum.  
+A super efficient way to execute queries is [Enumerate Query Chunks](#enumerate-query-chunks). But writing them by hand is awkward.  
+The query generator takes over this task for every method annotated with `[Query]`.  
+It automatically generates an additional method suffixed with `Query`. So given:
+```cs
+    [Query]
+    [AllTags<IsAlive>]
+    void MovePosition(ref Position position, float deltaTime) {
+        position.x += deltaTime;
+    }
+```
+The code generator creates / updates the method:
+```cs
+    void MovePositionQuery(EntityStore store, float deltaTime) { ... }
+```
+This method internally calls `MovePosition(ref Position position)` for every entity.
+
+**Explanation**  
+The same functionality with a manually written `ForEach()` is:
+```cs
+    void MovePositionQuery(EntityStore store, float deltaTime)
+    {
+        var query = store.Query<Position>().AllTags<IsAlive>();
+        query.ForEach((ref Position position) => {
+            position.x += deltaTime;
+        });
+    }
+```
+The behavior of both approaches is the same.
+
+**Comparison**  
+|                             | `ForEach()`                                             | Query Generator
+| --------------------------- | ------------------------------------------------------- | ------------------------------------------------
+| `ArchetypeQuery` creation   | `store.Query<>()` creates new `ArchetypeQuery` instance | creates and caches the instances internally
+| Memory allocation           | creates an `ArchetypeQuery` and a `ForEach` delegate    | only an `ArchetypeQuery` at the first call
+| Execution performance       | calling the `ForEach` delegate is expensive             | Annotated [Query] method is a direct method call
+
+**How to enable**  
+To bring the Query Generator alive you need to add `Friflo.Engine.ECS.Generators` to your `csproj` with:
+```xml
+<PackageReference Include="Friflo.Engine.ECS.Generators" OutputItemType="Analyzer" ReferenceOutputAssembly="false"/>
+```
+This dependency is only used by the compiler. It is not a runtime dependency.
+
+<br/>
+
+
 ## Boosted Query
 
 
