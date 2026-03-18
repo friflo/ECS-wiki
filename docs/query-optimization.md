@@ -24,6 +24,7 @@ This approach enables:
 - All optimization variants require only local code changes.
 
 Query optimizations can be achieved by using various query technics like:
+- [Query Generator](#query-generator)
 - [Boosted Query](#boosted-query)
 - [Enumerate Query Chunks](#enumerate-query-chunks)
 - [Parallel Query Job](#parallel-query-job)
