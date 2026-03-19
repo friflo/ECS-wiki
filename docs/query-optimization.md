@@ -82,7 +82,7 @@ The behavior of both approaches is the same.
 | --------------------------- | ------------------------------------------------------- | ------------------------------------------------
 | `ArchetypeQuery` creation   | `store.Query<>()` creates new `ArchetypeQuery` instance | creates and caches the instances internally
 | Memory allocation           | creates an `ArchetypeQuery` and a `ForEach` delegate    | an `ArchetypeQuery` only at the first call
-| Execution performance       | calling the `ForEach` delegate is expensive             | the annotated `[Query]` method is called directly
+| Execution performance       | calling the `ForEach` delegate is expensive             | `[Query]` method is called directly - can be inlined
 
 **How to enable**  
 To bring the Query Generator alive you need to add `Friflo.Engine.ECS.Generators` to your `csproj` with:
