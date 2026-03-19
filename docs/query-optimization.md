@@ -62,7 +62,8 @@ The code generator creates / updates the method:
 ```cs
     void MovePositionQuery(EntityStore store, float deltaTime) { ... }
 ```
-This method internally calls `MovePosition(ref Position position)` for every **matching** entity.
+This method calls `MovePosition(ref Position position)` for every **matching** entity.
+
 
 **Explanation**  
 The same functionality with a manually written `ForEach()` is:
@@ -77,12 +78,14 @@ The same functionality with a manually written `ForEach()` is:
 ```
 The behavior of both approaches is the same.
 
+
 **Comparison**  
 |                             | `ForEach()`                                             | Query Generator
 | --------------------------- | ------------------------------------------------------- | ------------------------------------------------
 | `ArchetypeQuery` creation   | `store.Query<>()` creates new `ArchetypeQuery` instance | creates and caches the instances internally
 | Memory allocation           | creates an `ArchetypeQuery` and a `ForEach` delegate    | an `ArchetypeQuery` only at the first call
 | Execution performance       | calling the `ForEach` delegate is expensive             | `[Query]` method is called directly - can be inlined
+
 
 **How to enable**  
 To bring the Query Generator alive you need to add `Friflo.Engine.ECS.Generators` to your `csproj` with:
