@@ -87,12 +87,20 @@ The behavior of both approaches is the same.
 | Execution performance       | calling the `ForEach` delegate is expensive             | `[Query]` method is called directly - can be inlined
 
 
-**How to enable**  
-To bring the Query Generator alive you need to add `Friflo.Engine.ECS.Generators` to your `csproj` with:
+**How to use**  
+To bring the Query Generator alive you need to add `Friflo.Engine.ECS.Generators` to your `csproj`.  
+This dependency is only used by the compiler. It is not a runtime dependency.
 ```xml
 <PackageReference Include="Friflo.Engine.ECS.Generators" OutputItemType="Analyzer" ReferenceOutputAssembly="false"/>
 ```
-This dependency is only used by the compiler. It is not a runtime dependency.
+
+The parameter values of the annotated `[Query]` method like `MovePosition()` depend on their type.
+
+| Parameter         | Value
+| ----------------- | -------------------------------------------------------
+| Component types   | the component values in the `EntityStore` of a matching entity.
+| `Entity entity`   | the current iterated entity.
+| Other types       | are set by the values passed to generated `...Query()` method call.
 
 <br/>
 
