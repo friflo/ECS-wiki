@@ -80,11 +80,12 @@ The behavior of both approaches is the same.
 
 
 **Comparison**  
-|                             | `ForEach()`                                             | Query Generator
-| --------------------------- | ------------------------------------------------------- | ------------------------------------------------
-| `ArchetypeQuery` creation   | `store.Query<>()` creates new `ArchetypeQuery` instance | creates and caches the instances internally
-| Memory allocation           | creates an `ArchetypeQuery` and a `ForEach` delegate    | an `ArchetypeQuery` only at the first call
-| Execution performance       | calling the `ForEach` delegate is expensive             | `[Query]` method is called directly - can be inlined
+
+| Efficiency                | `ForEach()`                                                 | Query Generator
+| ------------------------- | ----------------------------------------------------------- | ----------------------------------------------------
+| `ArchetypeQuery` creation | `store.Query<>()` creates new `ArchetypeQuery` instance     | creates and caches the instances internally
+| Memory allocations        | creates always an `ArchetypeQuery` and a `ForEach` delegate | an `ArchetypeQuery` only at the first call
+| Execution performance     | calling the `ForEach` delegate is expensive                 | `[Query]` method is called directly - can be inlined
 
 
 **How to use**  
