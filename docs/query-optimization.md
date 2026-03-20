@@ -47,7 +47,9 @@ Query optimization examples are part of the unit tests see:
 
 **🚀 New feature in v3.6.0** - *preview available:* [New feature: Query Generator](https://github.com/friflo/Friflo.Engine.ECS/issues/124).
 
-The goal of the **Query Generator** is to generate highly efficient query code and reduce the amount of boiler plate to a minimum.  
+The goal of the **Query Generator** is to generate highly efficient query code and reduce the amount of boiler plate to a minimum.
+The generator is a [C# Source Generator](https://devblogs.microsoft.com/dotnet/introducing-c-source-generators/) to enable seamless development.
+
 A super efficient way to execute queries is [Enumerate Query Chunks](#enumerate-query-chunks). But writing them by hand is awkward.  
 The query generator takes over this task for every method annotated with `[Query]`.  
 It automatically generates an additional method suffixed with `Query`. So given:
