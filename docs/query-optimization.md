@@ -64,8 +64,11 @@ The code generator creates / updates the method:
 ```cs
     void MovePositionQuery(EntityStore store, float deltaTime) { ... }
 ```
-This method calls `MovePosition(ref Position position)` for every **matching** entity.
-
+This method calls `MovePosition(ref Position position)` for every **matching** entity.  
+Now you can call the generated method to execute the query with:
+```cs
+    MovePositionQuery(store, 0.16f); // calls MovePosition() for all matching entities.
+```
 
 **Explanation**  
 The same functionality with a manually written `ForEach()` is:
