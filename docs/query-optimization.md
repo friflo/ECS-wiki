@@ -91,7 +91,9 @@ The behavior of both approaches is the same.
 To bring the Query Generator alive you need to add `Friflo.Engine.ECS.Generators` to your `csproj`.  
 This dependency is only used by the compiler. It is not a runtime dependency.
 ```xml
-<PackageReference Include="Friflo.Engine.ECS.Generators" OutputItemType="Analyzer" ReferenceOutputAssembly="false"/>
+<PackageReference Include="Friflo.Engine.ECS.Generators"
+                  OutputItemType="Analyzer"
+                  ReferenceOutputAssembly="false" />
 ```
 
 The parameter values of the annotated `[Query]` method like `MovePosition()` depend on their type.
