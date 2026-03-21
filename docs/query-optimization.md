@@ -118,7 +118,7 @@ partial class Queries {
     [Query]
     [WithoutAnyTags<IsStatic>]
     static void MovePosition(ref Position position, float deltaX) {
-        position.x = deltaX;
+        position.x += deltaX;
     }
     
     public static void Run() {
