@@ -110,6 +110,27 @@ The parameter values of the annotated `[Query]` method like `MovePosition()` dep
 | `Entity entity`   | the current iterated entity.
 | Other types       | are set by the values passed to generated `...Query()` method call.
 
+*Complete query generator example read to run:*
+```cs
+struct IsStatic : ITag;
+
+partial class Queries {
+    [Query]
+    [WithoutAnyTags<IsStatic>]
+    static void MovePosition(ref Position position, float deltaX) {
+        position.x = deltaX;
+    }
+    
+    public static void Run() {
+        var store = new EntityStore();
+        store.CreateEntity(new Position());
+        MovePositionQuery(store, 2);
+    }
+}
+```
+
+
+
 <br/>
 
 
