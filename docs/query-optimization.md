@@ -92,6 +92,8 @@ The behavior of both approaches is the same.
 | Memory allocations        | creates always an `ArchetypeQuery` and a `ForEach` delegate | an `ArchetypeQuery` only at the first call
 | Execution performance     | calling the `ForEach` delegate is expensive                 | `[Query]` method is called directly - can be inlined
 
+After some calls of the generated method it eventually executes allocation free.
+
 
 **How to use**  
 To bring the Query Generator alive you need to add `Friflo.Engine.ECS.Generators` to your `csproj`.  
