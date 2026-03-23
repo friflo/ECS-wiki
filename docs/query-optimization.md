@@ -24,7 +24,7 @@ This approach enables:
 - All optimization variants require only local code changes.
 
 Query optimizations can be achieved by using various query technics like:
-- [Query Generator](#query-generator)
+- [Query Generator](#query-generator) 🚀 New in v3.6.0
 - [Boosted Query](#boosted-query)
 - [Enumerate Query Chunks](#enumerate-query-chunks)
 - [Parallel Query Job](#parallel-query-job)
@@ -45,7 +45,9 @@ Query optimization examples are part of the unit tests see:
 
 ## Query Generator
 
-**🚀 New feature in v3.6.0** - *preview available:* [New feature: Query Generator](https://github.com/friflo/Friflo.Engine.ECS/issues/124).
+**🚀 New feature in v3.6.0**
+
+GitHub issue: [New feature: Query Generator](https://github.com/friflo/Friflo.Engine.ECS/issues/124).
 
 The goal of the **Query Generator** is to generate highly efficient query code and reduce the amount of boiler plate to a minimum.
 The generator is a [C# Source Generator](https://devblogs.microsoft.com/dotnet/introducing-c-source-generators/) to enable seamless development.
