@@ -5,7 +5,7 @@ These events can be consumed in two different ways.
 - Or by recording all events using an [EventRecorder](#eventrecorder) and process recorded events later within a `Query`.
 
 **🚀 New in v3.5.0**  
-Introduced a new pattern to process events on adding/removing components or tags more performant and concise.
+Introduced a new pattern to process events on adding/removing components or tags concise in **O(1)**.  
 See: [Map components to enums](#map-components-to-enums) and [Map tags to enums](#map-tags-to-enums).
 
 # Entity changes

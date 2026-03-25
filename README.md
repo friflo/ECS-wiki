@@ -5,7 +5,7 @@
 Its an archetype based ECS with focus on performance and simplicity.
 
 **🚀 New in v3.5.0**  
-Introduced new pattern to process events on adding/removing components or tags more performant and concise.  
+Introduced new pattern to process events on adding/removing components concise in **O(1)**.  
 See: [Map components to enums](docs/events.md#map-components-to-enums) and [Map tags to enums](docs/events.md#map-tags-to-enums).
 
 **🚀 New in v3.6.0**  
