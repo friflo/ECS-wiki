@@ -114,7 +114,7 @@ The parameter values of the annotated `[Query]` method like `MovePosition()` dep
 | `Entity entity`   | the current iterated entity.
 | Other types       | are set by the values passed to generated `...Query()` method call.
 
-*Complete query generator example read to run:*
+*Complete query generator example ready to run:*
 ```cs
 struct IsStatic : ITag;
 
