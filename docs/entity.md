@@ -57,7 +57,7 @@ public static void DisableEntity()
 Entity example code is part of the unit tests see:
 [Tests/ECS/Examples](https://github.com/friflo/Friflo.Engine.ECS/tree/main/src/Tests/ECS/Examples).
 
-When tying out the examples use a debugger to check entity state changes while stepping throw the code.
+When trying out the examples use a debugger to check entity state changes while stepping throw the code.
 
 <img src="../images/entity-debugger.png" width="630" height="370"></img>  
 *Screenshot:* Entity state - enables browsing the entire store hierarchy.
