@@ -157,24 +157,24 @@ public static void GetUniqueEntity()
 
 A more performant and type-safe approach to implement singletons in the ECS.
 ```cs
-enum PlayerSingleton { Instance }; // only one enum value
+enum SingletonType { Player }; // one enum value per singleton type
 
-struct PlayerComponent : IIndexedComponent<PlayerSingleton>
+struct SingletonComponent : IIndexedComponent<SingletonType>
 {
-    public  string              name;
-    public  PlayerSingleton     GetIndexedValue() => PlayerSingleton.Instance;
+    public  SingletonType   type;
+    public  SingletonType   GetIndexedValue() => type;
 }
 
-public static void SingletonComponent()
+public static void UseSingletonComponent()
 {
     var store   = new EntityStore();
-    store.CreateEntity(new PlayerComponent{ name = "Player" });
+    store.CreateEntity(new SingletonComponent{ type = SingletonType.Player} );
 
-    var index       = store.ComponentIndex<PlayerComponent,PlayerSingleton>();
-    Entity entity   = index[PlayerSingleton.Instance][0];   // get first entity
+    var index       = store.ComponentIndex<SingletonComponent,SingletonType>();
+    Entity entity   = index[SingletonType.Player][0];   // get first entity
     
-    var playerComponent = entity.GetComponent<PlayerComponent>();
-    Console.WriteLine($"name: {playerComponent.name}");     // name: Player
+    var playerComponent = entity.GetComponent<SingletonComponent>();
+    Console.WriteLine($"type: {playerComponent.type}"); // type: Player
 }
 ```
 
