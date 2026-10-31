@@ -49,6 +49,11 @@ public static void ComponentLookup()
 store.AddComponent(new TileComponent{ tileId = 33 }); // OK
 store.GetComponent<TileComponent>().tileId = 33;      // No index update
 ```
+To avoid changing the index field in-place accidentally make the index field `readonly`.  
+Or use an *init-only* property as alternative with better DX. E.g.
+```cs
+public int index { get; init; }
+```
 
 ## Range query
 

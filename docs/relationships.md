@@ -132,6 +132,11 @@ public static void LinkComponents()
 store.AddComponent(new AttackComponent{ target = entity1 }); // OK
 store.GetComponent<AttackComponent>().target = entity1;      // No index update
 ```
+To avoid changing the index field in-place accidentally make the index field `readonly`.  
+Or use an *init-only* property as alternative with better DX. E.g.
+```cs
+public int index { get; init; }
+```
 
 <br/>
 
